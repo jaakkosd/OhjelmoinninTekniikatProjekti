@@ -17,8 +17,7 @@ std::shared_ptr<Interface::ICity> Interface::createGame()
     std::shared_ptr<City> citypointer = std::make_shared<City>();
     gamelogic.takeCity(citypointer);//ensin töytyy antaa city
     gamelogic.finalizeGameStart();
-    qDebug() << "Hei me mennään junalla!";
-    std::shared_ptr<City> retCP = citypointer;
-    return retCP;
+    //std::shared_ptr<City> retCP = citypointer; pitääkö pointerista tehdä kopio tässä?
+    return citypointer;
 
 }
