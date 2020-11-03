@@ -1,13 +1,19 @@
 #include <QApplication>
 #include "mainwindow.h"
 #include "creategame.hh"
+#include "core/logic.hh"
 #include "city.hh"
 
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
     Q_INIT_RESOURCE(offlinedata);
+    CourseSide::Logic gamelogic;
+    gamelogic.fileConfig();
     std::shared_ptr<Interface::ICity>  cp = Interface::createGame();
+    gamelogic.takeCity(cp);//ensin töytyy antaa city
+    gamelogic.finalizeGameStart();
+
     MainWindow window;
     QImage bg = QImage(":/offlinedata/offlinedata/kartta_pieni_500x500.png");
     window.setPicture(bg);
