@@ -33,4 +33,6 @@ std::vector<std::shared_ptr<Interface::IActor> > City::getNearbyActors(Interface
     return output;
 }
 
-bool City::isGameOver() const {};
+bool City::isGameOver() const {
+    return false;
+};
