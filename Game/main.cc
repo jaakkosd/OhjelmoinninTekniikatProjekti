@@ -1,5 +1,5 @@
 #include <QApplication>
-#include "graphics/simplemainwindow.hh"
+#include "mainwindow.h"
 #include "creategame.hh"
 #include "city.hh"
 
@@ -8,7 +8,7 @@ int main(int argc, char *argv[])
     QApplication a(argc, argv);
     Q_INIT_RESOURCE(offlinedata);
     std::shared_ptr<Interface::ICity>  cp = Interface::createGame();
-    CourseSide::SimpleMainWindow window;
+    MainWindow window;
     QImage bg = QImage(":/offlinedata/offlinedata/kartta_pieni_500x500.png");
     window.setPicture(bg);
     auto loc = Interface::Location();
