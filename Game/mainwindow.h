@@ -1,8 +1,7 @@
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
 #include "interfaces/iactor.hh"
-#include "graphics/simpleactoritem.hh"
-
+#include "actoritem.h"
 #include <QMainWindow>
 #include <QGraphicsScene>
 #include <QTimer>
@@ -41,7 +40,7 @@ private:
     QGraphicsScene *map;
     QTimer *timer;
     QVector<QGraphicsItem*> actors_;
-    CourseSide::SimpleActorItem* last_;
+    ActorItem* last_;
 
     int width_ = 500; //pxls
     int height_ = 500;

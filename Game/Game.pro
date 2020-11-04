@@ -6,6 +6,7 @@ QT += core gui widgets network multimedia
 CONFIG += c++14
 
 SOURCES += \
+    actoritem.cpp \
     city.cc \
     creategame.cc \
     engine.cpp \
@@ -37,6 +38,7 @@ else:unix: PRE_TARGETDEPS += \
     $$OUT_PWD/../Course/CourseLib/libCourseLib.a
 
 HEADERS += \
+    actoritem.h \
     city.hh \
     engine.h \
     mainwindow.h
