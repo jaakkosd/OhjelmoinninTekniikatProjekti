@@ -1,6 +1,7 @@
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
 #include "interfaces/iactor.hh"
+#include "actors/nysse.hh"
 #include "actoritem.h"
 #include <QMainWindow>
 #include <QGraphicsScene>
@@ -25,10 +26,11 @@ public:
     void setSize(int w, int h);
     void setTick(int t);
 
-    virtual void addActor(int locX, int locY, int type = 0);
     void updateCoords(int nX, int nY);
     void setPicture(QImage &img);
 
+public slots:
+    void updateActors(std::vector<std::shared_ptr<Interface::IActor> > nearby);
 signals:
     void gameStarted();
 
@@ -39,7 +41,7 @@ private:
     Ui::MainWindow *ui;
     QGraphicsScene *map;
     QTimer *timer;
-    QVector<QGraphicsItem*> actors_;
+    QMap<std::shared_ptr<Interface::IActor>,ActorItem*> actors_;
     ActorItem* last_;
 
     int width_ = 500; //pxls

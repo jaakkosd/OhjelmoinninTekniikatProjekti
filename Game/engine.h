@@ -7,7 +7,7 @@
 #include "core/logic.hh"
 #include "city.hh"
 
-#define UPDATES_PER_SECOND 1
+#define UPDATES_PER_SECOND 30
 
 class Engine : public QObject
 {
@@ -25,6 +25,7 @@ private:
     std::shared_ptr<Interface::ICity>  cp_;
     MainWindow window_;
     QTimer *timer_;
+    QMap<std::shared_ptr<Interface::IActor>,ActorItem*> actors_;
 
 };
 

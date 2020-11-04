@@ -21,14 +21,42 @@ MainWindow::MainWindow(QWidget *parent) :
     resize(minimumSizeHint());
     //ui->gameView->fitInView(0,0, MAPWIDTH, MAPHEIGHT, Qt::KeepAspectRatio);
 
-    timer = new QTimer(this);
-    connect(timer, &QTimer::timeout, map, &QGraphicsScene::advance);
-    timer->start(tick_);
+    //timer = new QTimer(this);
+    //connect(timer, &QTimer::timeout, map, &QGraphicsScene::advance);
+    //timer->start(tick_);
 }
 
 MainWindow::~MainWindow()
 {
     delete ui;
+}
+
+void MainWindow::updateActors(std::vector<std::shared_ptr<Interface::IActor> > nearby)
+{
+
+    QMap<std::shared_ptr<Interface::IActor>,ActorItem*> newActors;
+    for(auto &i : nearby){
+        int x = i.get()->giveLocation().giveX();
+        int y = 500-i.get()->giveLocation().giveY();
+        auto iterator  = actors_.find(i);
+        if (iterator != actors_.end() && iterator.key() == i) {
+            ActorItem* oActor = actors_.take(i);
+            oActor->setCoord(x,y);
+            newActors[std::move(i)] = oActor;
+        }else{
+            if (dynamic_cast<CourseSide::Nysse*>(i.get()) != nullptr)
+              {
+                ActorItem* nActor =  new ActorItem(x,y);
+                map->addItem(nActor);
+                newActors[std::move(i)] =  nActor;
+              }
+        }
+    }
+    for(auto j: actors_){
+        delete j;
+    }
+    actors_.clear();
+    actors_ = std::move(newActors);
 }
 
 void MainWindow::setSize(int w, int h)
@@ -39,20 +67,7 @@ void MainWindow::setSize(int w, int h)
 
 void MainWindow::setTick(int t)
 {
-    tick_ = t;
-}
-
-void MainWindow::addActor(int locX, int locY, int type)
-{
-    ActorItem* nActor = new ActorItem(locX, locY, type);
-    actors_.push_back(nActor);
-    map->addItem(nActor);
-    last_ = nActor;
-}
-
-void MainWindow::updateCoords(int nX, int nY)
-{
-    last_->setCoord(nX, nY);
+    //tick_ = t;
 }
 
 void MainWindow::setPicture(QImage &img)

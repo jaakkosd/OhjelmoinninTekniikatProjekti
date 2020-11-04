@@ -31,15 +31,7 @@ void Engine::updatePositions(){
     Interface::Location loc;
     loc.setXY(250,250);
     std::vector<std::shared_ptr<Interface::IActor> > nearby = cp_->getNearbyActors(loc);
-    for(auto i : nearby){
-        if (dynamic_cast<CourseSide::Nysse*>(i.get()) == nullptr)
-          {
-            continue;
-          }
-        int x = i->giveLocation().giveX();
-        int y = i->giveLocation().giveY();
-        window_.addActor(x,y,0);
-    }
+    window_.updateActors(nearby);
 }
 
 
