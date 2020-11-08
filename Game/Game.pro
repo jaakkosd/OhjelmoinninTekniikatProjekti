@@ -7,9 +7,11 @@ CONFIG += c++14
 
 SOURCES += \
     actoritem.cpp \
+    busuiitem.cpp \
     city.cc \
     creategame.cc \
     engine.cpp \
+    imgactoritem.cpp \
     main.cc \
     mainwindow.cpp
 
@@ -39,9 +41,16 @@ else:unix: PRE_TARGETDEPS += \
 
 HEADERS += \
     actoritem.h \
+    busuiitem.h \
     city.hh \
     engine.h \
+    imgactoritem.h \
     mainwindow.h
 
 FORMS += \
     mainwindow.ui
+
+DISTFILES +=
+
+RESOURCES += \
+    resources.qrc

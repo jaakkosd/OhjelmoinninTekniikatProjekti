@@ -2,7 +2,7 @@
 #define MAINWINDOW_H
 #include "interfaces/iactor.hh"
 #include "actors/nysse.hh"
-#include "actoritem.h"
+#include "busuiitem.h"
 #include <QMainWindow>
 #include <QGraphicsScene>
 #include <QTimer>
@@ -41,8 +41,8 @@ private:
     Ui::MainWindow *ui;
     QGraphicsScene *map;
     QTimer *timer;
-    QMap<std::shared_ptr<Interface::IActor>,ActorItem*> actors_;
-    ActorItem* last_;
+    QMap<std::shared_ptr<Interface::IActor>,busUiItem*> actors_;
+
 
     int width_ = 500; //pxls
     int height_ = 500;

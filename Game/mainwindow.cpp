@@ -34,19 +34,19 @@ MainWindow::~MainWindow()
 void MainWindow::updateActors(std::vector<std::shared_ptr<Interface::IActor> > nearby)
 {
 
-    QMap<std::shared_ptr<Interface::IActor>,ActorItem*> newActors;
+    QMap<std::shared_ptr<Interface::IActor>,busUiItem*> newActors;
     for(auto &i : nearby){
         int x = i.get()->giveLocation().giveX();
         int y = 500-i.get()->giveLocation().giveY();
         auto iterator  = actors_.find(i);
         if (iterator != actors_.end() && iterator.key() == i) {
-            ActorItem* oActor = actors_.take(i);
-            oActor->setCoord(x,y);
-            newActors[std::move(i)] = oActor;
+            busUiItem* oldBus = actors_.take(i);
+            oldBus->move(x,y);
+            newActors[std::move(i)] = oldBus;
         }else{
             if (dynamic_cast<CourseSide::Nysse*>(i.get()) != nullptr)
               {
-                ActorItem* nActor =  new ActorItem(x,y);
+                busUiItem* nActor =  new busUiItem(x,y);
                 map->addItem(nActor);
                 newActors[std::move(i)] =  nActor;
               }

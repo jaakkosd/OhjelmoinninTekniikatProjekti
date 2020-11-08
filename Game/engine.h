@@ -6,6 +6,7 @@
 #include "creategame.hh"
 #include "core/logic.hh"
 #include "city.hh"
+#include "busuiitem.h"
 
 #define UPDATES_PER_SECOND 30
 
@@ -25,7 +26,7 @@ private:
     std::shared_ptr<Interface::ICity>  cp_;
     MainWindow window_;
     QTimer *timer_;
-    QMap<std::shared_ptr<Interface::IActor>,ActorItem*> actors_;
+    QMap<std::shared_ptr<Interface::IActor>,busUiItem*> actors_;
 
 };
 

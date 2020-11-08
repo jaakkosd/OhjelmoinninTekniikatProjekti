@@ -1,0 +1,6 @@
+<RCC>
+    <qresource prefix="/img">
+        <file>pin_red16.png</file>
+        <file>pin_green16.png</file>
+    </qresource>
+</RCC>
