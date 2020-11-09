@@ -2,7 +2,6 @@
 #include "ui_mainwindow.h"
 #include <QDebug>
 
-const int PADDING = 10;
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -20,7 +19,12 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->graphicsView->setScene(map);
     map->setSceneRect(0,0,map_width_,map_height_);
 
-    resize(minimumSizeHint());
+    ui->graphicsView->setHorizontalScrollBarPolicy ( Qt::ScrollBarAlwaysOff );
+    ui->graphicsView->setVerticalScrollBarPolicy ( Qt::ScrollBarAlwaysOff );
+    ui->graphicsView->scale(1.5,1.5);
+
+    //ui->graphicsView->horizontalScrollBar()->value()
+    //resize(minimumSizeHint());
     //ui->gameView->fitInView(0,0, MAPWIDTH, MAPHEIGHT, Qt::KeepAspectRatio);
 
     //timer = new QTimer(this);

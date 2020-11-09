@@ -11,9 +11,6 @@ public:
 protected:
     int x_;
     int y_;
-private:
-    int oldx_;
-    int oldy_;
 };
 
 

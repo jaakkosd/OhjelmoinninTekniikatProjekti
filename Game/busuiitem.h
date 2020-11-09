@@ -12,6 +12,7 @@ public:
 private:
     QPixmap pixmapLeft_;
     QPixmap pixmapRight_;
+    float angle_ = 0;
 
 };
 

@@ -2,10 +2,10 @@
 
 busUiItem::busUiItem(int x, int y):imgActorItem( x,  y)
 {
-    assert(pixmapLeft_.load(":/img/pin_red16.png")); //assert that png file is loaded
-    assert(pixmapRight_.load(":/img/pin_green16.png")); //assert that png file is loaded
-    setOffset(-8,-16);
-    setScale(1);
+    assert(pixmapLeft_.load(":/img/nysse_left.png")); //assert that png file is loaded
+    assert(pixmapRight_.load(":/img/nysse_right.png")); //assert that png file is loaded
+    setOffset(-18,-9);
+    setScale(2);
 
     //QPixmap pixmapItems = pixmapItem.scaled(QSize(512,512),  Qt::KeepAspectRatio);
     setPixmap(pixmapLeft_);
@@ -21,12 +21,23 @@ void busUiItem::move(int x,int y)
     if(x==x_ && y==y_){
         return;
     }
-    int angle = -qRadiansToDegrees(qAtan2(x-x_,y-y_));
-    if(angle >90  || angle < -90){
-        setPixmap(pixmapLeft_);
-    }else{
-        setPixmap(pixmapRight_);
+    float angle = -qRadiansToDegrees(qAtan2(x-x_,y-y_));
+    float dangle = angle-angle_;
+    if(dangle != 0){
+        if(dangle > 180){
+            dangle -= 360;
+        }else if(dangle < -180){
+            dangle += 360;
+        }
+        angle_ -= dangle/15;
+        bool change = false;
+        if((angle_ >0 &&  angle_< 180) || angle_< -180 ){
+            change = true;
+            setPixmap(pixmapRight_);
+        }else{
+            setPixmap(pixmapLeft_);
+        }
+        setRotation(angle_+180*change+90);
     }
-    setRotation(angle);
     setCoord(x,y);
 }
