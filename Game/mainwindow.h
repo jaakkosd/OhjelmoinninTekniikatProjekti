@@ -10,6 +10,10 @@
 #include <memory>
 #include <QVector>
 #include <map>
+#include <QScrollBar>
+#include <core/location.hh>
+#include <courseconverter.h>
+#include <QPair>
 
 namespace Ui {
 class MainWindow;
@@ -29,6 +33,7 @@ public:
     void updateCoords(int nX, int nY);
     void setPicture(QImage &img);
 
+    Interface::Location getCenter();
 public slots:
     void updateActors(std::vector<std::shared_ptr<Interface::IActor> > nearby);
 signals:
@@ -42,13 +47,11 @@ private:
     QGraphicsScene *map;
     QTimer *timer;
     QMap<std::shared_ptr<Interface::IActor>,busUiItem*> actors_;
-
+    virtual void wheelEvent(QWheelEvent * event);
 
     int map_width_ = 1095; //pxls
     int map_height_ = 592;
     int tick_ = 500; //ms
-    int map_width_offset = 353;
-    int map_height_offset = 556;
 };
 
 #endif // MAINWINDOW_H

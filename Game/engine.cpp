@@ -28,9 +28,7 @@ void Engine::init(){
 }
 
 void Engine::updatePositions(){
-    Interface::Location loc;
-    loc.setXY(250,250);
-    std::vector<std::shared_ptr<Interface::IActor> > nearby = cp_->getNearbyActors(loc);
+    std::vector<std::shared_ptr<Interface::IActor> > nearby = cp_->getNearbyActors(window_.getCenter());
     window_.updateActors(nearby);
 }
 

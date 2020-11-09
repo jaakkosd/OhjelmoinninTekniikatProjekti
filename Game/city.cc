@@ -2,7 +2,7 @@
 #include <QTime>
 #include <QDebug>
 
-#define VIEW_DISTANCE  200
+#define VIEW_DISTANCE  500
 
 
 City::City()

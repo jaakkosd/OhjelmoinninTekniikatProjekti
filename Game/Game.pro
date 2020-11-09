@@ -9,6 +9,7 @@ SOURCES += \
     actoritem.cpp \
     busuiitem.cpp \
     city.cc \
+    courseconverter.cpp \
     creategame.cc \
     engine.cpp \
     imgactoritem.cpp \
@@ -43,6 +44,7 @@ HEADERS += \
     actoritem.h \
     busuiitem.h \
     city.hh \
+    courseconverter.h \
     engine.h \
     imgactoritem.h \
     mainwindow.h

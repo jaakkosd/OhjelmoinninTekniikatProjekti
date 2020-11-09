@@ -1,12 +1,39 @@
-# Programming 3 Exercise project template
+# Jakke & Makke, Programming 3 Exercise
 
-1. Make sure you have setup ssh-key for your GitLab account. https://course-gitlab.tuni.fi/profile/keys
-2. Clone and add template repo as remote.
-Address: git@course-gitlab.tuni.fi:tie-0240x-ohjelmointi-3-programming-3-2020-2021/group_template_project.git
-3. Pull from template, and do git submodule update --init in repo. Check that Course now contains something.
-4. Make sure you can build the project. (Should compile without issues if your environment is setup correctly)
+- [ ] Harjoitustyön työnjako
+
+- [ ] Own namespace
+
+- [ ] Draw passagers
+
+- [ ] Add stops
+
+- [ ] Add moveable character (<mark>Jakko</mark>)
+
+- [ ] Add character movement
+
+- [ ] Add map scrolling (disable mouse wheel scrolling)
+
+- [ ] Add setup window <mark>(Jakko)</mark>
+
+- [ ] Add statistic system 
+
+- [ ] Add unit tests to Statistics - class ( it counts the points)
+
+- [ ] Loppudokumentti, josta löytyy:
+
+- [ ] Pelin säännöt
+
+- [ ] Peliohjeet
+
+- [ ] Luokkien vastuujako (luokkakaavio on tässä hyödyllinen)
+
+- [ ] Ryhmän työnjako
+
+- [ ] A second random unic gameobject ( maybe something to not to hit or the tail of our snake)
 
 ## Submodule / CourseLib
+
 Submodule for CourseLib is currently configured to use ssh. If you haven't yet setup an ssh-key. Go do it at  https://course-gitlab.tuni.fi/profile/keys
 
 The page contains also instructions for generating and using existing ssh-keys.
@@ -24,4 +51,8 @@ No Doxyfile is provided with the project, but you may generate it using doxygen 
 You should create your own code inside your own namespace :)
 
 
-# You are allowed (and probably should) make changes to this file after you have started your project. :)
+
+| 1   | 2    | 3   |
+| --- | ---- | --- |
+| 1   | 3    | 4   |
+| 12  | 4123 | 41  |
