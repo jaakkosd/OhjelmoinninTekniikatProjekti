@@ -9,14 +9,16 @@ MainWindow::MainWindow(QWidget *parent) :
     ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
-    ui->graphicsView->setFixedSize(width_, height_);
-    ui->centralwidget->setFixedSize(width_ + ui->startButton->width() + PADDING, height_ + PADDING);
+    //old stuff remove if works:
 
-    ui->startButton->move(width_ + PADDING , PADDING);
+    //ui->graphicsView->setFixedSize(view_width_, view_width_);
+    //ui->centralwidget->setFixedSize(view_width_ + ui->startButton->width() + PADDING, view_width_ + PADDING);
+
+    //ui->startButton->move(map_width_ + PADDING , PADDING);
 
     map = new QGraphicsScene(this);
     ui->graphicsView->setScene(map);
-    map->setSceneRect(0,0,width_,height_);
+    map->setSceneRect(0,0,map_width_,map_height_);
 
     resize(minimumSizeHint());
     //ui->gameView->fitInView(0,0, MAPWIDTH, MAPHEIGHT, Qt::KeepAspectRatio);
@@ -36,8 +38,8 @@ void MainWindow::updateActors(std::vector<std::shared_ptr<Interface::IActor> > n
 
     QMap<std::shared_ptr<Interface::IActor>,busUiItem*> newActors;
     for(auto &i : nearby){
-        int x = i.get()->giveLocation().giveX();
-        int y = 500-i.get()->giveLocation().giveY();
+        int x = i.get()->giveLocation().giveX()+ map_width_offset;
+        int y = map_height_offset - i.get()->giveLocation().giveY();
         auto iterator  = actors_.find(i);
         if (iterator != actors_.end() && iterator.key() == i) {
             busUiItem* oldBus = actors_.take(i);
@@ -61,8 +63,8 @@ void MainWindow::updateActors(std::vector<std::shared_ptr<Interface::IActor> > n
 
 void MainWindow::setSize(int w, int h)
 {
-    width_ = w;
-    height_ = h;
+    map_width_ = w;
+    map_height_ = h;
 }
 
 void MainWindow::setTick(int t)

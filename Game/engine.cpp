@@ -17,7 +17,7 @@ void Engine::init(){
     gamelogic_.finalizeGameStart();
 
 
-    QImage bg = QImage(":/offlinedata/offlinedata/kartta_pieni_500x500.png");
+    QImage bg = QImage(":/offlinedata/offlinedata/kartta_iso_1095x592.png");
     window_.setPicture(bg);
 
     window_.show();
