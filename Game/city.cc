@@ -12,7 +12,7 @@ City::City()
 void City::setBackground(QImage& basicbackground, QImage& bigbackground){};
 void City::setClock(QTime clock) {};
 void City::addStop(std::shared_ptr<Interface::IStop> newstop) {
-    stopList.append(newstop);
+    stopList.append(newstop); 
 };
 void City::startGame(){};
 void City::addActor(std::shared_ptr<Interface::IActor> newactor) {

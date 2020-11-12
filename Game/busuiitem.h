@@ -4,10 +4,10 @@
 #include "imgactoritem.h"
 #include <QDebug>
 #include <QtMath>
-class busUiItem : public imgActorItem
+class BusUiItem : public ImgActorItem
 {
 public:
-    busUiItem(int x, int y);
+    BusUiItem(int x, int y);
     void move(int x,int y);
 private:
     QPixmap pixmapLeft_;

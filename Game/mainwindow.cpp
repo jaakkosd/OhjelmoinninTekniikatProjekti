@@ -41,23 +41,35 @@ MainWindow::~MainWindow()
 void MainWindow::updateActors(std::vector<std::shared_ptr<Interface::IActor> > nearby)
 {
 
-    QMap<std::shared_ptr<Interface::IActor>,busUiItem*> newActors;
+    QMap<std::shared_ptr<Interface::IActor>,ImgActorItem*> newActors;
     for(auto &i : nearby){
         courseConverter::cords input {i.get()->giveLocation().giveX(),
                               i.get()->giveLocation().giveY()} ;
         auto output = courseConverter::mapToUi(input);
         auto iterator  = actors_.find(i);
         if (iterator != actors_.end() && iterator.key() == i) {
-            busUiItem* oldBus = actors_.take(i);
-            oldBus->move(output.x,output.y);
-            newActors[std::move(i)] = oldBus;
+            ImgActorItem* oldActorItem = actors_.take(i);
+            oldActorItem->move(output.x,output.y);
+            if (dynamic_cast<CourseSide::Passenger*>(i.get()) != nullptr){
+                CourseSide::Passenger * pas = dynamic_cast<CourseSide::Passenger*>(i.get());
+                oldActorItem->setVisible(!pas->isInVehicle());
+            }
+            newActors[std::move(i)] = oldActorItem;
         }else{
             if (dynamic_cast<CourseSide::Nysse*>(i.get()) != nullptr)
               {
-                busUiItem* nActor =  new busUiItem(output.x, output.y);
+                BusUiItem* nActor =  new BusUiItem(output.x, output.y);
                 map->addItem(nActor);
                 newActors[std::move(i)] =  nActor;
               }
+            else if (dynamic_cast<CourseSide::Passenger*>(i.get()) != nullptr){
+                PassangerUiItem* nActor =  new PassangerUiItem(output.x, output.y);
+                map->addItem(nActor);
+                newActors[std::move(i)] =  nActor;
+
+            }else{
+                qDebug() << "ELSE";
+            }
         }
     }
     for(auto j: actors_){
@@ -84,16 +96,17 @@ void MainWindow::setPicture(QImage &img)
     map->setBackgroundBrush(img);
 }
 
-void MainWindow::setStops()
+void MainWindow::setStops(std::shared_ptr<Interface::ICity>  cp_)
 {
-    CourseSide::OfflineData offlineData;
-    for (auto stop : offlineData.stops){
-        qDebug() << "jee";
-        Interface::Location loc = stop->getLocation();
-        courseConverter::cords mapcords {loc.giveX(), loc.giveY()};
-        courseConverter::cords uicords = courseConverter::mapToUi(mapcords);
-        ActorItem* stoppi =  new ActorItem(uicords.x, uicords.y);
-        map->addItem(stoppi);
+   City* cityPointer =  dynamic_cast<City*>(cp_.get());
+   if (cityPointer){
+       for (auto stop : cityPointer->stopList){
+               Interface::Location loc = stop->getLocation();
+               courseConverter::cords mapcords {loc.giveX(), loc.giveY()};
+               courseConverter::cords uicords = courseConverter::mapToUi(mapcords);
+               ActorItem* stoppi =  new ActorItem(uicords.x, uicords.y);
+               map->addItem(stoppi);
+       }
     }
 }
 

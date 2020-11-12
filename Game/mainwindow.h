@@ -16,6 +16,8 @@
 #include <core/location.hh>
 #include <courseconverter.h>
 #include <QPair>
+#include "passangeruiitem.h"
+#include "city.hh"
 
 namespace Ui {
 class MainWindow;
@@ -35,7 +37,7 @@ public:
     void updateCoords(int nX, int nY);
     void setPicture(QImage &img);
 
-    void setStops();
+    void setStops(std::shared_ptr<Interface::ICity>  cp_);
 
     Interface::Location getCenter();
 public slots:
@@ -50,7 +52,7 @@ private:
     Ui::MainWindow *ui;
     QGraphicsScene *map;
     QTimer *timer;
-    QMap<std::shared_ptr<Interface::IActor>,busUiItem*> actors_;
+    QMap<std::shared_ptr<Interface::IActor>,ImgActorItem*> actors_;
     virtual void wheelEvent(QWheelEvent * event);
 
     int map_width_ = 1095; //pxls

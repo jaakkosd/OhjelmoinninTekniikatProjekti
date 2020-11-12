@@ -1,6 +1,6 @@
 #include "busuiitem.h"
 
-busUiItem::busUiItem(int x, int y):imgActorItem( x,  y)
+BusUiItem::BusUiItem(int x, int y):ImgActorItem( x,  y)
 {
     assert(pixmapLeft_.load(":/img/nysse_left.png")); //assert that png file is loaded
     assert(pixmapRight_.load(":/img/nysse_right.png")); //assert that png file is loaded
@@ -12,7 +12,7 @@ busUiItem::busUiItem(int x, int y):imgActorItem( x,  y)
 
 }
 
-void busUiItem::move(int x,int y)
+void BusUiItem::move(int x,int y)
 {
     // the idea here is that when the bus is going left it should show the picture of a bus going left
     // now it's not working
