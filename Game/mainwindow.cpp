@@ -84,6 +84,19 @@ void MainWindow::setPicture(QImage &img)
     map->setBackgroundBrush(img);
 }
 
+void MainWindow::setStops()
+{
+    CourseSide::OfflineData offlineData;
+    for (auto stop : offlineData.stops){
+        qDebug() << "jee";
+        Interface::Location loc = stop->getLocation();
+        courseConverter::cords mapcords {loc.giveX(), loc.giveY()};
+        courseConverter::cords uicords = courseConverter::mapToUi(mapcords);
+        ActorItem* stoppi =  new ActorItem(uicords.x, uicords.y);
+        map->addItem(stoppi);
+    }
+}
+
 
 void MainWindow::on_startButton_clicked()
 {

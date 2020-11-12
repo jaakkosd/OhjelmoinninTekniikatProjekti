@@ -1,8 +1,10 @@
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
 #include "interfaces/iactor.hh"
+#include "actoritem.h"
 #include "actors/nysse.hh"
 #include "busuiitem.h"
+#include "offlinereader.hh"
 #include <QMainWindow>
 #include <QGraphicsScene>
 #include <QTimer>
@@ -32,6 +34,8 @@ public:
 
     void updateCoords(int nX, int nY);
     void setPicture(QImage &img);
+
+    void setStops();
 
     Interface::Location getCenter();
 public slots:
