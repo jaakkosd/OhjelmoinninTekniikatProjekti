@@ -49,7 +49,7 @@ void MainWindow::updateActors(std::vector<std::shared_ptr<Interface::IActor> > n
         auto iterator  = actors_.find(i);
         if (iterator != actors_.end() && iterator.key() == i) {
             ImgActorItem* oldActorItem = actors_.take(i);
-            oldActorItem->move(output.x,output.y);
+            oldActorItem->moveTo(output.x,output.y);
             if (dynamic_cast<CourseSide::Passenger*>(i.get()) != nullptr){
                 CourseSide::Passenger * pas = dynamic_cast<CourseSide::Passenger*>(i.get());
                 oldActorItem->setVisible(!pas->isInVehicle());
@@ -125,18 +125,23 @@ void MainWindow::on_startButton_clicked()
     emit gameStarted();
 }
 
-void MainWindow::wheelEvent(QWheelEvent *event)
-{
 
-}
+
+
 
 Interface::Location MainWindow::getCenter()
 {
-    courseConverter::cords input {(ui->graphicsView->horizontalScrollBar()->value() + ui->graphicsView->height()/2)/WINDOW_SCALE,
-                          (ui->graphicsView->verticalScrollBar()->value() + ui->graphicsView->width()/2)/WINDOW_SCALE} ;
+    courseConverter::cords input {(ui->graphicsView->horizontalScrollBar()->value() + ui->graphicsView->width()/2)/WINDOW_SCALE,
+                          (ui->graphicsView->verticalScrollBar()->value() + ui->graphicsView->height()/2)/WINDOW_SCALE} ;
     auto output = courseConverter::uiToMap(input);
     auto loc = Interface::Location();
     loc.setXY(output.x,output.y);
     return loc;
+}
+
+void MainWindow::scrollMap(int x, int y)
+{
+    ui->graphicsView->horizontalScrollBar()->setValue(x-ui->graphicsView->width()/2);
+    ui->graphicsView->verticalScrollBar()->setValue(y-ui->graphicsView->height()/2);
 }
 

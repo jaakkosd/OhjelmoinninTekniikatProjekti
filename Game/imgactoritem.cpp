@@ -13,7 +13,7 @@ void ImgActorItem::setCoord(int x, int y)
     setPos(x_, y_ );
 }
 
-void ImgActorItem::move(int x, int y)
+void ImgActorItem::moveTo(int x, int y)
 {
     setCoord(x,y);
 }

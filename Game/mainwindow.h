@@ -45,6 +45,8 @@ public:
     void addRatikka(Ratikkaitem* ratikka);
 
     Interface::Location getCenter();
+    void  scrollMap(int x,int y);
+
 public slots:
     void updateActors(std::vector<std::shared_ptr<Interface::IActor> > nearby);
 signals:
@@ -58,7 +60,6 @@ private:
     QGraphicsScene *map;
     QTimer *timer;
     QMap<std::shared_ptr<Interface::IActor>,ImgActorItem*> actors_;
-    virtual void wheelEvent(QWheelEvent * event);
 
     int map_width_ = 1095; //pxls
     int map_height_ = 592;

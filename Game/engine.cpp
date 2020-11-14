@@ -27,12 +27,38 @@ void Engine::init(){
     timer_->start(1000/UPDATES_PER_SECOND);
     window_.addRatikka(&ratikka_);
     updatePositions();
+    window_.installEventFilter(&moveKeysObject_);
+    connect(&moveKeysObject_, &Movement::keyPressed,this, &Engine::updateKeys);
 }
 
 void Engine::updatePositions(){
-    ratikka_.move(100, 100);
     std::vector<std::shared_ptr<Interface::IActor> > nearby = cp_->getNearbyActors(window_.getCenter());
     window_.updateActors(nearby);
+    updateRatikka();
 }
 
+void Engine::updateKeys(QSet<int> keys){
+    keys_ = keys;
+}
+
+void Engine::updateRatikka(){
+    bool a = keys_.contains(65);
+    bool s = keys_.contains(83);
+    bool w = keys_.contains(87);
+    bool d = keys_.contains(68);
+    int x = 0;
+    int y = 0;
+    if(a){
+        x = -1;
+    }else if(d){
+        x = 1;
+    }
+    if(w){
+        y = -1;
+    }else if(s){
+        y = 1;
+    }
+    auto cords = ratikka_.move(x,y);
+    window_.scrollMap(cords.first, cords.second);
+}
 

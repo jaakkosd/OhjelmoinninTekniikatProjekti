@@ -15,6 +15,7 @@ SOURCES += \
     imgactoritem.cpp \
     main.cc \
     mainwindow.cpp \
+    movement.cpp \
     ratikkaitem.cpp \
     passangeruiitem.cpp \
     stopuiitem.cpp
@@ -52,6 +53,7 @@ HEADERS += \
     engine.h \
     imgactoritem.h \
     mainwindow.h \
+    movement.h \
     passangeruiitem.h \
     stopuiitem.h \
     ratikkaitem.h

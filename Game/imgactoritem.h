@@ -8,7 +8,7 @@ class ImgActorItem : public QGraphicsPixmapItem
 public:
     ImgActorItem(int x, int y);
     void setCoord(int x, int y);
-    virtual void move(int x, int y);
+    virtual void moveTo(int x, int y);
 protected:
     int x_;
     int y_;
