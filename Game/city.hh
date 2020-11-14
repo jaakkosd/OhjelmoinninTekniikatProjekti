@@ -20,9 +20,10 @@ public:
     void actorMoved(std::shared_ptr<Interface::IActor> actor)  ;
     std::vector<std::shared_ptr<Interface::IActor> > getNearbyActors(Interface::Location loc) const  ;
     bool isGameOver() const ;
-public slots:
     QList<std::shared_ptr<Interface::IActor>> actorList;
     QList<std::shared_ptr<Interface::IStop>> stopList;
+public slots:
+
 
 
 private:

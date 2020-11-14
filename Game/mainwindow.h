@@ -1,8 +1,10 @@
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
 #include "interfaces/iactor.hh"
+#include "actoritem.h"
 #include "actors/nysse.hh"
 #include "busuiitem.h"
+#include "offlinereader.hh"
 #include <QMainWindow>
 #include <QGraphicsScene>
 #include <QTimer>
@@ -14,7 +16,10 @@
 #include <core/location.hh>
 #include <courseconverter.h>
 #include <QPair>
-
+#include "passangeruiitem.h"
+#include "city.hh"
+#include <QRandomGenerator>
+#include "stopuiitem.h"
 namespace Ui {
 class MainWindow;
 }
@@ -33,6 +38,8 @@ public:
     void updateCoords(int nX, int nY);
     void setPicture(QImage &img);
 
+    void setStops(std::shared_ptr<Interface::ICity>  cp_);
+
     Interface::Location getCenter();
 public slots:
     void updateActors(std::vector<std::shared_ptr<Interface::IActor> > nearby);
@@ -46,12 +53,13 @@ private:
     Ui::MainWindow *ui;
     QGraphicsScene *map;
     QTimer *timer;
-    QMap<std::shared_ptr<Interface::IActor>,busUiItem*> actors_;
+    QMap<std::shared_ptr<Interface::IActor>,ImgActorItem*> actors_;
     virtual void wheelEvent(QWheelEvent * event);
 
     int map_width_ = 1095; //pxls
     int map_height_ = 592;
     int tick_ = 500; //ms
+    QRandomGenerator randgen = QRandomGenerator(QTime::currentTime().msecsSinceStartOfDay());
 };
 
 #endif // MAINWINDOW_H

@@ -4,5 +4,7 @@
         <file>pin_green16.png</file>
         <file>nysse_left.png</file>
         <file>nysse_right.png</file>
+        <file>passenger.png</file>
+        <file>stop.png</file>
     </qresource>
 </RCC>
