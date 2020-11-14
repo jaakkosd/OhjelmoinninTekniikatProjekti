@@ -21,6 +21,7 @@ void Engine::init(){
     window_.setPicture(bg);
 
     window_.show();
+    window_.setStops(cp_);
     timer_ = new QTimer();
     connect(timer_, &QTimer::timeout, this, &Engine::updatePositions);
     timer_->start(1000/UPDATES_PER_SECOND);

@@ -26,12 +26,13 @@ void ActorItem::paint(QPainter *painter, const QStyleOptionGraphicsItem *option,
 
 void ActorItem::setCoord(int x, int y)
 {
+    x_ = x;
+    y_ = y;
     setX( x );
     setY( y );
 }
 
 void ActorItem::move(int x, int y)
 {
-    x_ = x;
-    y_ = y;
+    setCoord(x,y);
 }

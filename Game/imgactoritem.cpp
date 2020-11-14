@@ -1,14 +1,19 @@
 #include "imgactoritem.h"
 
-imgActorItem::imgActorItem(int x, int y):x_(x), y_(y)
+ImgActorItem::ImgActorItem(int x, int y):x_(x), y_(y)
 {
     setPos(x_, y_ );
 
 }
 
-void imgActorItem::setCoord(int x, int y)
+void ImgActorItem::setCoord(int x, int y)
 {
     x_=x;
     y_=y;
     setPos(x_, y_ );
+}
+
+void ImgActorItem::move(int x, int y)
+{
+    setCoord(x,y);
 }
