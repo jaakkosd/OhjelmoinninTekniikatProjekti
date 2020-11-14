@@ -2,7 +2,7 @@
 #include "ui_mainwindow.h"
 #include <QDebug>
 
-#define WINDOW_SCALE 2
+#define WINDOW_SCALE 1
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -64,6 +64,9 @@ void MainWindow::updateActors(std::vector<std::shared_ptr<Interface::IActor> > n
               }
             else if (dynamic_cast<CourseSide::Passenger*>(i.get()) != nullptr){
                 PassangerUiItem* nActor =  new PassangerUiItem(output.x, output.y);
+                int x = randgen.bounded(-3,4);
+                int y = randgen.bounded(-3,4);
+                nActor->setOffset(x,y);
                 map->addItem(nActor);
                 newActors[std::move(i)] =  nActor;
 
