@@ -12,5 +12,11 @@ PassangerUiItem::PassangerUiItem(int x, int y):ImgActorItem( x,  y)
 }
 
 void PassangerUiItem::move(int x,int y){
-    setCoord(x,y);
+    setCoord(x+offx_,y+offy_);
+}
+
+void PassangerUiItem::setOffset(int x, int y)
+{
+    offx_ = x;
+    offy_ = y;
 }

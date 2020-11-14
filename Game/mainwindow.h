@@ -18,6 +18,8 @@
 #include <QPair>
 #include "passangeruiitem.h"
 #include "city.hh"
+#include <QRandomGenerator>
+
 
 namespace Ui {
 class MainWindow;
@@ -58,6 +60,7 @@ private:
     int map_width_ = 1095; //pxls
     int map_height_ = 592;
     int tick_ = 500; //ms
+    QRandomGenerator randgen = QRandomGenerator(QTime::currentTime().msecsSinceStartOfDay());
 };
 
 #endif // MAINWINDOW_H
