@@ -14,7 +14,8 @@ SOURCES += \
     engine.cpp \
     imgactoritem.cpp \
     main.cc \
-    mainwindow.cpp
+    mainwindow.cpp \
+    ratikkaitem.cpp
 
 win32:CONFIG(release, debug|release): LIBS += \
     -L$$OUT_PWD/../Course/CourseLib/release/ -lCourseLib
@@ -47,7 +48,8 @@ HEADERS += \
     courseconverter.h \
     engine.h \
     imgactoritem.h \
-    mainwindow.h
+    mainwindow.h \
+    ratikkaitem.h
 
 FORMS += \
     mainwindow.ui
