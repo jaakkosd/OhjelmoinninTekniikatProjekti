@@ -15,7 +15,8 @@ SOURCES += \
     imgactoritem.cpp \
     main.cc \
     mainwindow.cpp \
-    passangeruiitem.cpp
+    passangeruiitem.cpp \
+    stopuiitem.cpp
 
 win32:CONFIG(release, debug|release): LIBS += \
     -L$$OUT_PWD/../Course/CourseLib/release/ -lCourseLib
@@ -49,7 +50,8 @@ HEADERS += \
     engine.h \
     imgactoritem.h \
     mainwindow.h \
-    passangeruiitem.h
+    passangeruiitem.h \
+    stopuiitem.h
 
 FORMS += \
     mainwindow.ui

@@ -107,7 +107,7 @@ void MainWindow::setStops(std::shared_ptr<Interface::ICity>  cp_)
                Interface::Location loc = stop->getLocation();
                courseConverter::cords mapcords {loc.giveX(), loc.giveY()};
                courseConverter::cords uicords = courseConverter::mapToUi(mapcords);
-               ActorItem* stoppi =  new ActorItem(uicords.x, uicords.y);
+               StopUiItem* stoppi =  new StopUiItem(uicords.x, uicords.y);
                map->addItem(stoppi);
        }
     }

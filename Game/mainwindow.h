@@ -19,8 +19,7 @@
 #include "passangeruiitem.h"
 #include "city.hh"
 #include <QRandomGenerator>
-
-
+#include "stopuiitem.h"
 namespace Ui {
 class MainWindow;
 }
