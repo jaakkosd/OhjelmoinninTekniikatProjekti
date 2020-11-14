@@ -25,10 +25,12 @@ void Engine::init(){
     timer_ = new QTimer();
     connect(timer_, &QTimer::timeout, this, &Engine::updatePositions);
     timer_->start(1000/UPDATES_PER_SECOND);
+    window_.addRatikka(&ratikka_);
     updatePositions();
 }
 
 void Engine::updatePositions(){
+    ratikka_.move(100, 100);
     std::vector<std::shared_ptr<Interface::IActor> > nearby = cp_->getNearbyActors(window_.getCenter());
     window_.updateActors(nearby);
 }

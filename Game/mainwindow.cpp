@@ -110,7 +110,12 @@ void MainWindow::setStops(std::shared_ptr<Interface::ICity>  cp_)
                StopUiItem* stoppi =  new StopUiItem(uicords.x, uicords.y);
                map->addItem(stoppi);
        }
-    }
+   }
+}
+
+void MainWindow::addRatikka(Ratikkaitem* ratikka)
+{
+    map->addItem(ratikka);
 }
 
 

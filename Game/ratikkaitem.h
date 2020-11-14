@@ -3,11 +3,10 @@
 
 #include "imgactoritem.h"
 
-class ratikkaitem : public imgActorItem
+class Ratikkaitem : public ImgActorItem
 {
 public:
-    ratikkaitem(int x, int y);
-    void move(int x,int y);
+    Ratikkaitem(int x=100, int y=100);
 private:
     QPixmap ratikka;
 };

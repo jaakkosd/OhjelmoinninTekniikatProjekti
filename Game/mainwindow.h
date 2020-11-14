@@ -20,6 +20,8 @@
 #include "city.hh"
 #include <QRandomGenerator>
 #include "stopuiitem.h"
+#include "ratikkaitem.h"
+
 namespace Ui {
 class MainWindow;
 }
@@ -39,6 +41,8 @@ public:
     void setPicture(QImage &img);
 
     void setStops(std::shared_ptr<Interface::ICity>  cp_);
+
+    void addRatikka(Ratikkaitem* ratikka);
 
     Interface::Location getCenter();
 public slots:

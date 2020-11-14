@@ -7,6 +7,7 @@
 #include "core/logic.hh"
 #include "city.hh"
 #include "busuiitem.h"
+#include "ratikkaitem.h"
 
 #define UPDATES_PER_SECOND 30
 
@@ -27,6 +28,7 @@ private:
     MainWindow window_;
     QTimer *timer_;
     QMap<std::shared_ptr<Interface::IActor>,BusUiItem*> actors_;
+    Ratikkaitem ratikka_;
 
 };
 
