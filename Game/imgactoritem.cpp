@@ -6,14 +6,19 @@ ImgActorItem::ImgActorItem(int x, int y):x_(x), y_(y)
 
 }
 
-void ImgActorItem::setCoord(int x, int y)
+void ImgActorItem::setCoords(int x, int y)
 {
     x_=x;
     y_=y;
     setPos(x_, y_ );
 }
 
-void ImgActorItem::move(int x, int y)
+courseConverter::cords ImgActorItem::getCoords()
 {
-    setCoord(x,y);
+    return courseConverter::cords {x_, y_};
+}
+
+void ImgActorItem::moveTo(int x, int y)
+{
+    setCoords(x,y);
 }

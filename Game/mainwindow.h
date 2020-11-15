@@ -20,6 +20,8 @@
 #include "city.hh"
 #include <QRandomGenerator>
 #include "stopuiitem.h"
+#include "ratikkaitem.h"
+
 namespace Ui {
 class MainWindow;
 }
@@ -40,9 +42,13 @@ public:
 
     void setStops(std::shared_ptr<Interface::ICity>  cp_);
 
+    void addRatikka(Ratikkaitem* ratikka);
+
     Interface::Location getCenter();
+    void  scrollMap(int x,int y);
+
 public slots:
-    void updateActors(std::vector<std::shared_ptr<Interface::IActor> > nearby);
+    void addActor(QGraphicsItem *actor);
 signals:
     void gameStarted();
 
@@ -53,13 +59,10 @@ private:
     Ui::MainWindow *ui;
     QGraphicsScene *map;
     QTimer *timer;
-    QMap<std::shared_ptr<Interface::IActor>,ImgActorItem*> actors_;
-    virtual void wheelEvent(QWheelEvent * event);
 
     int map_width_ = 1095; //pxls
     int map_height_ = 592;
     int tick_ = 500; //ms
-    QRandomGenerator randgen = QRandomGenerator(QTime::currentTime().msecsSinceStartOfDay());
 };
 
 #endif // MAINWINDOW_H

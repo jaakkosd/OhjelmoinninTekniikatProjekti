@@ -8,7 +8,7 @@ class BusUiItem : public ImgActorItem
 {
 public:
     BusUiItem(int x, int y);
-    void move(int x,int y);
+    void moveTo(int x,int y);
 private:
     QPixmap pixmapLeft_;
     QPixmap pixmapRight_;

@@ -12,7 +12,7 @@ BusUiItem::BusUiItem(int x, int y):ImgActorItem( x,  y)
 
 }
 
-void BusUiItem::move(int x,int y)
+void BusUiItem::moveTo(int x,int y)
 {
     // the idea here is that when the bus is going left it should show the picture of a bus going left
     // now it's not working
@@ -39,5 +39,5 @@ void BusUiItem::move(int x,int y)
         }
         setRotation(angle_+180*change+90);
     }
-    setCoord(x,y);
+    setCoords(x,y);
 }
