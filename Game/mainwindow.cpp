@@ -38,49 +38,9 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
-void MainWindow::updateActors(std::vector<std::shared_ptr<Interface::IActor> > nearby)
+void MainWindow::addActor(QGraphicsItem* actor)
 {
-
-    QMap<std::shared_ptr<Interface::IActor>,ImgActorItem*> newActors;
-    for(auto &i : nearby){
-        courseConverter::cords input {i.get()->giveLocation().giveX(),
-                              i.get()->giveLocation().giveY()} ;
-        auto output = courseConverter::mapToUi(input);
-        auto iterator  = actors_.find(i);
-        if (iterator != actors_.end() && iterator.key() == i) {
-            ImgActorItem* oldActorItem = actors_.take(i);
-            oldActorItem->moveTo(output.x,output.y);
-            if (dynamic_cast<CourseSide::Passenger*>(i.get()) != nullptr){
-                CourseSide::Passenger * pas = dynamic_cast<CourseSide::Passenger*>(i.get());
-                oldActorItem->setVisible(!pas->isInVehicle());
-            }
-            newActors[std::move(i)] = oldActorItem;
-        }else{
-            if (dynamic_cast<CourseSide::Nysse*>(i.get()) != nullptr)
-              {
-                BusUiItem* nActor =  new BusUiItem(output.x, output.y);
-                map->addItem(nActor);
-                newActors[std::move(i)] =  nActor;
-              }
-            else if (dynamic_cast<CourseSide::Passenger*>(i.get()) != nullptr){
-                PassangerUiItem* nActor =  new PassangerUiItem(output.x, output.y);
-                int x = randgen.bounded(-3,4);
-                int y = randgen.bounded(-3,4);
-                nActor->setOffset(x,y);
-                map->addItem(nActor);
-                newActors[std::move(i)] =  nActor;
-
-            }else{
-                qDebug() << "ELSE";
-            }
-        }
-    }
-    for(auto j: actors_){
-        j->hide();
-        delete j;
-    }
-    actors_.clear();
-    actors_ = std::move(newActors);
+    map->addItem(actor);
 }
 
 void MainWindow::setSize(int w, int h)

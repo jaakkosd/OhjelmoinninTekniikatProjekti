@@ -48,7 +48,7 @@ public:
     void  scrollMap(int x,int y);
 
 public slots:
-    void updateActors(std::vector<std::shared_ptr<Interface::IActor> > nearby);
+    void addActor(QGraphicsItem *actor);
 signals:
     void gameStarted();
 
@@ -59,12 +59,10 @@ private:
     Ui::MainWindow *ui;
     QGraphicsScene *map;
     QTimer *timer;
-    QMap<std::shared_ptr<Interface::IActor>,ImgActorItem*> actors_;
 
     int map_width_ = 1095; //pxls
     int map_height_ = 592;
     int tick_ = 500; //ms
-    QRandomGenerator randgen = QRandomGenerator(QTime::currentTime().msecsSinceStartOfDay());
 };
 
 #endif // MAINWINDOW_H

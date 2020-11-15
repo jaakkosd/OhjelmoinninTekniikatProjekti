@@ -32,11 +32,11 @@ private:
     std::shared_ptr<Interface::ICity>  cp_;
     MainWindow window_;
     QTimer *timer_;
-    QMap<std::shared_ptr<Interface::IActor>,BusUiItem*> actors_;
     Ratikkaitem ratikka_;
     Movement moveKeysObject_;
     QSet<int> keys_;
-
+    QMap<std::shared_ptr<Interface::IActor>,ImgActorItem*> actors_;
+    QRandomGenerator randgen = QRandomGenerator(QTime::currentTime().msecsSinceStartOfDay());
 };
 
 #endif // ENGINE_H

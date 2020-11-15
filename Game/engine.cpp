@@ -33,8 +33,57 @@ void Engine::init(){
 
 void Engine::updatePositions(){
     std::vector<std::shared_ptr<Interface::IActor> > nearby = cp_->getNearbyActors(window_.getCenter());
-    window_.updateActors(nearby);
     updateRatikka();
+    QMap<std::shared_ptr<Interface::IActor>,ImgActorItem*> newActors;
+    for(auto &i : nearby){
+        courseConverter::cords input {i.get()->giveLocation().giveX(),
+                              i.get()->giveLocation().giveY()} ;
+        auto output = courseConverter::mapToUi(input);
+        auto iterator  = actors_.find(i);
+        if (iterator != actors_.end() && iterator.key() == i) {
+            ImgActorItem* oldActorItem = actors_.take(i);
+            oldActorItem->moveTo(output.x,output.y);
+            if (dynamic_cast<CourseSide::Passenger*>(i.get()) != nullptr){
+                CourseSide::Passenger * pas = dynamic_cast<CourseSide::Passenger*>(i.get());
+                oldActorItem->setVisible(!pas->isInVehicle());
+            }
+            newActors[std::move(i)] = oldActorItem;
+        }else{
+            if (dynamic_cast<CourseSide::Nysse*>(i.get()) != nullptr)
+              {
+                BusUiItem* nActor =  new BusUiItem(output.x, output.y);
+                window_.addActor(nActor);
+                newActors[std::move(i)] =  nActor;
+              }
+            else if (dynamic_cast<CourseSide::Passenger*>(i.get()) != nullptr){
+                PassangerUiItem* nActor =  new PassangerUiItem(output.x, output.y);
+                int x = randgen.bounded(-3,4);
+                int y = randgen.bounded(-3,4);
+                nActor->setOffset(x,y);
+                window_.addActor(nActor);
+                newActors[std::move(i)] =  nActor;
+            }
+        }
+    }
+    for(auto j: actors_){
+        j->hide();
+        delete j;
+    }
+    actors_.clear();
+    actors_ = std::move(newActors);
+
+    // iterate trough nearby actors and remove all colliding with the RATIKKA
+    for(auto i:actors_.keys()){
+        if(actors_[i]->collidesWithItem(&ratikka_)){
+            //value is ImgActorItem*
+            actors_[i]->hide();
+            delete actors_[i];
+            // key is Interface::IActor
+            cp_->removeActor(i);
+            actors_.remove(i);
+            //TODO: add points for hitting busses and maybe passengers mayne test is subject is a nysse or passenger
+        }
+    }
 }
 
 void Engine::updateKeys(QSet<int> keys){

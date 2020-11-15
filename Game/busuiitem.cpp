@@ -39,5 +39,5 @@ void BusUiItem::moveTo(int x,int y)
         }
         setRotation(angle_+180*change+90);
     }
-    setCoord(x,y);
+    setCoords(x,y);
 }
