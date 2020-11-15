@@ -6,6 +6,7 @@
         <file>nysse_right.png</file>
         <file>passenger.png</file>
         <file>stop.png</file>
-        <file>ratikka.png</file>
+        <file>ratikkaleft.png</file>
+        <file>ratikkaright.png</file>
     </qresource>
 </RCC>
