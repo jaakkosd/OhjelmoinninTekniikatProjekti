@@ -15,8 +15,6 @@ QPair<int,int> Ratikkaitem::move(int x, int y){
         setPixmap(ratikkaleft);
     } else if ( x > 0) {
         setPixmap(ratikkaright);
-    } else {
-        qDebug() << "error";
     }
     moveTo(x_+x,y_+y);
     return QPair<int,int>(x_,y_);
