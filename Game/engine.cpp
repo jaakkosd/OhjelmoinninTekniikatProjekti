@@ -19,7 +19,6 @@ void Engine::init(){
 
     QImage bg = QImage(":/offlinedata/offlinedata/kartta_iso_1095x592.png");
     window_.setPicture(bg);
-
     window_.show();
     window_.setStops(cp_);
     timer_ = new QTimer();
@@ -27,13 +26,16 @@ void Engine::init(){
     timer_->start(1000/UPDATES_PER_SECOND);
     window_.addRatikka(&ratikka_);
     updatePositions();
-    window_.installEventFilter(&moveKeysObject_);
+    window_.installEvents(&moveKeysObject_);
     connect(&moveKeysObject_, &Movement::keyPressed,this, &Engine::updateKeys);
 }
 
 void Engine::updatePositions(){
-    std::vector<std::shared_ptr<Interface::IActor> > nearby = cp_->getNearbyActors(window_.getCenter());
+    QTime time = QTime::currentTime();
+    QString text = time.toString("hh:mm");
+    window_.setClock(text);
     updateRatikka();
+    std::vector<std::shared_ptr<Interface::IActor> > nearby = cp_->getNearbyActors(window_.getCenter());
     QMap<std::shared_ptr<Interface::IActor>,ImgActorItem*> newActors;
     for(auto &i : nearby){
         courseConverter::cords input {i.get()->giveLocation().giveX(),

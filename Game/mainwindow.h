@@ -47,8 +47,10 @@ public:
     Interface::Location getCenter();
     void  scrollMap(int x,int y);
 
+    void installEvents(QObject *handler);
 public slots:
     void addActor(QGraphicsItem *actor);
+    void setClock(QString str);
 signals:
     void gameStarted();
 

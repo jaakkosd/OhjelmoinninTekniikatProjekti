@@ -9,12 +9,6 @@ MainWindow::MainWindow(QWidget *parent) :
     ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
-    //old stuff remove if works:
-
-    //ui->graphicsView->setFixedSize(view_width_, view_width_);
-    //ui->centralwidget->setFixedSize(view_width_ + ui->startButton->width() + PADDING, view_width_ + PADDING);
-
-    //ui->startButton->move(map_width_ + PADDING , PADDING);
 
     map = new QGraphicsScene(this);
     ui->graphicsView->setScene(map);
@@ -23,14 +17,6 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->graphicsView->setHorizontalScrollBarPolicy ( Qt::ScrollBarAlwaysOff );
     ui->graphicsView->setVerticalScrollBarPolicy ( Qt::ScrollBarAlwaysOff );
     ui->graphicsView->scale(WINDOW_SCALE,WINDOW_SCALE);
-
-
-    //resize(minimumSizeHint());
-    //ui->gameView->fitInView(0,0, MAPWIDTH, MAPHEIGHT, Qt::KeepAspectRatio);
-
-    //timer = new QTimer(this);
-    //connect(timer, &QTimer::timeout, map, &QGraphicsScene::advance);
-    //timer->start(tick_);
 }
 
 MainWindow::~MainWindow()
@@ -105,3 +91,13 @@ void MainWindow::scrollMap(int x, int y)
     ui->graphicsView->verticalScrollBar()->setValue(y-ui->graphicsView->height()/2);
 }
 
+void MainWindow::installEvents(QObject *handler)
+{
+    ui->graphicsView->installEventFilter(handler);
+    ui->graphicsView->viewport()->installEventFilter(handler);
+}
+
+void MainWindow::setClock(QString str)
+{
+    ui->lcdNumber->display(str);
+}
