@@ -1,4 +1,6 @@
 #include "engine.h"
+#include "QtDebug"
+
 template<typename Base, typename T>
 inline bool instanceof(const T*) {
     return std::is_base_of<Base, T>::value;
@@ -10,12 +12,16 @@ Engine::Engine(QObject *parent) : QObject(parent)
 }
 
 void Engine::init(){
+
+    connect(&setupdialog_, &SetupDialog::settings,
+            this, &Engine::getSettings);
+    setupdialog_.exec();
+
     gamelogic_.setTime(9,0);
     gamelogic_.fileConfig();
     cp_ = Interface::createGame();
     gamelogic_.takeCity(cp_);    //ensin töytyy antaa city
     gamelogic_.finalizeGameStart();
-
 
     QImage bg = QImage(":/offlinedata/offlinedata/kartta_iso_1095x592.png");
     window_.setPicture(bg);
@@ -25,6 +31,7 @@ void Engine::init(){
     timer_ = new QTimer();
     connect(timer_, &QTimer::timeout, this, &Engine::updatePositions);
     timer_->start(1000/UPDATES_PER_SECOND);
+
     window_.addRatikka(&ratikka_);
     updatePositions();
     window_.installEventFilter(&moveKeysObject_);
@@ -88,6 +95,11 @@ void Engine::updatePositions(){
 
 void Engine::updateKeys(QSet<int> keys){
     keys_ = keys;
+}
+
+void Engine::getSettings(int difficulity, int startPoint)
+{
+    qDebug() << "getted!";
 }
 
 void Engine::updateRatikka(){

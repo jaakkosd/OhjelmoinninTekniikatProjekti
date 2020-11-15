@@ -9,6 +9,7 @@
 #include "busuiitem.h"
 #include "ratikkaitem.h"
 #include "movement.h"
+#include "setupdialog.h"
 
 #define UPDATES_PER_SECOND 30
 
@@ -20,7 +21,8 @@ public:
 
     void init();
 
-signals:
+public slots:
+    void getSettings(int difficulity, int startPoint);
 
 protected slots:
     void updatePositions();
@@ -31,6 +33,7 @@ private:
     CourseSide::Logic gamelogic_;
     std::shared_ptr<Interface::ICity>  cp_;
     MainWindow window_;
+    SetupDialog setupdialog_;
     QTimer *timer_;
     Ratikkaitem ratikka_;
     Movement moveKeysObject_;
