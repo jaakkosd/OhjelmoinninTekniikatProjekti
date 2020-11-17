@@ -16,6 +16,7 @@
 class Engine : public QObject
 {
     Q_OBJECT
+
 public:
     explicit Engine(QObject *parent = nullptr);
 
@@ -40,6 +41,8 @@ private:
     QSet<int> keys_;
     QMap<std::shared_ptr<Interface::IActor>,ImgActorItem*> actors_;
     QRandomGenerator randgen = QRandomGenerator(QTime::currentTime().msecsSinceStartOfDay());
+    int speed_;
+    courseConverter::cords startCords_;
 };
 
 #endif // ENGINE_H

@@ -50,7 +50,7 @@
    </property>
    <item>
     <property name="text">
-     <string>Easy</string>
+     <string>Slow</string>
     </property>
    </item>
    <item>
@@ -60,7 +60,7 @@
    </item>
    <item>
     <property name="text">
-     <string>Hard</string>
+     <string>Fast</string>
     </property>
    </item>
   </widget>
