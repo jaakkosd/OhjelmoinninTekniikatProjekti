@@ -1,6 +1,6 @@
 #include "ratikkaitem.h"
 #include <QDebug>
-
+namespace Game {
 Ratikkaitem::Ratikkaitem(int x, int y):ImgActorItem( x,  y)
 {
     assert(ratikkaleft.load(":/img/ratikkaleft.png")); //assert that png file is loaded
@@ -18,4 +18,5 @@ QPair<int,int> Ratikkaitem::move(int x, int y){
     }
     moveTo(x_+x,y_+y);
     return QPair<int,int>(x_,y_);
+}
 }

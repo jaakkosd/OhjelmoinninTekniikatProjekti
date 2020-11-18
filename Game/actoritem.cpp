@@ -1,5 +1,5 @@
 #include "actoritem.h"
-
+namespace Game {
 ActorItem::ActorItem(int x, int y, int type):x_(x), y_(y), type_(type)
 {
     setPos(mapToParent(x_, y_ ));
@@ -35,4 +35,5 @@ void ActorItem::setCoord(int x, int y)
 void ActorItem::move(int x, int y)
 {
     setCoord(x,y);
+}
 }

@@ -2,7 +2,7 @@
 #define RATIKKAITEM_H
 
 #include "imgactoritem.h"
-
+namespace Game {
 class Ratikkaitem : public ImgActorItem
 {
 public:
@@ -12,5 +12,5 @@ private:
     QPixmap ratikkaleft;
     QPixmap ratikkaright;
 };
-
+}
 #endif // RATIKKAITEM_H

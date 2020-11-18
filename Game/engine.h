@@ -11,7 +11,7 @@
 #include "movement.h"
 
 #define UPDATES_PER_SECOND 30
-
+namespace Game {
 class Engine : public QObject
 {
     Q_OBJECT
@@ -38,5 +38,5 @@ private:
     QMap<std::shared_ptr<Interface::IActor>,ImgActorItem*> actors_;
     QRandomGenerator randgen = QRandomGenerator(QTime::currentTime().msecsSinceStartOfDay());
 };
-
+}
 #endif // ENGINE_H

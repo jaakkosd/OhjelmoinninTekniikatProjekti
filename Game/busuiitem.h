@@ -4,6 +4,7 @@
 #include "imgactoritem.h"
 #include <QDebug>
 #include <QtMath>
+namespace Game {
 class BusUiItem : public ImgActorItem
 {
 public:
@@ -15,5 +16,5 @@ private:
     float angle_ = 90;
 
 };
-
+}
 #endif // BUS_UI_ITEM_H

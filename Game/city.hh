@@ -4,7 +4,7 @@
 
 
 
-
+namespace Game {
 class City : public Interface::ICity
 {
 public:
@@ -29,6 +29,6 @@ public slots:
 private:
 };
 
-
+}
 
 #endif // CITY_HH

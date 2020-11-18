@@ -3,7 +3,7 @@
 
 #include <QGraphicsPixmapItem>
 #include "courseconverter.h"
-
+namespace Game {
 class ImgActorItem : public QGraphicsPixmapItem
 {
 public:
@@ -15,6 +15,6 @@ protected:
     int x_;
     int y_;
 };
-
+}
 
 #endif // PIC_ACTOR_ITEM_H

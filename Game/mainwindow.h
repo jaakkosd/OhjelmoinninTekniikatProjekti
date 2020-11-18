@@ -42,7 +42,7 @@ public:
 
     void setStops(std::shared_ptr<Interface::ICity>  cp_);
 
-    void addRatikka(Ratikkaitem* ratikka);
+    void addRatikka(Game::Ratikkaitem* ratikka);
 
     Interface::Location getCenter();
     void  scrollMap(int x,int y);

@@ -1,7 +1,7 @@
 #ifndef PASSANGERUIITEM_H
 #define PASSANGERUIITEM_H
 #include "imgactoritem.h"
-
+namespace Game {
 class PassangerUiItem : public ImgActorItem
 {
 public:
@@ -13,5 +13,5 @@ private:
     int offx_ = 0;
     int offy_ = 0;
 };
-
+}
 #endif // PASSANGERUIITEM_H

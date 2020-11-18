@@ -1,9 +1,5 @@
 #include "engine.h"
-template<typename Base, typename T>
-inline bool instanceof(const T*) {
-    return std::is_base_of<Base, T>::value;
-}
-
+namespace Game {
 Engine::Engine(QObject *parent) : QObject(parent)
 {
 
@@ -109,7 +105,7 @@ void Engine::updateRatikka(){
     }else if(s){
         y = 1;
     }
-    auto cords = ratikka_.move(x,y);
+    auto cords = ratikka_.move(x*2,y*2);
     window_.scrollMap(cords.first, cords.second);
 }
-
+}

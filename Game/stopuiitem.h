@@ -2,7 +2,7 @@
 #define STOPUIITEM_H
 
 #include "imgactoritem.h"
-
+namespace Game {
 class StopUiItem : public ImgActorItem
 {
 public:
@@ -10,5 +10,5 @@ public:
 private:
     QPixmap pixmap_;
 };
-
+}
 #endif // STOPUIITEM_H

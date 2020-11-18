@@ -1,5 +1,5 @@
 #include "movement.h"
-
+namespace Game {
 Movement::Movement(QObject *parent) : QObject(parent)
 {
 
@@ -28,4 +28,5 @@ bool Movement::eventFilter(QObject *obj, QEvent *event)
         // standard event processing
         return QObject::eventFilter(obj, event);
     }
+}
 }
