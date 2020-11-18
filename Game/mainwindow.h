@@ -22,6 +22,7 @@
 #include "stopuiitem.h"
 #include "ratikkaitem.h"
 
+
 namespace Ui {
 class MainWindow;
 }

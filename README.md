@@ -1,22 +1,24 @@
 # Jakke & Makke, Programming 3 Exercise
 
-- [ ] Harjoitustyön työnjako
+- [x] Harjoitustyön työnjako
 
 - [ ] Own namespace
 
-- [ ] Draw passagers
+- [x] Draw passagers
 
-- [ ] Add stops
+- [x] Add stops
 
-- [ ] Add moveable character (<mark>Jakko</mark>)
+- [x] Add moveable character (<mark>Jakko</mark>)
 
-- [ ] Add character movement
+- [x] Add character movement
 
-- [ ] Add map scrolling (disable mouse wheel scrolling)
+- [x] Add map scrolling (disable mouse wheel scrolling)
 
-- [ ] Add setup window <mark>(Jakko)</mark>
+- [x] Add setup window <mark>(Jakko)</mark>
 
 - [ ] Add statistic system 
+
+- [ ] A second random unic gameobject ( maybe something to not to hit or the tail of our snake)
 
 - [ ] Add unit tests to Statistics - class ( it counts the points)
 
@@ -29,8 +31,6 @@
 - [ ] Luokkien vastuujako (luokkakaavio on tässä hyödyllinen)
 
 - [ ] Ryhmän työnjako
-
-- [ ] A second random unic gameobject ( maybe something to not to hit or the tail of our snake)
 
 ## Submodule / CourseLib
 
