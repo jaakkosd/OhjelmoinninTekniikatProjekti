@@ -34,7 +34,7 @@ private:
     CourseSide::Logic gamelogic_;
     std::shared_ptr<Interface::ICity>  cp_;
     MainWindow window_;
-    SetupDialog setupdialog_;
+    SetupDialog setupDialog_;
     QTimer *timer_;
     Ratikkaitem ratikka_;
     Movement moveKeysObject_;

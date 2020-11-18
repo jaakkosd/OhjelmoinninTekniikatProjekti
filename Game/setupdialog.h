@@ -2,6 +2,7 @@
 #define SETUPDIALOG_H
 
 #include <QDialog>
+#include "rulesdialog.h"
 
 namespace Ui {
 class SetupDialog;
@@ -17,6 +18,7 @@ public:
 
 public slots:
     void emitSettings();
+    void showRules();
 
 signals:
     void settings(int difficulity, int startPoint);
@@ -24,6 +26,7 @@ signals:
 
 private:
     Ui::SetupDialog *ui;
+    RulesDialog rulesDialog_;
 };
 
 #endif // SETUPDIALOG_H

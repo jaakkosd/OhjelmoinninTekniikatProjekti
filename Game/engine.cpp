@@ -7,9 +7,9 @@ Engine::Engine(QObject *parent) : QObject(parent)
 
 void Engine::init(){
 
-    connect(&setupdialog_, &SetupDialog::settings,
+    connect(&setupDialog_, &SetupDialog::settings,
             this, &Engine::getSettings);
-    setupdialog_.exec();
+    setupDialog_.exec();
 
     gamelogic_.setTime(9,0);
     gamelogic_.fileConfig();

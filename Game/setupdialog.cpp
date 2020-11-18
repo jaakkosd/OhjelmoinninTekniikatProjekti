@@ -1,6 +1,5 @@
 #include "setupdialog.h"
 #include "ui_setupdialog.h"
-#include "QDebug"
 
 SetupDialog::SetupDialog(QWidget *parent) :
     QDialog(parent),
@@ -12,6 +11,8 @@ SetupDialog::SetupDialog(QWidget *parent) :
             this, &SetupDialog::emitSettings);
     connect(ui->startButton, &QPushButton::clicked,
             this, &SetupDialog::accept);
+    connect(ui->rulesButton, &QPushButton::clicked,
+            this, &SetupDialog::showRules);
 }
 
 SetupDialog::~SetupDialog()
@@ -22,8 +23,11 @@ SetupDialog::~SetupDialog()
 void SetupDialog::emitSettings()
 {
     int difficulity = ui->DifficulitycomboBox->currentIndex();
-    qDebug() << difficulity;
     int startPoint = ui->startComboBox->currentIndex();
-    qDebug() << startPoint;
     emit settings(difficulity, startPoint);
+}
+
+void SetupDialog::showRules()
+{
+    rulesDialog_.exec();
 }

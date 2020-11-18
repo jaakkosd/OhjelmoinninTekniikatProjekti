@@ -76,8 +76,8 @@ void MainWindow::on_startButton_clicked()
 
 Interface::Location MainWindow::getCenter()
 {
-    Game::courseConverter::cords input {(ui->graphicsView->horizontalScrollBar()->value() + ui->graphicsView->width()/2)/WINDOW_SCALE,
-                          (ui->graphicsView->verticalScrollBar()->value() + ui->graphicsView->height()/2)/WINDOW_SCALE} ;
+    Game::courseConverter::cords input {static_cast<int>((ui->graphicsView->horizontalScrollBar()->value() + ui->graphicsView->width()/2)/WINDOW_SCALE),
+                          static_cast<int>((ui->graphicsView->verticalScrollBar()->value() + ui->graphicsView->height()/2)/WINDOW_SCALE)} ;
     auto output = Game::courseConverter::uiToMap(input);
     auto loc = Interface::Location();
     loc.setXY(output.x,output.y);

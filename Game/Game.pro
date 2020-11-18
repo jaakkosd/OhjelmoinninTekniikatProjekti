@@ -18,6 +18,7 @@ SOURCES += \
     movement.cpp \
     ratikkaitem.cpp \
     passangeruiitem.cpp \
+    rulesdialog.cpp \
     setupdialog.cpp \
     stopuiitem.cpp
 
@@ -56,12 +57,14 @@ HEADERS += \
     mainwindow.h \
     movement.h \
     passangeruiitem.h \
+    rulesdialog.h \
     setupdialog.h \
     stopuiitem.h \
     ratikkaitem.h
 
 FORMS += \
     mainwindow.ui \
+    rulesdialog.ui \
     setupdialog.ui
 
 DISTFILES +=
