@@ -1,4 +1,4 @@
-#include "imgactoritem.h"
+#include "graphicitems/imgactoritem.h"
 namespace Game {
 ImgActorItem::ImgActorItem(int x, int y):x_(x), y_(y)
 {

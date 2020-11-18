@@ -1,4 +1,4 @@
-#include "ratikkaitem.h"
+#include "graphicitems/ratikkaitem.h"
 #include <QDebug>
 namespace Game {
 Ratikkaitem::Ratikkaitem(int x, int y):ImgActorItem( x,  y)

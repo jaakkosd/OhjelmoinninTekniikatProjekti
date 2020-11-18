@@ -1,4 +1,4 @@
-#include "stopuiitem.h"
+#include "graphicitems/stopuiitem.h"
 namespace Game {
 StopUiItem::StopUiItem(int x,int y):ImgActorItem(x,y)
 {

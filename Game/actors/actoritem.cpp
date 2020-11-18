@@ -1,4 +1,4 @@
-#include "actoritem.h"
+#include "actors/actoritem.h"
 namespace Game {
 ActorItem::ActorItem(int x, int y, int type):x_(x), y_(y), type_(type)
 {

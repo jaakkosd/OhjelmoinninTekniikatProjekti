@@ -1,6 +1,5 @@
-#include "mainwindow.h"
+#include "graphic/mainwindow.h"
 #include "ui_mainwindow.h"
-#include <QDebug>
 
 #define WINDOW_SCALE 1.2
 MainWindow::MainWindow(QWidget *parent) :
@@ -62,15 +61,6 @@ void MainWindow::addRatikka(Game::Ratikkaitem* ratikka)
 {
     map->addItem(ratikka);
 }
-
-
-void MainWindow::on_startButton_clicked()
-{
-    qDebug() << "Start clicked";
-    emit gameStarted();
-}
-
-
 
 
 

@@ -2,14 +2,14 @@
 #define ENGINE_H
 
 #include <QObject>
-#include "mainwindow.h"
+#include "graphic/mainwindow.h"
 #include "creategame.hh"
 #include "core/logic.hh"
 #include "city.hh"
-#include "busuiitem.h"
-#include "ratikkaitem.h"
+#include "graphicitems/busuiitem.h"
+#include "graphicitems/ratikkaitem.h"
 #include "movement.h"
-#include "setupdialog.h"
+#include "graphic/setupdialog.h"
 
 #define UPDATES_PER_SECOND 30
 namespace Game {

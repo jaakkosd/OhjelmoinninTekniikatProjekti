@@ -1,4 +1,4 @@
-#include "movement.h"
+#include "core/movement.h"
 namespace Game {
 Movement::Movement(QObject *parent) : QObject(parent)
 {
