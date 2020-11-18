@@ -6,7 +6,7 @@ namespace Game {
 class Ratikkaitem : public ImgActorItem
 {
 public:
-    Ratikkaitem(int x=548, int y=296);
+    Ratikkaitem(int x=0, int y=0);
     QPair<int,int> move(int x, int y);
 private:
     QPixmap ratikkaleft;

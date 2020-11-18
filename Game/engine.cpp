@@ -73,13 +73,17 @@ void Engine::updatePositions(){
     // iterate trough nearby actors and remove all colliding with the RATIKKA
     for(auto i:actors_.keys()){
         if(actors_[i]->collidesWithItem(&ratikka_)){
-            //value is ImgActorItem*
-            actors_[i]->hide();
-            delete actors_[i];
-            // key is Interface::IActor
-            cp_->removeActor(i);
-            actors_.remove(i);
-            //TODO: add points for hitting busses and maybe passengers mayne test is subject is a nysse or passenger
+            if (dynamic_cast<CourseSide::Passenger*>(i.get()) != nullptr){
+                //value is ImgActorItem*
+                actors_[i]->hide();
+                delete actors_[i];
+                // key is Interface::IActor
+                cp_->removeActor(i);
+                actors_.remove(i);
+                //TODO: add points for hitting busses and maybe passengers mayne test is subject is a nysse or passenger
+            }else {
+                dynamic_cast<City*>(cp_.get())->endGame();
+                }
         }
     }
 }
