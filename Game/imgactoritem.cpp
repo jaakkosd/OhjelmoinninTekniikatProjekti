@@ -1,5 +1,5 @@
 #include "imgactoritem.h"
-
+namespace Game {
 ImgActorItem::ImgActorItem(int x, int y):x_(x), y_(y)
 {
     setPos(x_, y_ );
@@ -21,4 +21,5 @@ courseConverter::cords ImgActorItem::getCoords()
 void ImgActorItem::moveTo(int x, int y)
 {
     setCoords(x,y);
+}
 }

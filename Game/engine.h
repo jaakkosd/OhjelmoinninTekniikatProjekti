@@ -12,7 +12,7 @@
 #include "setupdialog.h"
 
 #define UPDATES_PER_SECOND 30
-
+namespace Game {
 class Engine : public QObject
 {
     Q_OBJECT
@@ -46,5 +46,5 @@ private:
     const QList<Interface::Location> startLocations_ {Interface::Location(6825438,3328230),
                 Interface::Location(6825071,3326060),Interface::Location(6825017,3328246)};
 };
-
+}
 #endif // ENGINE_H

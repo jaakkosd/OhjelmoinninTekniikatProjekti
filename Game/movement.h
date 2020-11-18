@@ -3,7 +3,7 @@
 
 #include <QObject>
 #include <QKeyEvent>
-
+namespace Game {
 class Movement : public QObject
 {
     Q_OBJECT
@@ -19,6 +19,6 @@ private:
 };
 
 
-
+}
 
 #endif // MOVEMENT_H

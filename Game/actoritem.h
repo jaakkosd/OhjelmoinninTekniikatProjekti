@@ -4,9 +4,11 @@
 #include <QGraphicsItem>
 #include <QGraphicsScene>
 #include <QPainter>
+namespace Game {
 
 const int WIDTH = 5;
 const int HEIGHT = 5;
+
 
 class ActorItem : public QGraphicsItem
 {
@@ -23,5 +25,5 @@ private:
     int y_;
     int type_;
 };
-
+}
 #endif // ACTORITEM_H

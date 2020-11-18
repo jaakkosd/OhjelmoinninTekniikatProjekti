@@ -4,7 +4,7 @@
 
 #define VIEW_DISTANCE  500
 
-
+namespace Game {
 City::City()
 {
 }
@@ -25,6 +25,7 @@ void City::addActor(std::shared_ptr<Interface::IActor> newactor) {
 } ;
 void City::removeActor(std::shared_ptr<Interface::IActor> actor) {
     actorList.removeAll(actor);
+    actor->remove();
 } ;
 void City::actorRemoved(std::shared_ptr<Interface::IActor> actor) {} ;
 bool City::findActor(std::shared_ptr<Interface::IActor> actor) const  {
@@ -48,3 +49,4 @@ std::vector<std::shared_ptr<Interface::IActor> > City::getNearbyActors(Interface
 bool City::isGameOver() const {
     return false;
 };
+}

@@ -43,13 +43,15 @@ public:
 
     void setStops(std::shared_ptr<Interface::ICity>  cp_);
 
-    void addRatikka(Ratikkaitem* ratikka);
+    void addRatikka(Game::Ratikkaitem* ratikka);
 
     Interface::Location getCenter();
     void  scrollMap(int x,int y);
 
+    void installEvents(QObject *handler);
 public slots:
     void addActor(QGraphicsItem *actor);
+    void setClock(QString str);
 signals:
     void gameStarted();
 
