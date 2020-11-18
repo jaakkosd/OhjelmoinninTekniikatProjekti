@@ -33,7 +33,7 @@ void Engine::init(){
     timer_->start(1000/UPDATES_PER_SECOND);
 
     window_.addRatikka(&ratikka_);
-    //ratikka_.setCoords(startCords_.x,startCords_.y);
+    ratikka_.setCoords(startCords_.x,startCords_.y);
     updatePositions();
     window_.installEventFilter(&moveKeysObject_);
     connect(&moveKeysObject_, &Movement::keyPressed,this, &Engine::updateKeys);
@@ -102,10 +102,11 @@ void Engine::getSettings(int difficulity, int startPoint)
 {
     speed_ = (difficulity + 1) * 2;
 
-    if ( startPoint == 0 ){
-        startCords_ = courseConverter::mapToUi(courseConverter::cords{6825438,3328230});
-        qDebug() << "möö";
-    }
+    if ( startLocations_.size() < startPoint || startPoint < 0){
+       startPoint = 0;}
+    auto loc = startLocations_[startPoint];
+    startCords_ = courseConverter::mapToUi(courseConverter::cords{loc.giveX(),loc.giveY()});
+
 }
 
 void Engine::updateRatikka(){

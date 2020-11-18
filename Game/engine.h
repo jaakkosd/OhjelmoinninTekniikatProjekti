@@ -43,6 +43,8 @@ private:
     QRandomGenerator randgen = QRandomGenerator(QTime::currentTime().msecsSinceStartOfDay());
     int speed_;
     courseConverter::cords startCords_;
+    const QList<Interface::Location> startLocations_ {Interface::Location(6825438,3328230),
+                Interface::Location(6825071,3326060),Interface::Location(6825017,3328246)};
 };
 
 #endif // ENGINE_H
