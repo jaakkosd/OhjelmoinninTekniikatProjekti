@@ -9,9 +9,8 @@ MainWindow::MainWindow(QWidget *parent) :
 {
     ui->setupUi(this);
 
-    map = new QGraphicsScene(this);
-    ui->graphicsView->setScene(map);
-    map->setSceneRect(0,0,map_width_,map_height_);
+    ui->graphicsView->setScene(&map);
+    map.setSceneRect(0,0,map_width_,map_height_);
 
     ui->graphicsView->setHorizontalScrollBarPolicy ( Qt::ScrollBarAlwaysOff );
     ui->graphicsView->setVerticalScrollBarPolicy ( Qt::ScrollBarAlwaysOff );
@@ -25,7 +24,7 @@ MainWindow::~MainWindow()
 
 void MainWindow::addActor(QGraphicsItem* actor)
 {
-    map->addItem(actor);
+    map.addItem(actor);
 }
 
 void MainWindow::setSize(int w, int h)
@@ -34,14 +33,9 @@ void MainWindow::setSize(int w, int h)
     map_height_ = h;
 }
 
-void MainWindow::setTick(int t)
-{
-    //tick_ = t;
-}
-
 void MainWindow::setPicture(QImage &img)
 {
-    map->setBackgroundBrush(img);
+    map.setBackgroundBrush(img);
 }
 
 void MainWindow::setStops(std::shared_ptr<Interface::ICity>  cp_)
@@ -53,14 +47,14 @@ void MainWindow::setStops(std::shared_ptr<Interface::ICity>  cp_)
                Game::courseConverter::cords mapcords {loc.giveX(), loc.giveY()};
                Game::courseConverter::cords uicords = Game::courseConverter::mapToUi(mapcords);
                Game::StopUiItem* stoppi =  new Game::StopUiItem(uicords.x, uicords.y);
-               map->addItem(stoppi);
+               map.addItem(stoppi);
        }
    }
 }
 
 void MainWindow::addRatikka(Game::Ratikkaitem* ratikka)
 {
-    map->addItem(ratikka);
+    map.addItem(ratikka);
 }
 
 

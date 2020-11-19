@@ -17,10 +17,10 @@ class Engine : public QObject
     Q_OBJECT
 public:
     explicit Engine(QObject *parent = nullptr);
-
     void init();
 
 signals:
+    void gameEnded();
 
 protected slots:
     void updatePositions();
@@ -31,12 +31,13 @@ private:
     CourseSide::Logic gamelogic_;
     std::shared_ptr<Interface::ICity>  cp_;
     MainWindow window_;
-    QTimer *timer_;
+    QTimer timer_;
     Ratikkaitem ratikka_;
     Movement moveKeysObject_;
     QSet<int> keys_;
     QMap<std::shared_ptr<Interface::IActor>,ImgActorItem*> actors_;
     QRandomGenerator randgen = QRandomGenerator(QTime::currentTime().msecsSinceStartOfDay());
+    void EndGame();
 };
 }
 #endif // ENGINE_H

@@ -1,4 +1,6 @@
 #include "engine.h"
+
+#include <QMessageBox>
 namespace Game {
 Engine::Engine(QObject *parent) : QObject(parent)
 {
@@ -17,9 +19,8 @@ void Engine::init(){
     window_.setPicture(bg);
     window_.show();
     window_.setStops(cp_);
-    timer_ = new QTimer();
-    connect(timer_, &QTimer::timeout, this, &Engine::updatePositions);
-    timer_->start(1000/UPDATES_PER_SECOND);
+    connect(&timer_, &QTimer::timeout, this, &Engine::updatePositions);
+    timer_.start(1000/UPDATES_PER_SECOND);
     window_.addRatikka(&ratikka_);
     updatePositions();
     window_.installEvents(&moveKeysObject_);
@@ -82,8 +83,9 @@ void Engine::updatePositions(){
                 actors_.remove(i);
                 //TODO: add points for hitting busses and maybe passengers mayne test is subject is a nysse or passenger
             }else {
-                dynamic_cast<City*>(cp_.get())->endGame();
-                }
+                EndGame();
+
+            }
         }
     }
 }
@@ -111,5 +113,15 @@ void Engine::updateRatikka(){
     }
     auto cords = ratikka_.move(x*2,y*2);
     window_.scrollMap(cords.first, cords.second);
+}
+
+void Engine::EndGame()
+{
+    timer_.stop();
+    dynamic_cast<City*>(cp_.get())->endGame();
+    QMessageBox msgBox;
+    msgBox.setText("The document has been modified.");
+    msgBox.exec();
+    emit gameEnded();
 }
 }

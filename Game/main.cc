@@ -2,14 +2,23 @@
 #include "engine.h"
 #include <QDir>
 
+void startGame();
+Game::Engine * engine;
+
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
     Q_INIT_RESOURCE(offlinedata);
-    qDebug() << QDir::currentPath();
-    Game::Engine engine;
-    engine.init();
+    startGame();
     return a.exec();
+    delete engine;
+}
+
+void startGame(){
+    delete engine;
+    engine = new Game::Engine;
+    engine->init();
+    QObject::connect(engine, &Game::Engine::gameEnded,&startGame);
 }
 
 
