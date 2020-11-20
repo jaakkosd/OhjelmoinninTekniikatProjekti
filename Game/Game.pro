@@ -6,19 +6,21 @@ QT += core gui widgets network multimedia
 CONFIG += c++14
 
 SOURCES += \
-    actoritem.cpp \
-    busuiitem.cpp \
-    city.cc \
-    courseconverter.cpp \
-    creategame.cc \
-    engine.cpp \
-    imgactoritem.cpp \
-    main.cc \
-    mainwindow.cpp \
-    movement.cpp \
-    ratikkaitem.cpp \
-    passangeruiitem.cpp \
-    stopuiitem.cpp
+    actors/actoritem.cpp \
+    core/city.cc \
+    core/courseconverter.cpp \
+    core/creategame.cc \
+    core/engine.cpp \
+    core/movement.cpp \
+    graphic/mainwindow.cpp \
+    graphic/rulesdialog.cpp \
+    graphic/setupdialog.cpp \
+    graphicitems/busuiitem.cpp \
+    graphicitems/imgactoritem.cpp \
+    graphicitems/passangeruiitem.cpp \
+    graphicitems/ratikkaitem.cpp \
+    graphicitems/stopuiitem.cpp \
+    main.cc
 
 
 win32:CONFIG(release, debug|release): LIBS += \
@@ -46,20 +48,24 @@ else:unix: PRE_TARGETDEPS += \
     $$OUT_PWD/../Course/CourseLib/libCourseLib.a
 
 HEADERS += \
-    actoritem.h \
-    busuiitem.h \
-    city.hh \
-    courseconverter.h \
-    engine.h \
-    imgactoritem.h \
-    mainwindow.h \
-    movement.h \
-    passangeruiitem.h \
-    stopuiitem.h \
-    ratikkaitem.h
+    actors/actoritem.h \
+    core/city.hh \
+    core/courseconverter.h \
+    core/engine.h \
+    core/movement.h \
+    graphic/mainwindow.h \
+    graphic/rulesdialog.h \
+    graphic/setupdialog.h \
+    graphicitems/busuiitem.h \
+    graphicitems/imgactoritem.h \
+    graphicitems/passangeruiitem.h \
+    graphicitems/ratikkaitem.h \
+    graphicitems/stopuiitem.h
 
 FORMS += \
-    mainwindow.ui
+    mainwindow.ui \
+    rulesdialog.ui \
+    setupdialog.ui
 
 DISTFILES +=
 

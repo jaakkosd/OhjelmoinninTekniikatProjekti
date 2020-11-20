@@ -1,5 +1,5 @@
 #include <QApplication>
-#include "engine.h"
+#include "core/engine.h"
 #include <QDir>
 
 void startGame();

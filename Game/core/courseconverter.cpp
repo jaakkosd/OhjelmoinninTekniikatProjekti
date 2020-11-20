@@ -1,4 +1,4 @@
-#include "courseconverter.h"
+#include "core/courseconverter.h"
 namespace Game {
 courseConverter::cords courseConverter::mapToUi(cords input)
 {

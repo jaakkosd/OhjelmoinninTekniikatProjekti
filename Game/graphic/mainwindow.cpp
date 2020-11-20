@@ -1,6 +1,5 @@
-#include "mainwindow.h"
+#include "graphic/mainwindow.h"
 #include "ui_mainwindow.h"
-#include <QDebug>
 
 #define WINDOW_SCALE 1.2
 MainWindow::MainWindow(QWidget *parent) :
@@ -58,20 +57,11 @@ void MainWindow::addRatikka(Game::Ratikkaitem* ratikka)
 }
 
 
-void MainWindow::on_startButton_clicked()
-{
-    qDebug() << "Start clicked";
-    emit gameStarted();
-}
-
-
-
-
 
 Interface::Location MainWindow::getCenter()
 {
-    Game::courseConverter::cords input {(ui->graphicsView->horizontalScrollBar()->value() + ui->graphicsView->width()/2)/WINDOW_SCALE,
-                          (ui->graphicsView->verticalScrollBar()->value() + ui->graphicsView->height()/2)/WINDOW_SCALE} ;
+    Game::courseConverter::cords input {static_cast<int>((ui->graphicsView->horizontalScrollBar()->value() + ui->graphicsView->width()/2)/WINDOW_SCALE),
+                          static_cast<int>((ui->graphicsView->verticalScrollBar()->value() + ui->graphicsView->height()/2)/WINDOW_SCALE)} ;
     auto output = Game::courseConverter::uiToMap(input);
     auto loc = Interface::Location();
     loc.setXY(output.x,output.y);

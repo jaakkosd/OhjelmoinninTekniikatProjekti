@@ -1,4 +1,4 @@
-#include "passangeruiitem.h"
+#include "graphicitems/passangeruiitem.h"
 namespace Game {
 PassangerUiItem::PassangerUiItem(int x, int y):ImgActorItem( x,  y)
 {

@@ -1,9 +1,9 @@
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
 #include "interfaces/iactor.hh"
-#include "actoritem.h"
+#include "actors/actoritem.h"
 #include "actors/nysse.hh"
-#include "busuiitem.h"
+#include "graphicitems/busuiitem.h"
 #include "offlinereader.hh"
 #include <QMainWindow>
 #include <QGraphicsScene>
@@ -14,13 +14,14 @@
 #include <map>
 #include <QScrollBar>
 #include <core/location.hh>
-#include <courseconverter.h>
+#include <core/courseconverter.h>
 #include <QPair>
-#include "passangeruiitem.h"
-#include "city.hh"
+#include "graphicitems/passangeruiitem.h"
+#include "core/city.hh"
 #include <QRandomGenerator>
-#include "stopuiitem.h"
-#include "ratikkaitem.h"
+#include "graphicitems/stopuiitem.h"
+#include "graphicitems/ratikkaitem.h"
+
 
 namespace Ui {
 class MainWindow;
@@ -48,14 +49,11 @@ public:
     void  scrollMap(int x,int y);
 
     void installEvents(QObject *handler);
+
 public slots:
     void addActor(QGraphicsItem *actor);
     void setClock(QString str);
-signals:
-    void gameStarted();
 
-private slots:
-    void on_startButton_clicked();
 
 private:
     Ui::MainWindow *ui;

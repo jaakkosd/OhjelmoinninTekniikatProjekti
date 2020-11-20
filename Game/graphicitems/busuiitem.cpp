@@ -1,4 +1,4 @@
-#include "busuiitem.h"
+#include "graphicitems/busuiitem.h"
 namespace Game {
 BusUiItem::BusUiItem(int x, int y):ImgActorItem( x,  y)
 {

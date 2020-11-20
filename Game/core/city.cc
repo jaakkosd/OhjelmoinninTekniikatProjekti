@@ -1,4 +1,4 @@
-#include "city.hh"
+#include "core/city.hh"
 #include <QTime>
 #include <QDebug>
 

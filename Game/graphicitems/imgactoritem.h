@@ -2,7 +2,7 @@
 #define PIC_ACTOR_ITEM_H
 
 #include <QGraphicsPixmapItem>
-#include "courseconverter.h"
+#include "core/courseconverter.h"
 namespace Game {
 class ImgActorItem : public QGraphicsPixmapItem
 {
