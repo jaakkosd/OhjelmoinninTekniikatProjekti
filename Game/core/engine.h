@@ -25,13 +25,13 @@ public:
 
 public slots:
     void getSettings(int difficulity, int startPoint);
-    void spawnSquirrel();
 signals:
     void gameEnded();
 protected slots:
     void updatePositions();
 private slots:
     void updateRatikka();
+    void updateSquirrel();
     void updateKeys(QSet<int> keys);
 private:
     bool running = true;
@@ -56,6 +56,8 @@ private:
     courseConverter::cords startCords_;
     const QList<Interface::Location> startLocations_ {Interface::Location(6825438,3328230),
                 Interface::Location(6825071,3326060),Interface::Location(6825017,3328246)};
+    bool squirrelTime_ = false;
+    std::vector<std::shared_ptr<FlyingSquirrel>> squirrels_;
 
 
 };

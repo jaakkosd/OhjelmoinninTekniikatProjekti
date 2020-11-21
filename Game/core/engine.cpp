@@ -25,7 +25,7 @@ void Engine::init(){
     connect(&timer_, &QTimer::timeout, this, &Engine::updatePositions);
     timer_.start(1000/UPDATES_PER_SECOND);
     window_.addActor(&ratikka_);
-    spawnSquirrel();
+    window_.addActor(&squirrel_);
     ratikka_.setCoords(startCords_.x,startCords_.y);
     updatePositions();
     window_.installEvents(&moveKeysObject_);
@@ -37,6 +37,10 @@ void Engine::updatePositions(){
     QString text = time.toString("hh:mm");
     window_.setClock(text);
     updateRatikka();
+    if ( !squirrelTime_ ){
+        FlyingSquirrel* newsquirrel = new FlyingSquirrel();
+        updateSquirrel();
+    }
     std::vector<std::shared_ptr<Interface::IActor> > nearby = cp_->getNearbyActors(window_.getCenter());
     QMap<std::shared_ptr<Interface::IActor>,ImgActorItem*> newActors;
     for(auto &i : nearby){
@@ -111,12 +115,6 @@ void Engine::getSettings(int difficulity, int startPoint)
 
 }
 
-void Engine::spawnSquirrel()
-{
-    squirrel_.setCoords(200,200);
-    window_.addActor(&squirrel_);
-}
-
 void Engine::updateRatikka(){
     bool a = keys_.contains(65);
     bool s = keys_.contains(83);
@@ -136,6 +134,11 @@ void Engine::updateRatikka(){
     }
     auto cords = ratikka_.move(x*2,y*2);
     window_.scrollMap(cords.first, cords.second);
+}
+
+void Engine::updateSquirrel()
+{
+    //for (auto & element : squirrels_)
 }
 
 void Engine::EndGame(endingCases endingCase)
