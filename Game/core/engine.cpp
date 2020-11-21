@@ -8,7 +8,10 @@ Engine::Engine(QObject *parent) : QObject(parent)
 void Engine::init(){
     connect(&setupDialog_, &SetupDialog::settings,
             this, &Engine::getSettings);
-    setupDialog_.exec();
+    if(!setupDialog_.exec()){
+        window_.close();
+        return;
+    }
 
     gamelogic_.setTime(9,0);
     gamelogic_.fileConfig();
@@ -180,23 +183,28 @@ void Engine::EndGame(endingCases endingCase)
     running = false;*/
     timer_.stop();
     cp_->endGame();
+    QString text("%1\n\nPeli ohi!\nSait %2 pistettä!");
     switch (endingCase) {
     case hitNysse:
     {
-            QMessageBox msgBox;
-            msgBox.setText(QString("Nysse ajoi päällesi :( \n\nPeli ohi!\nSait %1 pistettä!").arg(cp_->stats()->getPoints()));
-            msgBox.exec();
+        text = text.arg("Nysse ajoi päällesi :(");
     }
         break;
     case timeUp:{
-        QMessageBox msgBox;
-        msgBox.setText(QString("Aika loppui :( \n\nPeli ohi! \nSait %1 pistettä!").arg(cp_->stats()->getPoints()));
-        msgBox.exec();
+        text = text.arg("Aika loppui :(");
+    }
+    case hitAnimal:{
+        text = text.arg("Törmäsit liito-oravaan. Olet ihmishirviö >:(");
     }
         break;
     default:
             break;
     }
+
+    QMessageBox msgBox;
+    msgBox.setText(text.arg(cp_->stats()->getPoints()));
+    msgBox.exec();
+
     emit gameEnded();
 }
 }

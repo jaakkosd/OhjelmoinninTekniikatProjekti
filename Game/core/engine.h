@@ -58,7 +58,7 @@ private:
     const QList<Interface::Location> startLocations_ {Interface::Location(6826254,3327977),
                 Interface::Location(6825071,3326060),Interface::Location(6825017,3328246)};
     QDateTime endTime;
-    #include "graphicitems/flyingsquirrel.h"
+    QList<FlyingSquirrel*> squirrels_;
 };
 }
 #endif // ENGINE_H
