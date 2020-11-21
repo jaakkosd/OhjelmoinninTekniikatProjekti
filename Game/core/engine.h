@@ -10,6 +10,8 @@
 #include "graphicitems/ratikkaitem.h"
 #include "movement.h"
 #include "ui/setupdialog.h"
+#include "graphicitems/flyingsquirrel.h"
+
 
 #define UPDATES_PER_SECOND 30
 namespace Game {
@@ -23,6 +25,7 @@ public:
 
 public slots:
     void getSettings(int difficulity, int startPoint);
+    void spawnSquirrel();
 signals:
     void gameEnded();
 protected slots:
@@ -43,6 +46,7 @@ private:
     SetupDialog setupDialog_;
     QTimer timer_;
     Ratikkaitem ratikka_;
+    FlyingSquirrel squirrel_;
     Movement moveKeysObject_;
     QSet<int> keys_;
     QMap<std::shared_ptr<Interface::IActor>,ImgActorItem*> actors_;

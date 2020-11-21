@@ -24,7 +24,8 @@ void Engine::init(){
     window_.setStops(cp_);
     connect(&timer_, &QTimer::timeout, this, &Engine::updatePositions);
     timer_.start(1000/UPDATES_PER_SECOND);
-    window_.addRatikka(&ratikka_);
+    window_.addActor(&ratikka_);
+    spawnSquirrel();
     ratikka_.setCoords(startCords_.x,startCords_.y);
     updatePositions();
     window_.installEvents(&moveKeysObject_);
@@ -108,6 +109,12 @@ void Engine::getSettings(int difficulity, int startPoint)
     auto loc = startLocations_[startPoint];
     startCords_ = courseConverter::mapToUi(courseConverter::cords{loc.giveX(),loc.giveY()});
 
+}
+
+void Engine::spawnSquirrel()
+{
+    squirrel_.setCoords(200,200);
+    window_.addActor(&squirrel_);
 }
 
 void Engine::updateRatikka(){
