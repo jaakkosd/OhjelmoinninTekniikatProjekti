@@ -11,6 +11,8 @@
 #include "movement.h"
 #include "ui/setupdialog.h"
 #include "statistics.h"
+#include "graphicitems/flyingsquirrel.h"
+
 
 #define UPDATES_PER_SECOND 30
 namespace Game {
@@ -30,8 +32,10 @@ protected slots:
     void updatePositions();
 private slots:
     void updateRatikka();
+    void updateSquirrels();
     void updateKeys(QSet<int> keys);
 private:
+    const static int squirrelSpeed = 8;
     bool running = true;
     enum endingCases  { timeUp,
                         hitNysse,
@@ -54,6 +58,7 @@ private:
     const QList<Interface::Location> startLocations_ {Interface::Location(6826254,3327977),
                 Interface::Location(6825071,3326060),Interface::Location(6825017,3328246)};
     QDateTime endTime;
+    #include "graphicitems/flyingsquirrel.h"
 };
 }
 #endif // ENGINE_H

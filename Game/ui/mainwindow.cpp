@@ -51,13 +51,6 @@ void MainWindow::setStops(std::shared_ptr<Interface::ICity>  cp_)
    }
 }
 
-void MainWindow::addRatikka(Game::Ratikkaitem* ratikka)
-{
-    map.addItem(ratikka);
-}
-
-
-
 Interface::Location MainWindow::getCenter()
 {
     Game::courseConverter::cords input {static_cast<int>((ui->graphicsView->horizontalScrollBar()->value() + ui->graphicsView->width()/2)/WINDOW_SCALE),

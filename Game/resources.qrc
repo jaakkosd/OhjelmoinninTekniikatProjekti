@@ -8,6 +8,7 @@
         <file>resources/stop.png</file>
         <file>resources/ratikkaleft.png</file>
         <file>resources/ratikkaright.png</file>
+        <file>resources/liitoorava.png</file>
         <file>resources/hiscore.txt</file>
     </qresource>
 </RCC>
