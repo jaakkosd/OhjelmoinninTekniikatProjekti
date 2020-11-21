@@ -12,9 +12,9 @@ SOURCES += \
     core/creategame.cc \
     core/engine.cpp \
     core/movement.cpp \
-    graphic/mainwindow.cpp \
-    graphic/rulesdialog.cpp \
-    graphic/setupdialog.cpp \
+    ui/mainwindow.cpp \
+    ui/rulesdialog.cpp \
+    ui/setupdialog.cpp \
     graphicitems/busuiitem.cpp \
     graphicitems/imgactoritem.cpp \
     graphicitems/passangeruiitem.cpp \
@@ -53,9 +53,9 @@ HEADERS += \
     core/courseconverter.h \
     core/engine.h \
     core/movement.h \
-    graphic/mainwindow.h \
-    graphic/rulesdialog.h \
-    graphic/setupdialog.h \
+    ui/mainwindow.h \
+    ui/rulesdialog.h \
+    ui/setupdialog.h \
     graphicitems/busuiitem.h \
     graphicitems/imgactoritem.h \
     graphicitems/passangeruiitem.h \
@@ -63,9 +63,9 @@ HEADERS += \
     graphicitems/stopuiitem.h
 
 FORMS += \
-    mainwindow.ui \
-    rulesdialog.ui \
-    setupdialog.ui
+    ui/mainwindow.ui \
+    ui/rulesdialog.ui \
+    ui/setupdialog.ui
 
 DISTFILES +=
 

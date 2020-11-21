@@ -1,13 +1,12 @@
 <RCC>
     <qresource prefix="/img">
-        <file>pin_red16.png</file>
-        <file>pin_green16.png</file>
-        <file>nysse_left.png</file>
-        <file>nysse_right.png</file>
-        <file>passenger.png</file>
-        <file>stop.png</file>
-        <file>ratikkaleft.png</file>
-        <file>ratikkaright.png</file>
-        <file>liitoorava.png</file>
+        <file>resources/pin_red16.png</file>
+        <file>resources/pin_green16.png</file>
+        <file>resources/nysse_left.png</file>
+        <file>resources/nysse_right.png</file>
+        <file>resources/passenger.png</file>
+        <file>resources/stop.png</file>
+        <file>resources/ratikkaleft.png</file>
+        <file>resources/ratikkaright.png</file>
     </qresource>
 </RCC>

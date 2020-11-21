@@ -22,11 +22,13 @@ public:
     bool isGameOver() const ;
     QList<std::shared_ptr<Interface::IActor>> actorList;
     QList<std::shared_ptr<Interface::IStop>> stopList;
+    void endGame();
 public slots:
 
 
 
 private:
+    bool gameEnded_ = false;
 };
 
 }

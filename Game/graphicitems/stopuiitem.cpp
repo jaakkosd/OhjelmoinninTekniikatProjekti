@@ -2,7 +2,7 @@
 namespace Game {
 StopUiItem::StopUiItem(int x,int y):ImgActorItem(x,y)
 {
-    assert(pixmap_.load(":/img/stop.png")); //assert that png file is loaded
+    assert(pixmap_.load(":/img/resources/stop.png")); //assert that png file is loaded
     setOffset(0,-84);
     setScale(0.3);
 

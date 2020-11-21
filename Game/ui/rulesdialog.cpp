@@ -1,4 +1,4 @@
-#include "graphic/rulesdialog.h"
+#include "ui/rulesdialog.h"
 #include "ui_rulesdialog.h"
 
 RulesDialog::RulesDialog(QWidget *parent) :

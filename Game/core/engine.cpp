@@ -1,4 +1,5 @@
 #include "core/engine.h"
+#include <QMessageBox>
 namespace Game {
 Engine::Engine(QObject *parent) : QObject(parent)
 {
@@ -21,10 +22,8 @@ void Engine::init(){
     window_.setPicture(bg);
     window_.show();
     window_.setStops(cp_);
-    timer_ = new QTimer();
-    connect(timer_, &QTimer::timeout, this, &Engine::updatePositions);
-    timer_->start(1000/UPDATES_PER_SECOND);
-
+    connect(&timer_, &QTimer::timeout, this, &Engine::updatePositions);
+    timer_.start(1000/UPDATES_PER_SECOND);
     window_.addRatikka(&ratikka_);
     ratikka_.setCoords(startCords_.x,startCords_.y);
     updatePositions();
@@ -79,13 +78,19 @@ void Engine::updatePositions(){
     // iterate trough nearby actors and remove all colliding with the RATIKKA
     for(auto i:actors_.keys()){
         if(actors_[i]->collidesWithItem(&ratikka_)){
-            //value is ImgActorItem*
-            actors_[i]->hide();
-            delete actors_[i];
-            // key is Interface::IActor
-            cp_->removeActor(i);
-            actors_.remove(i);
-            //TODO: add points for hitting busses and maybe passengers mayne test is subject is a nysse or passenger
+            if (dynamic_cast<CourseSide::Passenger*>(i.get()) != nullptr){
+                //value is ImgActorItem*
+                actors_[i]->hide();
+                delete actors_[i];
+                // key is Interface::IActor
+                cp_->removeActor(i);
+                actors_.remove(i);
+                //TODO: add points for hitting busses and maybe passengers mayne test is subject is a nysse or passenger
+            }else {
+                EndGame(hitNysse);
+                return;
+
+            }
         }
     }
 }
@@ -124,5 +129,25 @@ void Engine::updateRatikka(){
     }
     auto cords = ratikka_.move(x*2,y*2);
     window_.scrollMap(cords.first, cords.second);
+}
+
+void Engine::EndGame(endingCases endingCase)
+{
+    /*if(!running){
+        return;
+    }
+    running = false;*/
+    timer_.stop();
+    dynamic_cast<City*>(cp_.get())->endGame();
+    switch (endingCase) {
+        case hitNysse:{
+            QMessageBox msgBox;
+            msgBox.setText("Nysse ajoi päällesi :( \n\nPeli ohi!");
+            msgBox.exec();
+        }break;
+        default:
+            break;
+    }
+    emit gameEnded();
 }
 }

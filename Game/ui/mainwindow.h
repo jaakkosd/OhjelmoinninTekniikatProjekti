@@ -57,8 +57,7 @@ public slots:
 
 private:
     Ui::MainWindow *ui;
-    QGraphicsScene *map;
-    QTimer *timer;
+    QGraphicsScene map;
 
     int map_width_ = 1095; //pxls
     int map_height_ = 592;
