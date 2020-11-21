@@ -20,7 +20,7 @@ void City::addStop(std::shared_ptr<Interface::IStop> newstop) {
 void City::startGame(){
 
 };
-void City::addActor(std::shared_ptr<Interface::IActor> newactor) {
+void City::addActor(std::shared_ptr<Interface::IActor> newactor) {//if (dynamic_cast<CourseSide::Nysse*>(i.get()) != nullptr){
     actorList.append(newactor);
 } ;
 void City::removeActor(std::shared_ptr<Interface::IActor> actor) {

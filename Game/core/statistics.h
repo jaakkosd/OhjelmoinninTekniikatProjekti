@@ -2,6 +2,8 @@
 #define STATISTICS_H
 
 #include "interfaces/istatistics.hh"
+#include <QFile>
+#include <QDir>
 
 namespace Game {
 class Statistics : public Interface::IStatistics
@@ -56,8 +58,12 @@ public:
     void addPoints();
     int getPoints();
 
+    void saveHiScore();
+    int readHiScore();
 private:
     int points_;
+    int nysses_ = 0;
+    int passangers_ = 0;
 };
 }
 #endif // STATISTICS_H
