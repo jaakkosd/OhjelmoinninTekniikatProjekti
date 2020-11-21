@@ -51,7 +51,7 @@ private:
     void EndGame(endingCases endingCase);
     int speed_;
     courseConverter::cords startCords_;
-    const QList<Interface::Location> startLocations_ {Interface::Location(6825438,3328230),
+    const QList<Interface::Location> startLocations_ {Interface::Location(6826254,3327977),
                 Interface::Location(6825071,3326060),Interface::Location(6825017,3328246)};
     QDateTime endTime;
     Statistics stats_;
