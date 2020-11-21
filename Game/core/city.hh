@@ -1,6 +1,8 @@
 #ifndef CITY_HH
 #define CITY_HH
 #include "interfaces/icity.hh"
+#include "statistics.h"
+#include "actors/nysse.hh"
 
 
 
@@ -23,12 +25,14 @@ public:
     QList<std::shared_ptr<Interface::IActor>> actorList;
     QList<std::shared_ptr<Interface::IStop>> stopList;
     void endGame();
+    Statistics * stats();
 public slots:
 
 
 
 private:
     bool gameEnded_ = false;
+    Statistics stats_;
 };
 
 }

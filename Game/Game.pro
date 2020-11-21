@@ -12,6 +12,7 @@ SOURCES += \
     core/creategame.cc \
     core/engine.cpp \
     core/movement.cpp \
+    core/statistics.cpp \
     graphicitems/flyingsquirrel.cpp \
     ui/mainwindow.cpp \
     ui/rulesdialog.cpp \
@@ -55,6 +56,7 @@ HEADERS += \
     core/engine.h \
     core/movement.h \
     graphicitems/flyingsquirrel.h \
+    core/statistics.h \
     ui/mainwindow.h \
     ui/rulesdialog.h \
     ui/setupdialog.h \

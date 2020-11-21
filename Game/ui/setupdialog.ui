@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>271</width>
+    <width>306</width>
     <height>145</height>
    </rect>
   </property>
@@ -36,7 +36,7 @@
     </rect>
    </property>
    <property name="text">
-    <string>Difficulity</string>
+    <string>Speed</string>
    </property>
   </widget>
   <widget class="QComboBox" name="DifficulitycomboBox">
@@ -44,7 +44,7 @@
     <rect>
      <x>120</x>
      <y>10</y>
-     <width>141</width>
+     <width>161</width>
      <height>24</height>
     </rect>
    </property>
@@ -69,13 +69,13 @@
     <rect>
      <x>120</x>
      <y>60</y>
-     <width>141</width>
+     <width>161</width>
      <height>24</height>
     </rect>
    </property>
    <item>
     <property name="text">
-     <string>Rautatieasema A</string>
+     <string>Tampellan Esplanadi</string>
     </property>
    </item>
    <item>
@@ -92,7 +92,7 @@
   <widget class="QPushButton" name="rulesButton">
    <property name="geometry">
     <rect>
-     <x>30</x>
+     <x>50</x>
      <y>100</y>
      <width>81</width>
      <height>31</height>
@@ -105,7 +105,7 @@
   <widget class="QPushButton" name="startButton">
    <property name="geometry">
     <rect>
-     <x>140</x>
+     <x>170</x>
      <y>100</y>
      <width>81</width>
      <height>31</height>

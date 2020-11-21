@@ -11,7 +11,6 @@ int main(int argc, char *argv[])
     Q_INIT_RESOURCE(offlinedata);
     startGame();
     return a.exec();
-    delete engine;
 }
 
 void startGame(){

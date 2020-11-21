@@ -10,6 +10,7 @@
 #include "graphicitems/ratikkaitem.h"
 #include "movement.h"
 #include "ui/setupdialog.h"
+#include "statistics.h"
 #include "graphicitems/flyingsquirrel.h"
 
 
@@ -42,7 +43,7 @@ private:
                       };
 
     CourseSide::Logic gamelogic_;
-    std::shared_ptr<Interface::ICity>  cp_;
+    std::shared_ptr<Game::City>  cp_;
     MainWindow window_;
     SetupDialog setupDialog_;
     QTimer timer_;
@@ -54,11 +55,10 @@ private:
     void EndGame(endingCases endingCase);
     int speed_;
     courseConverter::cords startCords_;
-    const QList<Interface::Location> startLocations_ {Interface::Location(6825438,3328230),
+    const QList<Interface::Location> startLocations_ {Interface::Location(6826254,3327977),
                 Interface::Location(6825071,3326060),Interface::Location(6825017,3328246)};
+    QDateTime endTime;
     QList<FlyingSquirrel*> squirrels_;
-
-
 };
 }
 #endif // ENGINE_H

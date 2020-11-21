@@ -77,3 +77,13 @@ void MainWindow::setClock(QString str)
 {
     ui->lcdNumber->display(str);
 }
+
+void MainWindow::setScore(int score)
+{
+    ui->lcdNumber_2->display(score);
+}
+
+void MainWindow::setHiScore(int score)
+{
+    ui->lcdNumber_3->display(score);
+}

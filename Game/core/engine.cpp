@@ -3,39 +3,47 @@
 namespace Game {
 Engine::Engine(QObject *parent) : QObject(parent)
 {
-
 }
 
 void Engine::init(){
-
     connect(&setupDialog_, &SetupDialog::settings,
             this, &Engine::getSettings);
-    setupDialog_.exec();
+    if(!setupDialog_.exec()){
+        window_.close();
+        return;
+    }
 
     gamelogic_.setTime(9,0);
     gamelogic_.fileConfig();
-    cp_ = Interface::createGame();
-    gamelogic_.takeCity(cp_);    //ensin töytyy antaa city
+    std::shared_ptr<Interface::ICity> cp = Interface::createGame();
+    gamelogic_.takeCity(cp);    //ensin töytyy antaa city
+
+    cp_ = std::dynamic_pointer_cast<Game::City> (cp);
     gamelogic_.finalizeGameStart();
 
     QImage bg = QImage(":/offlinedata/offlinedata/kartta_iso_1095x592.png");
     window_.setPicture(bg);
     window_.show();
-    window_.setStops(cp_);
+    window_.setStops(cp);
+    window_.setHiScore(cp_->stats()->hiScore());
     connect(&timer_, &QTimer::timeout, this, &Engine::updatePositions);
-    timer_.start(1000/UPDATES_PER_SECOND);
     window_.addActor(&ratikka_);
     ratikka_.setCoords(startCords_.x,startCords_.y);
-    updatePositions();
     window_.installEvents(&moveKeysObject_);
     connect(&moveKeysObject_, &Movement::keyPressed,this, &Engine::updateKeys);
+    endTime = QDateTime::currentDateTime().addSecs(60);
+    timer_.start(1000/UPDATES_PER_SECOND);
 }
 
 void Engine::updatePositions(){
-    updateSquirrels();
-    QTime time = QTime::currentTime();
-    QString text = time.toString("hh:mm");
+	updateSquirrels();
+    auto between = QDateTime::currentDateTime().secsTo(endTime);
+    QString text = QString("%1:%2").arg(between/60).arg(between%60);
     window_.setClock(text);
+    if(between<=0){
+        EndGame(timeUp);
+        return;
+    }
     updateRatikka();
     std::vector<std::shared_ptr<Interface::IActor> > nearby = cp_->getNearbyActors(window_.getCenter());
     QMap<std::shared_ptr<Interface::IActor>,ImgActorItem*> newActors;
@@ -61,8 +69,8 @@ void Engine::updatePositions(){
               }
             else if (dynamic_cast<CourseSide::Passenger*>(i.get()) != nullptr){
                 PassangerUiItem* nActor =  new PassangerUiItem(output.x, output.y);
-                int x = randgen.bounded(-3,4);
-                int y = randgen.bounded(-3,4);
+                int x = randgen.bounded(-10,10);
+                int y = randgen.bounded(-10,10);
                 nActor->setOffset(x,y);
                 window_.addActor(nActor);
                 newActors[std::move(i)] =  nActor;
@@ -86,7 +94,8 @@ void Engine::updatePositions(){
                 // key is Interface::IActor
                 cp_->removeActor(i);
                 actors_.remove(i);
-                //TODO: add points for hitting busses and maybe passengers mayne test is subject is a nysse or passenger
+                cp_->stats()->addPoints();
+                window_.setScore(cp_->stats()->getPoints());
             }else {
                 EndGame(hitNysse);
                 return;
@@ -112,10 +121,15 @@ void Engine::getSettings(int difficulity, int startPoint)
 }
 
 void Engine::updateRatikka(){
-    bool a = keys_.contains(65);
-    bool s = keys_.contains(83);
-    bool w = keys_.contains(87);
-    bool d = keys_.contains(68);
+    auto oldCords = ratikka_.getCoords();
+    bool limitUp = oldCords.y <=0;
+    bool limitLeft = oldCords.x <=0;;
+    bool limitRight = oldCords.x >= courseConverter::map_width;
+    bool limitDown = oldCords.y >= courseConverter::map_height;
+    bool a = keys_.contains(65) && !limitLeft;
+    bool s = keys_.contains(83) && !limitDown;
+    bool w = keys_.contains(87) && !limitUp;
+    bool d = keys_.contains(68) && !limitRight;
     int x = 0;
     int y = 0;
     if(a){
@@ -159,21 +173,38 @@ void Engine::updateSquirrels()
 
 void Engine::EndGame(endingCases endingCase)
 {
+    qDebug("GAME END");
+    cp_->stats()->saveHiScore();
+    disconnect(&timer_, &QTimer::timeout, this, &Engine::updatePositions);
+
     /*if(!running){
         return;
     }
     running = false;*/
     timer_.stop();
-    dynamic_cast<City*>(cp_.get())->endGame();
+    cp_->endGame();
+    QString text("%1\n\nPeli ohi!\nSait %2 pistettä!");
     switch (endingCase) {
-        case hitNysse:{
-            QMessageBox msgBox;
-            msgBox.setText("Nysse ajoi päällesi :( \n\nPeli ohi!");
-            msgBox.exec();
-        }break;
-        default:
+    case hitNysse:
+    {
+        text = text.arg("Nysse ajoi päällesi :(");
+    }
+        break;
+    case timeUp:{
+        text = text.arg("Aika loppui :(");
+    }
+    case hitAnimal:{
+        text = text.arg("Törmäsit liito-oravaan. Olet ihmishirviö >:(");
+    }
+        break;
+    default:
             break;
     }
+
+    QMessageBox msgBox;
+    msgBox.setText(text.arg(cp_->stats()->getPoints()));
+    msgBox.exec();
+
     emit gameEnded();
 }
 }
