@@ -7,7 +7,7 @@ Engine::Engine(QObject *parent) : QObject(parent)
 }
 
 void Engine::init(){
-
+    window_.setHiScore(HiScore::readScore());
     connect(&setupDialog_, &SetupDialog::settings,
             this, &Engine::getSettings);
     setupDialog_.exec();
@@ -144,6 +144,7 @@ void Engine::updateRatikka(){
 void Engine::EndGame(endingCases endingCase)
 {
     qDebug("GAME END");
+    HiScore::writeScore(stats_.getPoints());
     disconnect(&timer_, &QTimer::timeout, this, &Engine::updatePositions);
 
     /*if(!running){
@@ -155,9 +156,13 @@ void Engine::EndGame(endingCases endingCase)
     switch (endingCase) {
         case hitNysse:{
             QMessageBox msgBox;
-            msgBox.setText("Nysse ajoi päällesi :( \n\nPeli ohi!");
+            msgBox.setText(QString("Nysse ajoi päällesi :( \n\nPeli ohi!\nSait %1 pistettä!").arg(stats_.getPoints()));
             msgBox.exec();
         }break;
+    case timeUp:{
+        QMessageBox msgBox;
+        msgBox.setText(QString("Aika loppui :( \n\nPeli ohi! \nSait %1 pistettä!").arg(stats_.getPoints()));
+        msgBox.exec();}break;
         default:
             break;
     }

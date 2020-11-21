@@ -11,6 +11,7 @@ SOURCES += \
     core/courseconverter.cpp \
     core/creategame.cc \
     core/engine.cpp \
+    core/hiscore.cpp \
     core/movement.cpp \
     core/statistics.cpp \
     ui/mainwindow.cpp \
@@ -53,6 +54,7 @@ HEADERS += \
     core/city.hh \
     core/courseconverter.h \
     core/engine.h \
+    core/hiscore.h \
     core/movement.h \
     core/statistics.h \
     ui/mainwindow.h \

@@ -11,6 +11,7 @@
 #include "movement.h"
 #include "ui/setupdialog.h"
 #include "statistics.h"
+#include "hiscore.h"
 
 #define UPDATES_PER_SECOND 30
 namespace Game {

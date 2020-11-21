@@ -54,6 +54,7 @@ public slots:
     void addActor(QGraphicsItem *actor);
     void setClock(QString str);
     void setScore(int score);
+    void setHiScore(int score);
 
 
 private:
