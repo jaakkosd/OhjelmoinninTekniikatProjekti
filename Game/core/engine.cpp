@@ -111,10 +111,15 @@ void Engine::getSettings(int difficulity, int startPoint)
 }
 
 void Engine::updateRatikka(){
-    bool a = keys_.contains(65);
-    bool s = keys_.contains(83);
-    bool w = keys_.contains(87);
-    bool d = keys_.contains(68);
+    auto oldCords = ratikka_.getCoords();
+    bool limitUp = oldCords.y <=0;
+    bool limitLeft = oldCords.x <=0;;
+    bool limitRight = oldCords.x >= courseConverter::map_width;
+    bool limitDown = oldCords.y >= courseConverter::map_height;
+    bool a = keys_.contains(65) && !limitLeft;
+    bool s = keys_.contains(83) && !limitDown;
+    bool w = keys_.contains(87) && !limitUp;
+    bool d = keys_.contains(68) && !limitRight;
     int x = 0;
     int y = 0;
     if(a){
