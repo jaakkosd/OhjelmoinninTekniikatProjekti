@@ -10,6 +10,7 @@
 #include "graphicitems/ratikkaitem.h"
 #include "movement.h"
 #include "ui/setupdialog.h"
+#include "statistics.h"
 
 #define UPDATES_PER_SECOND 30
 namespace Game {
@@ -53,6 +54,7 @@ private:
     const QList<Interface::Location> startLocations_ {Interface::Location(6825438,3328230),
                 Interface::Location(6825071,3326060),Interface::Location(6825017,3328246)};
     QDateTime endTime;
+    Statistics stats_;
 };
 }
 #endif // ENGINE_H

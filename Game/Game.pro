@@ -12,6 +12,7 @@ SOURCES += \
     core/creategame.cc \
     core/engine.cpp \
     core/movement.cpp \
+    core/statistics.cpp \
     ui/mainwindow.cpp \
     ui/rulesdialog.cpp \
     ui/setupdialog.cpp \
@@ -53,6 +54,7 @@ HEADERS += \
     core/courseconverter.h \
     core/engine.h \
     core/movement.h \
+    core/statistics.h \
     ui/mainwindow.h \
     ui/rulesdialog.h \
     ui/setupdialog.h \

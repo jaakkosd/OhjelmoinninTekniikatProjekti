@@ -53,6 +53,7 @@ public:
 public slots:
     void addActor(QGraphicsItem *actor);
     void setClock(QString str);
+    void setScore(int score);
 
 
 private:

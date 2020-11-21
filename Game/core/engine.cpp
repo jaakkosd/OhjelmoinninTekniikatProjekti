@@ -89,7 +89,8 @@ void Engine::updatePositions(){
                 // key is Interface::IActor
                 cp_->removeActor(i);
                 actors_.remove(i);
-                //TODO: add points for hitting busses and maybe passengers mayne test is subject is a nysse or passenger
+                stats_.addPoints();
+                window_.setScore(stats_.getPoints());
             }else {
                 EndGame(hitNysse);
                 return;
