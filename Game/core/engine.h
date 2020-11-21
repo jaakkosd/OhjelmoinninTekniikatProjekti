@@ -31,9 +31,10 @@ protected slots:
     void updatePositions();
 private slots:
     void updateRatikka();
-    void updateSquirrel();
+    void updateSquirrels();
     void updateKeys(QSet<int> keys);
 private:
+    const static int squirrelSpeed = 8;
     bool running = true;
     enum endingCases  { timeUp,
                         hitNysse,
@@ -46,7 +47,6 @@ private:
     SetupDialog setupDialog_;
     QTimer timer_;
     Ratikkaitem ratikka_;
-    FlyingSquirrel squirrel_;
     Movement moveKeysObject_;
     QSet<int> keys_;
     QMap<std::shared_ptr<Interface::IActor>,ImgActorItem*> actors_;
@@ -56,8 +56,7 @@ private:
     courseConverter::cords startCords_;
     const QList<Interface::Location> startLocations_ {Interface::Location(6825438,3328230),
                 Interface::Location(6825071,3326060),Interface::Location(6825017,3328246)};
-    bool squirrelTime_ = false;
-    std::vector<std::shared_ptr<FlyingSquirrel>> squirrels_;
+    QList<FlyingSquirrel*> squirrels_;
 
 
 };

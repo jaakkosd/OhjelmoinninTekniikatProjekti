@@ -8,16 +8,13 @@ FlyingSquirrel::FlyingSquirrel(int x, int y):ImgActorItem(x,y)
     setOffset(-30,-30);
     setScale(1);
     setPixmap(squirrelUp);
-    x_ = rand() % 1065;
+    setRotation(180);
+    //x_ = rand() % 1065;
 }
 
-int FlyingSquirrel::giveX()
-{
-    return x_;
+QPair<int,int> FlyingSquirrel::move(int x, int y){
+    moveTo(x_+x,y_+y);
+    return QPair<int,int>(x_,y_);
 }
 
-int FlyingSquirrel::giveY()
-{
-    return y_;
-}
 }

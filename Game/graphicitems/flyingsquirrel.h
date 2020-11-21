@@ -7,13 +7,12 @@ namespace Game {
 class FlyingSquirrel : public ImgActorItem
 {
 public:
-    FlyingSquirrel(int x=-30, int y=-30);
-    int giveX();
-    int giveY();
+    FlyingSquirrel(int x, int y);
 
+public slots:
+    QPair<int, int> move(int x, int y);
 private:
     QPixmap squirrelUp;
-    int x_;
 };
 }
 
