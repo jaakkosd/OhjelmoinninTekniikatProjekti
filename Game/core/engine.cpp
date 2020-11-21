@@ -23,18 +23,22 @@ void Engine::init(){
     window_.show();
     window_.setStops(cp_);
     connect(&timer_, &QTimer::timeout, this, &Engine::updatePositions);
-    timer_.start(1000/UPDATES_PER_SECOND);
     window_.addRatikka(&ratikka_);
     ratikka_.setCoords(startCords_.x,startCords_.y);
-    updatePositions();
     window_.installEvents(&moveKeysObject_);
     connect(&moveKeysObject_, &Movement::keyPressed,this, &Engine::updateKeys);
+    endTime = QDateTime::currentDateTime().addSecs(60);
+    timer_.start(1000/UPDATES_PER_SECOND);
 }
 
 void Engine::updatePositions(){
-    QTime time = QTime::currentTime();
-    QString text = time.toString("hh:mm");
+    auto between = QDateTime::currentDateTime().secsTo(endTime);
+    QString text = QString("%1:%2").arg(between/60).arg(between%60);
     window_.setClock(text);
+    if(between<=0){
+        EndGame(timeUp);
+        return;
+    }
     updateRatikka();
     std::vector<std::shared_ptr<Interface::IActor> > nearby = cp_->getNearbyActors(window_.getCenter());
     QMap<std::shared_ptr<Interface::IActor>,ImgActorItem*> newActors;
@@ -138,6 +142,9 @@ void Engine::updateRatikka(){
 
 void Engine::EndGame(endingCases endingCase)
 {
+    qDebug("GAME END");
+    disconnect(&timer_, &QTimer::timeout, this, &Engine::updatePositions);
+
     /*if(!running){
         return;
     }
