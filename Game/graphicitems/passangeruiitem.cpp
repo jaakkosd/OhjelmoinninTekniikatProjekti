@@ -3,7 +3,7 @@ namespace Game {
 PassangerUiItem::PassangerUiItem(int x, int y):ImgActorItem( x,  y)
 {
 
-    assert(pixmap_.load(":/img/passenger.png")); //assert that png file is loaded
+    assert(pixmap_.load(":/img/resources/passenger.png")); //assert that png file is loaded
     setOffset(-12,-46);
     setScale(0.5);
 

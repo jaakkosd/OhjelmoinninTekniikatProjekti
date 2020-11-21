@@ -87,7 +87,8 @@ void Engine::updatePositions(){
                 actors_.remove(i);
                 //TODO: add points for hitting busses and maybe passengers mayne test is subject is a nysse or passenger
             }else {
-                EndGame();
+                EndGame(hitNysse);
+                return;
 
             }
         }
@@ -130,13 +131,23 @@ void Engine::updateRatikka(){
     window_.scrollMap(cords.first, cords.second);
 }
 
-void Engine::EndGame()
+void Engine::EndGame(endingCases endingCase)
 {
+    /*if(!running){
+        return;
+    }
+    running = false;*/
     timer_.stop();
     dynamic_cast<City*>(cp_.get())->endGame();
-    QMessageBox msgBox;
-    msgBox.setText("The document has been modified.");
-    msgBox.exec();
+    switch (endingCase) {
+        case hitNysse:{
+            QMessageBox msgBox;
+            msgBox.setText("Nysse ajoi päällesi :( \n\nPeli ohi!");
+            msgBox.exec();
+        }break;
+        default:
+            break;
+    }
     emit gameEnded();
 }
 }

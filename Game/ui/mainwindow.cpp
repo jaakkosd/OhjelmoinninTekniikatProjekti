@@ -1,4 +1,4 @@
-#include "graphic/mainwindow.h"
+#include "ui/mainwindow.h"
 #include "ui_mainwindow.h"
 
 #define WINDOW_SCALE 1.2
@@ -70,8 +70,8 @@ Interface::Location MainWindow::getCenter()
 
 void MainWindow::scrollMap(int x, int y)
 {
-    ui->graphicsView->horizontalScrollBar()->setValue(x-ui->graphicsView->width()/2);
-    ui->graphicsView->verticalScrollBar()->setValue(y-ui->graphicsView->height()/2);
+    ui->graphicsView->horizontalScrollBar()->setValue(x*WINDOW_SCALE-ui->graphicsView->width()/2);
+    ui->graphicsView->verticalScrollBar()->setValue(y*WINDOW_SCALE-ui->graphicsView->height()/2);
 }
 
 void MainWindow::installEvents(QObject *handler)

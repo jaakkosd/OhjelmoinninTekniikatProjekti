@@ -15,7 +15,7 @@ int main(int argc, char *argv[])
 }
 
 void startGame(){
-    delete engine;
+    engine->deleteLater();
     engine = new Game::Engine;
     engine->init();
     QObject::connect(engine, &Game::Engine::gameEnded,&startGame);
