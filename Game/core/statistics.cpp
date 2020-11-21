@@ -38,6 +38,9 @@ int Statistics::getPoints()
 }
 void Statistics::saveHiScore()
 {
+    if(hiScore_ > points_){
+        return;
+    }
     QFile file(QDir::currentPath()+"\\hiscore.txt");
     if (!file.open(QIODevice::WriteOnly))
     {
@@ -57,6 +60,11 @@ int Statistics::readHiScore(){
     QByteArray line = file.readLine();
     file.close();
     return line.toInt();
+}
+
+int Statistics::hiScore()
+{
+    return hiScore_;
 }
 
 

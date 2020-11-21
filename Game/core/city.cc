@@ -20,10 +20,18 @@ void City::addStop(std::shared_ptr<Interface::IStop> newstop) {
 void City::startGame(){
 
 };
-void City::addActor(std::shared_ptr<Interface::IActor> newactor) {//if (dynamic_cast<CourseSide::Nysse*>(i.get()) != nullptr){
+void City::addActor(std::shared_ptr<Interface::IActor> newactor) {
+    if (dynamic_cast<CourseSide::Nysse*>(newactor.get()) != nullptr){
+        stats_.newNysse();
+    }else{
+        stats_.morePassengers(1);
+    }
     actorList.append(newactor);
 } ;
 void City::removeActor(std::shared_ptr<Interface::IActor> actor) {
+    if (dynamic_cast<CourseSide::Nysse*>(actor.get()) != nullptr){
+        stats_.nysseRemoved();
+    }
     actorList.removeAll(actor);
     actor->remove();
 } ;
@@ -53,5 +61,11 @@ bool City::isGameOver() const {
 void City::endGame()
 {
     gameEnded_ = true;
+}
+
+Statistics *City::stats()
+{
+    return &stats_;
 };
 }
+

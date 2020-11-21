@@ -3,25 +3,26 @@
 namespace Game {
 Engine::Engine(QObject *parent) : QObject(parent)
 {
-
 }
 
 void Engine::init(){
-    window_.setHiScore(stats_.readHiScore());
     connect(&setupDialog_, &SetupDialog::settings,
             this, &Engine::getSettings);
     setupDialog_.exec();
 
     gamelogic_.setTime(9,0);
     gamelogic_.fileConfig();
-    cp_ = Interface::createGame();
-    gamelogic_.takeCity(cp_);    //ensin töytyy antaa city
+    std::shared_ptr<Interface::ICity> cp = Interface::createGame();
+    gamelogic_.takeCity(cp);    //ensin töytyy antaa city
+
+    cp_ = std::dynamic_pointer_cast<Game::City> (cp);
     gamelogic_.finalizeGameStart();
 
     QImage bg = QImage(":/offlinedata/offlinedata/kartta_iso_1095x592.png");
     window_.setPicture(bg);
     window_.show();
-    window_.setStops(cp_);
+    window_.setStops(cp);
+    window_.setHiScore(cp_->stats()->hiScore());
     connect(&timer_, &QTimer::timeout, this, &Engine::updatePositions);
     window_.addRatikka(&ratikka_);
     ratikka_.setCoords(startCords_.x,startCords_.y);
@@ -64,8 +65,8 @@ void Engine::updatePositions(){
               }
             else if (dynamic_cast<CourseSide::Passenger*>(i.get()) != nullptr){
                 PassangerUiItem* nActor =  new PassangerUiItem(output.x, output.y);
-                int x = randgen.bounded(-3,4);
-                int y = randgen.bounded(-3,4);
+                int x = randgen.bounded(-10,10);
+                int y = randgen.bounded(-10,10);
                 nActor->setOffset(x,y);
                 window_.addActor(nActor);
                 newActors[std::move(i)] =  nActor;
@@ -89,8 +90,8 @@ void Engine::updatePositions(){
                 // key is Interface::IActor
                 cp_->removeActor(i);
                 actors_.remove(i);
-                stats_.addPoints();
-                window_.setScore(stats_.getPoints());
+                cp_->stats()->addPoints();
+                window_.setScore(cp_->stats()->getPoints());
             }else {
                 EndGame(hitNysse);
                 return;
@@ -144,7 +145,7 @@ void Engine::updateRatikka(){
 void Engine::EndGame(endingCases endingCase)
 {
     qDebug("GAME END");
-    stats_.saveHiScore();
+    cp_->stats()->saveHiScore();
     disconnect(&timer_, &QTimer::timeout, this, &Engine::updatePositions);
 
     /*if(!running){
@@ -152,18 +153,18 @@ void Engine::EndGame(endingCases endingCase)
     }
     running = false;*/
     timer_.stop();
-    dynamic_cast<City*>(cp_.get())->endGame();
+    cp_->endGame();
     switch (endingCase) {
     case hitNysse:
     {
             QMessageBox msgBox;
-            msgBox.setText(QString("Nysse ajoi päällesi :( \n\nPeli ohi!\nSait %1 pistettä!").arg(stats_.getPoints()));
+            msgBox.setText(QString("Nysse ajoi päällesi :( \n\nPeli ohi!\nSait %1 pistettä!").arg(cp_->stats()->getPoints()));
             msgBox.exec();
     }
         break;
     case timeUp:{
         QMessageBox msgBox;
-        msgBox.setText(QString("Aika loppui :( \n\nPeli ohi! \nSait %1 pistettä!").arg(stats_.getPoints()));
+        msgBox.setText(QString("Aika loppui :( \n\nPeli ohi! \nSait %1 pistettä!").arg(cp_->stats()->getPoints()));
         msgBox.exec();
     }
         break;

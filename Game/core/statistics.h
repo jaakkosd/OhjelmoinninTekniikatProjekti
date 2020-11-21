@@ -59,11 +59,13 @@ public:
     int getPoints();
 
     void saveHiScore();
-    int readHiScore();
+    int hiScore();
 private:
+    int readHiScore();
     int points_;
     int nysses_ = 0;
     int passangers_ = 0;
+    int hiScore_ = readHiScore();
 };
 }
 #endif // STATISTICS_H

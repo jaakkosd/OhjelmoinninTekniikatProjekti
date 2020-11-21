@@ -39,7 +39,7 @@ private:
                       };
 
     CourseSide::Logic gamelogic_;
-    std::shared_ptr<Interface::ICity>  cp_;
+    std::shared_ptr<Game::City>  cp_;
     MainWindow window_;
     SetupDialog setupDialog_;
     QTimer timer_;
@@ -54,7 +54,6 @@ private:
     const QList<Interface::Location> startLocations_ {Interface::Location(6826254,3327977),
                 Interface::Location(6825071,3326060),Interface::Location(6825017,3328246)};
     QDateTime endTime;
-    Statistics stats_;
 };
 }
 #endif // ENGINE_H

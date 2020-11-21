@@ -12,8 +12,8 @@ public:
     courseConverter::cords getCoords();
     virtual void moveTo(int x, int y);
 protected:
-    int x_;
-    int y_;
+    int x_=0;
+    int y_=0;
 };
 }
 
