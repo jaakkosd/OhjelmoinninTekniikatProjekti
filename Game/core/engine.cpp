@@ -24,7 +24,7 @@ void Engine::init(){
     window_.setStops(cp_);
     connect(&timer_, &QTimer::timeout, this, &Engine::updatePositions);
     timer_.start(1000/UPDATES_PER_SECOND);
-    window_.addRatikka(&ratikka_);
+    window_.addActor(&ratikka_);
     ratikka_.setCoords(startCords_.x,startCords_.y);
     updatePositions();
     window_.installEvents(&moveKeysObject_);
@@ -32,6 +32,7 @@ void Engine::init(){
 }
 
 void Engine::updatePositions(){
+    updateSquirrels();
     QTime time = QTime::currentTime();
     QString text = time.toString("hh:mm");
     window_.setClock(text);
@@ -129,6 +130,31 @@ void Engine::updateRatikka(){
     }
     auto cords = ratikka_.move(x*2,y*2);
     window_.scrollMap(cords.first, cords.second);
+}
+
+void Engine::updateSquirrels()
+{
+    int width = 1095;
+    int height = 600;
+    for(FlyingSquirrel *animal: squirrels_){
+        animal->move(0,squirrelSpeed);
+        if(animal->collidesWithItem(&ratikka_)){
+            EndGame(hitAnimal);
+            return;
+        }
+        if(animal->getCoords().y>height){
+            animal->hide();
+            squirrels_.removeAll(animal);
+            delete animal;
+        }
+    }
+    if(randgen.bounded(1000)<100){
+        qDebug() << "spawn squirrle";
+        int x = randgen.bounded(30,width);
+        FlyingSquirrel* sq = new FlyingSquirrel(x,-30);
+        window_.addActor(sq);
+        squirrels_.insert(0,std::move(sq));
+    }
 }
 
 void Engine::EndGame(endingCases endingCase)
