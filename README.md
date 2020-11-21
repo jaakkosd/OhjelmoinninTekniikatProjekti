@@ -2,7 +2,7 @@
 
 - [x] Harjoitustyön työnjako
 
-- [ ] Own namespace
+- [X] Own namespace
 
 - [x] Draw passagers
 
@@ -16,9 +16,9 @@
 
 - [x] Add setup window <mark>(Jakko)</mark>
 
-- [ ] Add statistic system 
+- [X] Add statistic system 
 
-- [ ] A second random unic gameobject ( maybe something to not to hit or the tail of our snake)
+- [X] A second random unic gameobject ( maybe something to not to hit or the tail of our snake)
 
 - [ ] Add unit tests to Statistics - class ( it counts the points)
 
