@@ -162,8 +162,7 @@ void Engine::updateSquirrels()
             delete animal;
         }
     }
-    if(randgen.bounded(1000)<100){
-        qDebug() << "spawn squirrle";
+    if(randgen.bounded(1000)<10){
         int x = randgen.bounded(30,width);
         FlyingSquirrel* sq = new FlyingSquirrel(x,-30);
         window_.addActor(sq);
@@ -173,7 +172,6 @@ void Engine::updateSquirrels()
 
 void Engine::EndGame(endingCases endingCase)
 {
-    qDebug("GAME END");
     cp_->stats()->saveHiScore();
     disconnect(&timer_, &QTimer::timeout, this, &Engine::updatePositions);
 
@@ -183,18 +181,19 @@ void Engine::EndGame(endingCases endingCase)
     running = false;*/
     timer_.stop();
     cp_->endGame();
-    QString text("%1\n\nPeli ohi!\nSait %2 pistettä!");
+    QString text("%1\n\nGame over!\nYou got %2 points!");
     switch (endingCase) {
     case hitNysse:
     {
-        text = text.arg("Nysse ajoi päällesi :(");
+        text = text.arg("You collide with Nysse :(");
     }
         break;
     case timeUp:{
-        text = text.arg("Aika loppui :(");
+        text = text.arg("Time is up!");
+        break;
     }
     case hitAnimal:{
-        text = text.arg("Törmäsit liito-oravaan. Olet ihmishirviö >:(");
+        text = text.arg("You collide with flying squirrel >:(");
     }
         break;
     default:
@@ -202,6 +201,7 @@ void Engine::EndGame(endingCases endingCase)
     }
 
     QMessageBox msgBox;
+    msgBox.setStandardButtons(QMessageBox::Retry);
     msgBox.setText(text.arg(cp_->stats()->getPoints()));
     msgBox.exec();
 

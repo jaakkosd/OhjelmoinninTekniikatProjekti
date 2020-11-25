@@ -22,7 +22,6 @@ bool Movement::eventFilter(QObject *obj, QEvent *event)
     } else if( event->type() == QEvent::GraphicsSceneWheel
                ||event->type() == QEvent::Wheel) {
         // standard event processing
-        qDebug("Ate mouse event");
         return true;
     } else {
         // standard event processing
