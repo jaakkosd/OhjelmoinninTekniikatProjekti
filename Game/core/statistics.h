@@ -13,7 +13,7 @@ public:
       * @brief Default constructor for the Interface.(For documentation).
       * @post Scores are reset by default.
       */
-    Statistics();
+    Statistics(QString filename = "hiscore.txt");
 
     /**
       * @brief Interface has default virtual destructor (base class needs to have a virtual destructor).
@@ -55,17 +55,20 @@ public:
      * @post Exception guarantee: ryys
      */
 
-    void addPoints();
-    int getPoints();
+    void addPoints(int points=1);
+    int Points();
 
+    void readHiScore();
     void saveHiScore();
     int hiScore();
+    int nysses();
+    int passangers();
 private:
-    int readHiScore();
-    int points_;
+    int points_ = 0;
     int nysses_ = 0;
     int passangers_ = 0;
-    int hiScore_ = readHiScore();
+    int hiScore_ = 0;
+    QString filename_;
 };
 }
 #endif // STATISTICS_H

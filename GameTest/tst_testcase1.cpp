@@ -1,7 +1,5 @@
-#include <QtTest>
-// add necessary includes here
-#include "../Game/core/statistics.h"
-
+#include <QtTest/QtTest>
+#include "Game/core/statistics.h"
 class TestCase1 : public QObject
 {
     Q_OBJECT
@@ -11,9 +9,9 @@ public:
     ~TestCase1();
 
 private slots:
-    void test_case1();
-    void test_case2();
-    void test_case3();
+    void test_points();
+    void test_nysses();
+    void test_passangers();
 
 };
 
@@ -28,24 +26,35 @@ TestCase1::~TestCase1()
 
 }
 
-void TestCase1::test_case1()
+void TestCase1::test_points()
 {
-    QString str = "Hella";
-    QCOMPARE(str.toUpper(), QString("HELLO"));
+    Game::Statistics stats;
+    stats.addPoints(100);
+    stats.addPoints(100);
+    QCOMPARE(stats.Points(), 200);
+    QVERIFY(stats.hiScore()>=0);
+}
+
+void TestCase1::test_nysses()
+{
+    Game::Statistics stats;
+    for(int i = 0 ; i<100;i++){
+        stats.newNysse();
+    }
+    stats.nysseRemoved();
+    stats.nysseLeft();
+    QCOMPARE(stats.nysses(),98);
 
 }
 
-void TestCase1::test_case2()
+void TestCase1::test_passangers()
 {
-    QString str = "Hella";
-    QCOMPARE(str.toUpper(), QString("HELLO"));
+    Game::Statistics stats;
+    for(int i = 0 ; i<100;i++){
+        stats.morePassengers(10);
+    }
 
-}
-
-void TestCase1::test_case3()
-{
-    QString str = "Hella";
-    QCOMPARE(str.toUpper(), QString("HELLO"));
+    QCOMPARE(stats.passangers(),1000);
 
 }
 

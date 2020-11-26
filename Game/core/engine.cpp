@@ -95,7 +95,7 @@ void Engine::updatePositions(){
                 cp_->removeActor(i);
                 actors_.remove(i);
                 cp_->stats()->addPoints();
-                window_.setScore(cp_->stats()->getPoints());
+                window_.setScore(cp_->stats()->Points());
             }else {
                 EndGame(hitNysse);
                 return;
@@ -202,7 +202,7 @@ void Engine::EndGame(endingCases endingCase)
 
     QMessageBox msgBox;
     msgBox.setStandardButtons(QMessageBox::Retry);
-    msgBox.setText(text.arg(cp_->stats()->getPoints()));
+    msgBox.setText(text.arg(cp_->stats()->Points()));
     msgBox.exec();
 
     emit gameEnded();
