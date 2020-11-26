@@ -2,9 +2,10 @@
 #include "QDebug"
 
 namespace Game {
-Statistics::Statistics()
+Statistics::Statistics(QString filename)
 {
-    points_ = 0;
+    filename_ = filename;
+    readHiScore();
 }
 
 void Statistics::morePassengers(int num)
@@ -27,12 +28,12 @@ void Statistics::nysseLeft()
      nysses_ -= 1;
 }
 
-void Statistics::addPoints()
+void Statistics::addPoints(int points)
 {
-    points_ += 1;
+    points_ += points;
 }
 
-int Statistics::getPoints()
+int Statistics::Points()
 {
     return points_;
 }
@@ -41,7 +42,7 @@ void Statistics::saveHiScore()
     if(hiScore_ > points_){
         return;
     }
-    QFile file(QDir::currentPath()+"\\hiscore.txt");
+    QFile file(QDir::currentPath()+"\\"+filename_);
     if (!file.open(QIODevice::WriteOnly))
     {
         qDebug("Error in writing file");
@@ -51,15 +52,15 @@ void Statistics::saveHiScore()
     file.close();
 }
 
-int Statistics::readHiScore(){
-    QFile file(QDir::currentPath()+"\\hiscore.txt");
+void Statistics::readHiScore(){
+    QFile file(QDir::currentPath()+"\\"+filename_);
     if (!file.open(QIODevice::ReadOnly | QIODevice::Text)){
         qDebug("Error in reading file");
-        return 0;
+        hiScore_ = 0;
     }
     QByteArray line = file.readLine();
     file.close();
-    return line.toInt();
+    hiScore_ = line.toInt();
 }
 
 int Statistics::hiScore()
@@ -67,6 +68,14 @@ int Statistics::hiScore()
     return hiScore_;
 }
 
+int Statistics::nysses()
+{
+    return nysses_;
+}
 
+int Statistics::passangers()
+{
+    return passangers_;
+}
 
 }
