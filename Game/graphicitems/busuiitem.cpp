@@ -29,7 +29,7 @@ void BusUiItem::moveTo(int x,int y)
         }else if(dangle < -180){
             dangle += 360;
         }
-        angle_ -= dangle/15;
+        angle_ -= dangle/25;
         bool change = false;
         if((angle_ >0 &&  angle_< 180) || angle_< -180 ){
             change = true;
