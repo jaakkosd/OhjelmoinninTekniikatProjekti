@@ -2,7 +2,7 @@
 #define COURSECONVERTER_H
 #include <QPair>
 namespace Game {
-class courseConverter
+class CourseConverter
 {
 public:
     struct cords{

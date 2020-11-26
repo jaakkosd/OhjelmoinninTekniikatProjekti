@@ -48,9 +48,9 @@ void Engine::updatePositions(){
     std::vector<std::shared_ptr<Interface::IActor> > nearby = cp_->getNearbyActors(window_.getCenter());
     QMap<std::shared_ptr<Interface::IActor>,ImgActorItem*> newActors;
     for(auto &i : nearby){
-        courseConverter::cords input {i.get()->giveLocation().giveX(),
+        CourseConverter::cords input {i.get()->giveLocation().giveX(),
                               i.get()->giveLocation().giveY()} ;
-        auto output = courseConverter::mapToUi(input);
+        auto output = CourseConverter::mapToUi(input);
         auto iterator  = actors_.find(i);
         if (iterator != actors_.end() && iterator.key() == i) {
             ImgActorItem* oldActorItem = actors_.take(i);
@@ -116,7 +116,7 @@ void Engine::getSettings(int difficulity, int startPoint)
     if ( startLocations_.size() < startPoint || startPoint < 0){
        startPoint = 0;}
     auto loc = startLocations_[startPoint];
-    startCords_ = courseConverter::mapToUi(courseConverter::cords{loc.giveX(),loc.giveY()});
+    startCords_ = CourseConverter::mapToUi(CourseConverter::cords{loc.giveX(),loc.giveY()});
 
 }
 
@@ -124,8 +124,8 @@ void Engine::updateRatikka(){
     auto oldCords = ratikka_.getCoords();
     bool limitUp = oldCords.y <=0;
     bool limitLeft = oldCords.x <=0;;
-    bool limitRight = oldCords.x >= courseConverter::map_width;
-    bool limitDown = oldCords.y >= courseConverter::map_height;
+    bool limitRight = oldCords.x >= CourseConverter::map_width;
+    bool limitDown = oldCords.y >= CourseConverter::map_height;
     bool a = keys_.contains(65) && !limitLeft;
     bool s = keys_.contains(83) && !limitDown;
     bool w = keys_.contains(87) && !limitUp;

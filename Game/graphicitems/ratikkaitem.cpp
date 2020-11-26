@@ -1,7 +1,7 @@
 #include "graphicitems/ratikkaitem.h"
 #include <QDebug>
 namespace Game {
-Ratikkaitem::Ratikkaitem(int x, int y):ImgActorItem( x,  y)
+RatikkaItem::RatikkaItem(int x, int y):ImgActorItem( x,  y)
 {
     assert(ratikkaleft.load(":/img/resources/ratikkaleft.png")); //assert that png file is loaded
     assert(ratikkaright.load(":/img/resources/ratikkaright.png")); //assert that png file is loaded
@@ -10,7 +10,7 @@ Ratikkaitem::Ratikkaitem(int x, int y):ImgActorItem( x,  y)
     setPixmap(ratikkaright);
 }
 
-QPair<int,int> Ratikkaitem::move(int x, int y){
+QPair<int,int> RatikkaItem::move(int x, int y){
     if ( x < 0 ){
         setPixmap(ratikkaleft);
     } else if ( x > 0) {

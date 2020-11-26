@@ -43,8 +43,8 @@ void MainWindow::setStops(std::shared_ptr<Interface::ICity>  cp_)
    if (cityPointer){
        for (auto stop : cityPointer->stopList){
                Interface::Location loc = stop->getLocation();
-               Game::courseConverter::cords mapcords {loc.giveX(), loc.giveY()};
-               Game::courseConverter::cords uicords = Game::courseConverter::mapToUi(mapcords);
+               Game::CourseConverter::cords mapcords {loc.giveX(), loc.giveY()};
+               Game::CourseConverter::cords uicords = Game::CourseConverter::mapToUi(mapcords);
                Game::StopUiItem* stoppi =  new Game::StopUiItem(uicords.x, uicords.y);
                map.addItem(stoppi);
        }
@@ -53,9 +53,9 @@ void MainWindow::setStops(std::shared_ptr<Interface::ICity>  cp_)
 
 Interface::Location MainWindow::getCenter()
 {
-    Game::courseConverter::cords input {static_cast<int>((ui->graphicsView->horizontalScrollBar()->value() + ui->graphicsView->width()/2)/WINDOW_SCALE),
+    Game::CourseConverter::cords input {static_cast<int>((ui->graphicsView->horizontalScrollBar()->value() + ui->graphicsView->width()/2)/WINDOW_SCALE),
                           static_cast<int>((ui->graphicsView->verticalScrollBar()->value() + ui->graphicsView->height()/2)/WINDOW_SCALE)} ;
-    auto output = Game::courseConverter::uiToMap(input);
+    auto output = Game::CourseConverter::uiToMap(input);
     auto loc = Interface::Location();
     loc.setXY(output.x,output.y);
     return loc;

@@ -15,9 +15,9 @@ void ImgActorItem::setCoords(int x, int y)
     setZValue(y_);
 }
 
-courseConverter::cords ImgActorItem::getCoords()
+CourseConverter::cords ImgActorItem::getCoords()
 {
-    return courseConverter::cords {x_, y_};
+    return CourseConverter::cords {x_, y_};
 }
 
 void ImgActorItem::moveTo(int x, int y)

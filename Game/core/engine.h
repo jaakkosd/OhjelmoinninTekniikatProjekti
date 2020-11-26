@@ -47,14 +47,14 @@ private:
     MainWindow window_;
     SetupDialog setupDialog_;
     QTimer timer_;
-    Ratikkaitem ratikka_;
+    RatikkaItem ratikka_;
     Movement moveKeysObject_;
     QSet<int> keys_;
     QMap<std::shared_ptr<Interface::IActor>,ImgActorItem*> actors_;
     QRandomGenerator randgen = QRandomGenerator(QTime::currentTime().msecsSinceStartOfDay());
     void EndGame(endingCases endingCase);
     int speed_;
-    courseConverter::cords startCords_;
+    CourseConverter::cords startCords_;
     const QList<Interface::Location> startLocations_ {Interface::Location(6826254,3327977),
                 Interface::Location(6825071,3326060),Interface::Location(6825017,3328246)};
     QDateTime endTime;

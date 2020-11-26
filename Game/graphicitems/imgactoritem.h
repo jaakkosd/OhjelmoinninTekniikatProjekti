@@ -9,7 +9,7 @@ class ImgActorItem : public QGraphicsPixmapItem
 public:
     ImgActorItem(int x, int y);
     void setCoords(int x, int y);
-    courseConverter::cords getCoords();
+    CourseConverter::cords getCoords();
     virtual void moveTo(int x, int y);
 protected:
     int x_=0;
