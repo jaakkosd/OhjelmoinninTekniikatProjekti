@@ -77,7 +77,7 @@ void Engine::updatePositions(){
             }
         }
     }
-    for(auto j: actors_){
+    for(auto &j: actors_){
         j->hide();
         delete j;
     }
@@ -85,7 +85,7 @@ void Engine::updatePositions(){
     actors_ = std::move(newActors);
 
     // iterate trough nearby actors and remove all colliding with the RATIKKA
-    for(auto i:actors_.keys()){
+    for(auto &i:actors_.keys()){
         if(actors_[i]->collidesWithItem(&ratikka_)){
             if (dynamic_cast<CourseSide::Passenger*>(i.get()) != nullptr){
                 //value is ImgActorItem*
@@ -150,7 +150,7 @@ void Engine::updateSquirrels()
 {
     int width = 1095;
     int height = 600;
-    for(FlyingSquirrel *animal: squirrels_){
+    for(FlyingSquirrel *animal: qAsConst(squirrels_)){
         animal->move(0,squirrelSpeed);
         if(animal->collidesWithItem(&ratikka_)){
             EndGame(hitAnimal);

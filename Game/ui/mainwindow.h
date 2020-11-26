@@ -1,7 +1,6 @@
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
 #include "interfaces/iactor.hh"
-#include "actors/actoritem.h"
 #include "actors/nysse.hh"
 #include "graphicitems/busuiitem.h"
 #include "offlinereader.hh"
