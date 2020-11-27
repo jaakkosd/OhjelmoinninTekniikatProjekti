@@ -2,17 +2,9 @@
 namespace Game {
 ImgActorItem::ImgActorItem(int x, int y)
 {
-    setCoords(x, y);
+    moveTo(x, y);
 
 
-}
-
-void ImgActorItem::setCoords(int x, int y)
-{
-    x_=x;
-    y_=y;
-    setPos(x_, y_ );
-    setZValue(y_);
 }
 
 CourseConverter::cords ImgActorItem::getCoords()
@@ -22,6 +14,9 @@ CourseConverter::cords ImgActorItem::getCoords()
 
 void ImgActorItem::moveTo(int x, int y)
 {
-    setCoords(x,y);
+    x_=x;
+    y_=y;
+    setPos(x_, y_ );
+    setZValue(y_);
 }
 }

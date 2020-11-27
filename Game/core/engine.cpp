@@ -28,7 +28,7 @@ void Engine::init(){
     window_.setHiScore(cp_->stats()->hiScore());
     window_.addActor(&ratikka_);
     window_.scrollMap(startCords_.x, startCords_.y);
-    ratikka_.setCoords(startCords_.x,startCords_.y);
+    ratikka_.moveTo(startCords_.x,startCords_.y);
     window_.installEvents(&moveKeysObject_);
     connect(&timer_, &QTimer::timeout, this, &Engine::updatePositions);
     connect(&moveKeysObject_, &Movement::keyPressed,this, &Engine::updateKeys);
@@ -135,7 +135,7 @@ void Engine::updateRatikka(){
         return;
     }
     auto oldCords = ratikka_.getCoords();
-    bool limitUp = oldCords.y <=0;
+    bool limitUp = oldCords.y <=20;
     bool limitLeft = oldCords.x <=0;;
     bool limitRight = oldCords.x >= CourseConverter::map_width;
     bool limitDown = oldCords.y >= CourseConverter::map_height;

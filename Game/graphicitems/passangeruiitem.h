@@ -6,7 +6,6 @@ class PassangerUiItem : public ImgActorItem
 {
 public:
     PassangerUiItem(int x, int y);
-    void moveTo(int x,int y);
 private:
     QPixmap pixmap_;
 };

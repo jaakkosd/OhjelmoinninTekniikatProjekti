@@ -10,8 +10,4 @@ PassangerUiItem::PassangerUiItem(int x, int y):ImgActorItem( x,  y)
     //QPixmap pixmapItems = pixmapItem.scaled(QSize(512,512),  Qt::KeepAspectRatio);
     setPixmap(pixmap_);
 }
-
-void PassangerUiItem::moveTo(int x,int y){
-    setCoords(x,y);
-}
 }

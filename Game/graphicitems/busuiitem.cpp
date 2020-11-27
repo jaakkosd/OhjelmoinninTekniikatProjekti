@@ -14,10 +14,6 @@ BusUiItem::BusUiItem(int x, int y):ImgActorItem( x,  y)
 
 void BusUiItem::moveTo(int x,int y)
 {
-    // the idea here is that when the bus is going left it should show the picture of a bus going left
-    // now it's not working
-    // DOTO: Jaakko FIX THIS
-    // The cordinate system is using a grid so this looks funky, choppy and bad. Maybe implement some sort of (P)I(D) controller :)
     if(x==x_ && y==y_){
         return;
     }
@@ -39,6 +35,6 @@ void BusUiItem::moveTo(int x,int y)
         }
         setRotation(angle_+180*change+90);
     }
-    setCoords(x,y);
+    ImgActorItem::moveTo(x,y);
 }
 }
