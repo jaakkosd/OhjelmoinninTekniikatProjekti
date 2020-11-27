@@ -13,8 +13,16 @@
 #include "statistics.h"
 #include "graphicitems/flyingsquirrel.h"
 
+const static int SQUIRRELSPEED = 4;
+const static int STARTHOUR = 9;
+const static int FPS = 60;
+const static int GAMETIME = 60;
+const static QList<Interface::Location> STARTLOCATIONS {
+    Interface::Location(6826254,3327977),
+            Interface::Location(6825071,3326060),
+            Interface::Location(6825017,3328246)
+};
 
-#define UPDATES_PER_SECOND 30
 namespace Game {
 class Engine : public QObject
 {
@@ -35,7 +43,6 @@ private slots:
     void updateSquirrels();
     void updateKeys(QSet<int> keys);
 private:
-    const static int squirrelSpeed = 8;
     bool running = true;
     enum endingCases  { timeUp,
                         hitNysse,
@@ -55,8 +62,6 @@ private:
     void EndGame(endingCases endingCase);
     int speed_;
     CourseConverter::cords startCords_;
-    const QList<Interface::Location> startLocations_ {Interface::Location(6826254,3327977),
-                Interface::Location(6825071,3326060),Interface::Location(6825017,3328246)};
     QDateTime endTime;
     QList<FlyingSquirrel*> squirrels_;
 };

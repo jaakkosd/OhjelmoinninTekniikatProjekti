@@ -13,7 +13,7 @@ void Engine::init(){
         return;
     }
 
-    gamelogic_.setTime(9,0);
+    gamelogic_.setTime(STARTHOUR,0);
     gamelogic_.fileConfig();
     std::shared_ptr<Interface::ICity> cp = Interface::createGame();
     gamelogic_.takeCity(cp);    //ensin töytyy antaa city
@@ -26,13 +26,14 @@ void Engine::init(){
     window_.show();
     window_.setStops(cp);
     window_.setHiScore(cp_->stats()->hiScore());
-    connect(&timer_, &QTimer::timeout, this, &Engine::updatePositions);
     window_.addActor(&ratikka_);
+    window_.scrollMap(startCords_.x, startCords_.y);
     ratikka_.setCoords(startCords_.x,startCords_.y);
     window_.installEvents(&moveKeysObject_);
+    connect(&timer_, &QTimer::timeout, this, &Engine::updatePositions);
     connect(&moveKeysObject_, &Movement::keyPressed,this, &Engine::updateKeys);
-    endTime = QDateTime::currentDateTime().addSecs(60);
-    timer_.start(1000/UPDATES_PER_SECOND);
+    endTime = QDateTime::currentDateTime().addSecs(GAMETIME);
+    timer_.start(1000/FPS);
 }
 
 void Engine::updatePositions(){
@@ -47,6 +48,7 @@ void Engine::updatePositions(){
     updateRatikka();
     std::vector<std::shared_ptr<Interface::IActor> > nearby = cp_->getNearbyActors(window_.getCenter());
     QMap<std::shared_ptr<Interface::IActor>,ImgActorItem*> newActors;
+    auto moved =  cp_->movedActors();
     for(auto &i : nearby){
         CourseConverter::cords input {i.get()->giveLocation().giveX(),
                               i.get()->giveLocation().giveY()} ;
@@ -54,13 +56,22 @@ void Engine::updatePositions(){
         auto iterator  = actors_.find(i);
         if (iterator != actors_.end() && iterator.key() == i) {
             ImgActorItem* oldActorItem = actors_.take(i);
-            oldActorItem->moveTo(output.x,output.y);
             if (dynamic_cast<CourseSide::Passenger*>(i.get()) != nullptr){
+                if(moved.indexOf(i) != -1){
+                    int x = randgen.bounded(30)-15;
+                    int y = randgen.bounded(30)-15;
+                    oldActorItem->moveTo(output.x+x,output.y+y);
+                }
                 CourseSide::Passenger * pas = dynamic_cast<CourseSide::Passenger*>(i.get());
-                oldActorItem->setVisible(!pas->isInVehicle());
+                oldActorItem->setVisible(!(pas->isInVehicle()||pas->isRemoved()));
+            }else if(moved.indexOf(i) != -1){
+                oldActorItem->moveTo(output.x,output.y);
             }
             newActors[std::move(i)] = oldActorItem;
         }else{
+            if(i->isRemoved()){
+                continue;
+            }
             if (dynamic_cast<CourseSide::Nysse*>(i.get()) != nullptr)
               {
                 BusUiItem* nActor =  new BusUiItem(output.x, output.y);
@@ -68,10 +79,9 @@ void Engine::updatePositions(){
                 newActors[std::move(i)] =  nActor;
               }
             else if (dynamic_cast<CourseSide::Passenger*>(i.get()) != nullptr){
-                PassangerUiItem* nActor =  new PassangerUiItem(output.x, output.y);
-                int x = randgen.bounded(-10,10);
-                int y = randgen.bounded(-10,10);
-                nActor->setOffset(x,y);
+                int x = randgen.bounded(30)-15;
+                int y = randgen.bounded(30)-15;
+                PassangerUiItem* nActor =  new PassangerUiItem(output.x+x, output.y+y);
                 window_.addActor(nActor);
                 newActors[std::move(i)] =  nActor;
             }
@@ -92,7 +102,7 @@ void Engine::updatePositions(){
                 actors_[i]->hide();
                 delete actors_[i];
                 // key is Interface::IActor
-                cp_->removeActor(i);
+                cp_->actorRemoved(i);
                 actors_.remove(i);
                 cp_->stats()->addPoints();
                 window_.setScore(cp_->stats()->Points());
@@ -111,16 +121,19 @@ void Engine::updateKeys(QSet<int> keys){
 
 void Engine::getSettings(int difficulity, int startPoint)
 {
-    speed_ = (difficulity + 1) * 2;
+    speed_ = difficulity + 1;
 
-    if ( startLocations_.size() < startPoint || startPoint < 0){
+    if ( STARTLOCATIONS.size() < startPoint || startPoint < 0){
        startPoint = 0;}
-    auto loc = startLocations_[startPoint];
+    auto loc = STARTLOCATIONS[startPoint];
     startCords_ = CourseConverter::mapToUi(CourseConverter::cords{loc.giveX(),loc.giveY()});
 
 }
 
 void Engine::updateRatikka(){
+    if(keys_.empty()){
+        return;
+    }
     auto oldCords = ratikka_.getCoords();
     bool limitUp = oldCords.y <=0;
     bool limitLeft = oldCords.x <=0;;
@@ -151,7 +164,7 @@ void Engine::updateSquirrels()
     int width = 1095;
     int height = 600;
     for(FlyingSquirrel *animal: qAsConst(squirrels_)){
-        animal->move(0,squirrelSpeed);
+        animal->move(0,SQUIRRELSPEED);
         if(animal->collidesWithItem(&ratikka_)){
             EndGame(hitAnimal);
             return;
