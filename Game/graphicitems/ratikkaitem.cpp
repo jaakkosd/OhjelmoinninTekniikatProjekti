@@ -5,7 +5,7 @@ RatikkaItem::RatikkaItem(int x, int y):ImgActorItem( x,  y)
 {
     assert(ratikkaleft.load(":/img/resources/ratikkaleft.png")); //assert that png file is loaded
     assert(ratikkaright.load(":/img/resources/ratikkaright.png")); //assert that png file is loaded
-    setOffset(-13,-11);
+    setOffset(-21,-27);
     setScale(1);
     setPixmap(ratikkaright);
 }

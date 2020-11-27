@@ -4,7 +4,7 @@ PassangerUiItem::PassangerUiItem(int x, int y):ImgActorItem( x,  y)
 {
 
     assert(pixmap_.load(":/img/resources/passenger.png")); //assert that png file is loaded
-    setOffset(-12,-46);
+    setOffset(-13,-46);
     setScale(0.5);
 
     //QPixmap pixmapItems = pixmapItem.scaled(QSize(512,512),  Qt::KeepAspectRatio);
@@ -12,12 +12,6 @@ PassangerUiItem::PassangerUiItem(int x, int y):ImgActorItem( x,  y)
 }
 
 void PassangerUiItem::moveTo(int x,int y){
-    setCoords(x+offx_,y+offy_);
-}
-
-void PassangerUiItem::setOffset(int x, int y)
-{
-    offx_ = x;
-    offy_ = y;
+    setCoords(x,y);
 }
 }

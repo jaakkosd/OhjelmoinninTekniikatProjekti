@@ -41,7 +41,7 @@ void MainWindow::setStops(std::shared_ptr<Interface::ICity>  cp_)
 {
    Game::City* cityPointer =  dynamic_cast<Game::City*>(cp_.get());
    if (cityPointer){
-       for (auto &stop : cityPointer->stopList){
+       for (auto &stop : cityPointer->stopList()){
                Interface::Location loc = stop->getLocation();
                Game::CourseConverter::cords mapcords {loc.giveX(), loc.giveY()};
                Game::CourseConverter::cords uicords = Game::CourseConverter::mapToUi(mapcords);
