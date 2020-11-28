@@ -16,7 +16,7 @@ void Engine::init(){
     gamelogic_.setTime(STARTHOUR,0);
     gamelogic_.fileConfig();
     std::shared_ptr<Interface::ICity> cp = Interface::createGame();
-    gamelogic_.takeCity(cp);    //ensin töytyy antaa city
+    gamelogic_.takeCity(cp);
 
     cp_ = std::dynamic_pointer_cast<Game::City> (cp);
     gamelogic_.finalizeGameStart();

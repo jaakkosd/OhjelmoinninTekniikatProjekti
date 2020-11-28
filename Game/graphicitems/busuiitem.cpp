@@ -6,8 +6,6 @@ BusUiItem::BusUiItem(int x, int y):ImgActorItem( x,  y)
     assert(pixmapRight_.load(":/img/resources/nysse_right.png")); //assert that png file is loaded
     setOffset(-18,-9);
     setScale(2);
-
-    //QPixmap pixmapItems = pixmapItem.scaled(QSize(512,512),  Qt::KeepAspectRatio);
     setPixmap(pixmapLeft_);
 
 }

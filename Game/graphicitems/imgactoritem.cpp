@@ -3,8 +3,6 @@ namespace Game {
 ImgActorItem::ImgActorItem(int x, int y)
 {
     moveTo(x, y);
-
-
 }
 
 CourseConverter::cords ImgActorItem::getCoords()
