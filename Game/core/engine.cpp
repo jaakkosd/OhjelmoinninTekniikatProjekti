@@ -137,8 +137,8 @@ void Engine::updateRatikka(){
     auto oldCords = ratikka_.getCoords();
     bool limitUp = oldCords.y <=20;
     bool limitLeft = oldCords.x <=0;;
-    bool limitRight = oldCords.x >= CourseConverter::map_width;
-    bool limitDown = oldCords.y >= CourseConverter::map_height;
+    bool limitRight = oldCords.x >= CourseConverter::MAP_WIDTH;
+    bool limitDown = oldCords.y >= CourseConverter::MAP_HEIGHT;
     bool a = keys_.contains(65) && !limitLeft;
     bool s = keys_.contains(83) && !limitDown;
     bool w = keys_.contains(87) && !limitUp;
@@ -185,20 +185,21 @@ void Engine::updateSquirrels()
 
 void Engine::EndGame(endingCases endingCase)
 {
+    if(cp_->isGameOver()){
+        return;
+    }
+    running = false;
     cp_->stats()->saveHiScore();
     disconnect(&timer_, &QTimer::timeout, this, &Engine::updatePositions);
 
-    /*if(!running){
-        return;
-    }
-    running = false;*/
+
     timer_.stop();
     cp_->endGame();
     QString text("%1\n\nGame over!\nYou got %2 points!");
     switch (endingCase) {
     case hitNysse:
     {
-        text = text.arg("You collide with Nysse :(");
+        text = text.arg("You collided with a Nysse :(");
     }
         break;
     case timeUp:{
@@ -206,7 +207,7 @@ void Engine::EndGame(endingCases endingCase)
         break;
     }
     case hitAnimal:{
-        text = text.arg("You collide with flying squirrel >:(");
+        text = text.arg("You collided with a flying squirrel >:(");
     }
         break;
     default:

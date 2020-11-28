@@ -8,7 +8,7 @@
 namespace Game
 {
 /**
- * @brief CityIF is an interface that every city in the game must fulfill. Kaupunki
+ * @brief City is an class that stores city information like nysses and stops
  *
  * If class method doesn't have exception guarantee of nothrow, method can leak out exception `std::bad_alloc` (out of memory)
  */
@@ -74,6 +74,7 @@ public:
      * @param actor Actor that is set removed ingame.
      * @pre City is in gamestate. Given actor is found in the city. Actor has `actor.isRemoved() == true`.
      * @post Exception guarantee: strong.
+     * @exception GameError Actor not found in the city
      */
     void actorRemoved(std::shared_ptr<Interface::IActor> actor);
 
