@@ -33,20 +33,24 @@ class Engine : public QObject
 public: /**
      * @brief Engine, default constructor.
      * @param parent QObject
+     * @exception Exception safety: No-throw
      */
     explicit Engine(QObject *parent = nullptr);
 
     /**
-     * @brief init initialises
+     * @brief init initialises the game engine, timers, main window, course lib and course interface and starts the game.
+     * @pre object is created
+     * @post the game and it's parts are initialized and the game strarts
+     * @exception Exception safety: Basic
      */
     void init();
 
 signals:
 
     /**
-     * @brief gameEnded
+     * @brief signalGameEnded a signal that gets emitted when the game ends.
      */
-    void gameEnded();
+    void signalGameEnded();
 private slots:
     void updatePositions();
     void updateKeys(QSet<int> keys);

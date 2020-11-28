@@ -17,7 +17,7 @@ void startGame(){
     engine->deleteLater();
     engine = new Game::Engine;
     engine->init();
-    QObject::connect(engine, &Game::Engine::gameEnded,&startGame);
+    QObject::connect(engine, &Game::Engine::signalGameEnded,&startGame);
 }
 
 

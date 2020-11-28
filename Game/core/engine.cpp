@@ -219,6 +219,6 @@ void Engine::EndGame(endingCases endingCase)
     msgBox.setText(text.arg(cp_->stats()->Points()));
     msgBox.exec();
 
-    emit gameEnded();
+    emit signalGameEnded();
 }
 }
