@@ -189,6 +189,8 @@ void Engine::EndGame(endingCases endingCase)
         return;
     }
     running = false;
+    int old_hiscore = cp_->stats()->hiScore();
+    int score = cp_->stats()->Points();
     cp_->stats()->saveHiScore();
     disconnect(&timer_, &QTimer::timeout, this, &Engine::updatePositions);
 
@@ -196,6 +198,9 @@ void Engine::EndGame(endingCases endingCase)
     timer_.stop();
     cp_->endGame();
     QString text("%1\n\nGame over!\nYou got %2 points!");
+    if(score > old_hiscore){
+        text += " New hi-score!!!";
+    }
     switch (endingCase) {
     case hitNysse:
     {
