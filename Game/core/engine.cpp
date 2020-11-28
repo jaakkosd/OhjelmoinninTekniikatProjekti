@@ -136,8 +136,8 @@ void Engine::updateRatikka(){
     }
     auto oldCords = ratikka_.getCoords();
     bool limitUp = oldCords.y <=20;
-    bool limitLeft = oldCords.x <=0;;
-    bool limitRight = oldCords.x >= CourseConverter::MAP_WIDTH;
+    bool limitLeft = oldCords.x <=20;;
+    bool limitRight = oldCords.x >= CourseConverter::MAP_WIDTH-20;
     bool limitDown = oldCords.y >= CourseConverter::MAP_HEIGHT;
     bool a = keys_.contains(65) && !limitLeft;
     bool s = keys_.contains(83) && !limitDown;
