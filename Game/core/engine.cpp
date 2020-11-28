@@ -175,7 +175,7 @@ void Engine::updateSquirrels()
             delete animal;
         }
     }
-    if(randgen.bounded(1000)<10){
+    if(randgen.bounded(1000)<3){
         int x = randgen.bounded(30,width);
         FlyingSquirrel* sq = new FlyingSquirrel(x,-30);
         window_.addActor(sq);
