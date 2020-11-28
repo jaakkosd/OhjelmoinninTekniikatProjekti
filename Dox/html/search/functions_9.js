@@ -1,7 +1,5 @@
 var searchData=
 [
-  ['newnysse_283',['newNysse',['../class_interface_1_1_i_statistics.html#ac683e84583e624d355a77f255d465d3b',1,'Interface::IStatistics']]],
-  ['nysse_284',['Nysse',['../class_course_side_1_1_nysse.html#aa510b2460cc631ba267c437f1a5f2603',1,'CourseSide::Nysse']]],
-  ['nysseleft_285',['nysseLeft',['../class_interface_1_1_i_statistics.html#a728b82296c14bcdd68e8dd362bf23429',1,'Interface::IStatistics']]],
-  ['nysseremoved_286',['nysseRemoved',['../class_interface_1_1_i_statistics.html#ac1ef08da0ea42f4633ad86450449c56d',1,'Interface::IStatistics']]]
+  ['location_427',['Location',['../class_interface_1_1_location.html#ad46bb78e1bc5de791d4e77c9f46453d4',1,'Interface::Location::Location()'],['../class_interface_1_1_location.html#ad6dc3ce985b33b20371a5e3fb60a241b',1,'Interface::Location::Location(int northcoord, int eastcoord)']]],
+  ['logic_428',['Logic',['../class_course_side_1_1_logic.html#a51808c3d4e27295b44a0dbc7c4ad03de',1,'CourseSide::Logic']]]
 ];

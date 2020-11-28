@@ -7,7 +7,7 @@
 
 namespace Game {
 /**
- * @brief The Statistics class
+ * @brief The Statistics class is used to keep track of points, hiscore and gameobject counts.
  */
 class Statistics : public Interface::IStatistics
 {

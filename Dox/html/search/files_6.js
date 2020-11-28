@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['nysse_2ecc_211',['nysse.cc',['../nysse_8cc.html',1,'']]],
-  ['nysse_2ehh_212',['nysse.hh',['../nysse_8hh.html',1,'']]]
+  ['hiscore_2etxt_311',['hiscore.txt',['../hiscore_8txt.html',1,'']]]
 ];

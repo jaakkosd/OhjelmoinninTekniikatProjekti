@@ -1,7 +1,21 @@
 var searchData=
 [
-  ['takecity_147',['takeCity',['../class_course_side_1_1_logic.html#a2fa811a6c5bc60135e18115636774a00',1,'CourseSide::Logic']]],
-  ['testi_2etxt_148',['testi.txt',['../testi_8txt.html',1,'']]],
-  ['timeroute_149',['timeRoute',['../struct_course_side_1_1_bus_data.html#ae707a4b114f52f4276c8c38e3742733a',1,'CourseSide::BusData']]],
-  ['timeroute2_150',['timeRoute2',['../struct_course_side_1_1_bus_data.html#af7284de0947aa24e91deacae0656b5e7',1,'CourseSide::BusData']]]
+  ['ratikkaitem_156',['RatikkaItem',['../class_game_1_1_ratikka_item.html',1,'Game::RatikkaItem'],['../class_game_1_1_ratikka_item.html#a281fe6d98e445adb09fc493a895ebc0a',1,'Game::RatikkaItem::RatikkaItem()']]],
+  ['ratikkaitem_2ecpp_157',['ratikkaitem.cpp',['../ratikkaitem_8cpp.html',1,'']]],
+  ['ratikkaitem_2eh_158',['ratikkaitem.h',['../ratikkaitem_8h.html',1,'']]],
+  ['readfiles_159',['readFiles',['../class_course_side_1_1_offline_reader.html#a95ab469154bf7738c300744c09951333',1,'CourseSide::OfflineReader']]],
+  ['readhiscore_160',['readHiScore',['../class_game_1_1_statistics.html#a207d87205d20d9a1b0aae7862fc2f774',1,'Game::Statistics']]],
+  ['readme_2emd_161',['README.md',['../_r_e_a_d_m_e_8md.html',1,'']]],
+  ['readofflinedata_162',['readOfflineData',['../class_course_side_1_1_logic.html#aaa8190f5c3deb59b40fcca7b718db865',1,'CourseSide::Logic']]],
+  ['remove_163',['remove',['../class_course_side_1_1_nysse.html#a0449635b7cca375fce2e6f88be92d3ee',1,'CourseSide::Nysse::remove()'],['../class_course_side_1_1_passenger.html#a303b52a8d8158f373a2efea2cfe0003d',1,'CourseSide::Passenger::remove()'],['../class_interface_1_1_i_actor.html#a0a640d8a1f30964d8eff287c928032c0',1,'Interface::IActor::remove()']]],
+  ['removeactor_164',['removeActor',['../class_interface_1_1_i_city.html#a634b64858cbf5e52fdc60d7d59bb25a9',1,'Interface::ICity::removeActor()'],['../class_game_1_1_city.html#abd655694956c5493e7b8bdcb1aaf8e5d',1,'Game::City::removeActor()']]],
+  ['removed_5f_165',['removed_',['../class_course_side_1_1_passenger.html#a9786b1165ee673103d81a12062fe7a66',1,'CourseSide::Passenger']]],
+  ['removepassenger_166',['removePassenger',['../class_course_side_1_1_nysse.html#a0570a2c4aa8b8c84dd3239efe6fefc3d',1,'CourseSide::Nysse::removePassenger()'],['../class_course_side_1_1_stop.html#a3fd43f5442d5971815a818af38d1e8c1',1,'CourseSide::Stop::removePassenger()'],['../class_interface_1_1_i_vehicle.html#a48272ee2318718a22a29f8add05e9472',1,'Interface::IVehicle::removePassenger()']]],
+  ['route_167',['route',['../struct_course_side_1_1_bus_data.html#abe0f3f71154328c2382f6ee5b32f454f',1,'CourseSide::BusData']]],
+  ['routeid_168',['routeId',['../struct_course_side_1_1_bus_data.html#a9e0666f03b1e725b2a32a12025a82b32',1,'CourseSide::BusData']]],
+  ['routename_169',['routeName',['../struct_course_side_1_1_bus_data.html#a116234d2c751e1992fa5b7a936246576',1,'CourseSide::BusData']]],
+  ['routenumber_170',['routeNumber',['../struct_course_side_1_1_bus_data.html#a8c3c2eeb8c8f5d5b6e4db16a8c6c3c64',1,'CourseSide::BusData']]],
+  ['rulesdialog_171',['RulesDialog',['../class_rules_dialog.html',1,'RulesDialog'],['../class_rules_dialog.html#afacdb7f2c1cfcec3af367fcef2db873e',1,'RulesDialog::RulesDialog()']]],
+  ['rulesdialog_2ecpp_172',['rulesdialog.cpp',['../rulesdialog_8cpp.html',1,'']]],
+  ['rulesdialog_2eh_173',['rulesdialog.h',['../rulesdialog_8h.html',1,'']]]
 ];

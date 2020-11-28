@@ -74,6 +74,9 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
+<p>The <a class="el" href="class_course_side_1_1_logic.html" title="The Logic class.">Logic</a> class.  
+ <a href="class_course_side_1_1_logic.html#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="logic_8hh_source.html">logic.hh</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for CourseSide::Logic:</div>
@@ -85,32 +88,45 @@ Inheritance diagram for CourseSide::Logic:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-slots"></a>
 Public Slots</h2></td></tr>
 <tr class="memitem:ab9094d67a55e9f56721345890821463a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_course_side_1_1_logic.html#ab9094d67a55e9f56721345890821463a">advance</a> ()</td></tr>
+<tr class="memdesc:ab9094d67a55e9f56721345890821463a"><td class="mdescLeft">&#160;</td><td class="mdescRight">advance handles the movement and removal of buses and passengers. Gets called every timeout by increaseTime  <a href="class_course_side_1_1_logic.html#ab9094d67a55e9f56721345890821463a">More...</a><br /></td></tr>
 <tr class="separator:ab9094d67a55e9f56721345890821463a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4817108c919bd888b849375a9f8e92dd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_course_side_1_1_logic.html#a4817108c919bd888b849375a9f8e92dd">configChanged</a> (QTime time, bool debug)</td></tr>
+<tr class="memdesc:a4817108c919bd888b849375a9f8e92dd"><td class="mdescLeft">&#160;</td><td class="mdescRight">configChanged handles possible config parameters and calls fileconfig  <a href="class_course_side_1_1_logic.html#a4817108c919bd888b849375a9f8e92dd">More...</a><br /></td></tr>
 <tr class="separator:a4817108c919bd888b849375a9f8e92dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2c4feec4eb04717a5df80fa64e4a19cf"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_course_side_1_1_logic.html#a2c4feec4eb04717a5df80fa64e4a19cf">increaseTime</a> ()</td></tr>
+<tr class="memdesc:a2c4feec4eb04717a5df80fa64e4a19cf"><td class="mdescLeft">&#160;</td><td class="mdescRight">increaseTime gets called when timer_ timeouts and increases time when game is not over, calls advance to move buses to next position.  <a href="class_course_side_1_1_logic.html#a2c4feec4eb04717a5df80fa64e4a19cf">More...</a><br /></td></tr>
 <tr class="separator:a2c4feec4eb04717a5df80fa64e4a19cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a57502fae5dda5a61866bda61f9001657"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_course_side_1_1_logic.html#a57502fae5dda5a61866bda61f9001657">addNewBuses</a> ()</td></tr>
+<tr class="memdesc:a57502fae5dda5a61866bda61f9001657"><td class="mdescLeft">&#160;</td><td class="mdescRight">addNewBuses adds new buses to traffic from offlinedata  <a href="class_course_side_1_1_logic.html#a57502fae5dda5a61866bda61f9001657">More...</a><br /></td></tr>
 <tr class="separator:a57502fae5dda5a61866bda61f9001657"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9218c04edaaa52d0ccfc547bcf5bfa19"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_course_side_1_1_logic.html#a9218c04edaaa52d0ccfc547bcf5bfa19">addNewPassengers</a> (std::shared_ptr&lt; <a class="el" href="class_course_side_1_1_stop.html">Stop</a> &gt; stop, unsigned int no)</td></tr>
+<tr class="memdesc:a9218c04edaaa52d0ccfc547bcf5bfa19"><td class="mdescLeft">&#160;</td><td class="mdescRight">addNewPassengers adds passengers to given stop  <a href="class_course_side_1_1_logic.html#a9218c04edaaa52d0ccfc547bcf5bfa19">More...</a><br /></td></tr>
 <tr class="separator:a9218c04edaaa52d0ccfc547bcf5bfa19"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a51808c3d4e27295b44a0dbc7c4ad03de"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_course_side_1_1_logic.html#a51808c3d4e27295b44a0dbc7c4ad03de">Logic</a> (QObject *parent=0)</td></tr>
+<tr class="memdesc:a51808c3d4e27295b44a0dbc7c4ad03de"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default constructor.  <a href="class_course_side_1_1_logic.html#a51808c3d4e27295b44a0dbc7c4ad03de">More...</a><br /></td></tr>
 <tr class="separator:a51808c3d4e27295b44a0dbc7c4ad03de"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aaa8190f5c3deb59b40fcca7b718db865"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_course_side_1_1_logic.html#aaa8190f5c3deb59b40fcca7b718db865">readOfflineData</a> (const QString &amp;buses, const QString &amp;stops)</td></tr>
+<tr class="memdesc:aaa8190f5c3deb59b40fcca7b718db865"><td class="mdescLeft">&#160;</td><td class="mdescRight">readOfflineData uses <a class="el" href="class_course_side_1_1_offline_reader.html">OfflineReader</a> class to read given offlinedata-files  <a href="class_course_side_1_1_logic.html#aaa8190f5c3deb59b40fcca7b718db865">More...</a><br /></td></tr>
 <tr class="separator:aaa8190f5c3deb59b40fcca7b718db865"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aaf9eb4875f2f9dfa0bd53c3dc11b7677"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_course_side_1_1_logic.html#aaf9eb4875f2f9dfa0bd53c3dc11b7677">finalizeGameStart</a> ()</td></tr>
+<tr class="memdesc:aaf9eb4875f2f9dfa0bd53c3dc11b7677"><td class="mdescLeft">&#160;</td><td class="mdescRight">finalizeGameStart calls to add buses, stops and passengers, calls cityif_ to start the game and starts timer to update buses movement  <a href="class_course_side_1_1_logic.html#aaf9eb4875f2f9dfa0bd53c3dc11b7677">More...</a><br /></td></tr>
 <tr class="separator:aaf9eb4875f2f9dfa0bd53c3dc11b7677"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0ad56bd09c3dbe242221cf4c09e8dee2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_course_side_1_1_logic.html#a0ad56bd09c3dbe242221cf4c09e8dee2">fileConfig</a> (QString stops=<a class="el" href="namespace_course_side.html#a08121e5c8bad2a7bcab828d0f88b9106">DEFAULT_STOPS_FILE</a>, QString buses=<a class="el" href="namespace_course_side.html#a136a6fc8ee3a865b7df4abb888025956">DEFAULT_BUSES_FILE</a>)</td></tr>
+<tr class="memdesc:a0ad56bd09c3dbe242221cf4c09e8dee2"><td class="mdescLeft">&#160;</td><td class="mdescRight">fileConfig calls to read offlinedata  <a href="class_course_side_1_1_logic.html#a0ad56bd09c3dbe242221cf4c09e8dee2">More...</a><br /></td></tr>
 <tr class="separator:a0ad56bd09c3dbe242221cf4c09e8dee2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2d04a203574c2752852a979567157acb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_course_side_1_1_logic.html#a2d04a203574c2752852a979567157acb">setTime</a> (unsigned short hr, unsigned short min)</td></tr>
+<tr class="memdesc:a2d04a203574c2752852a979567157acb"><td class="mdescLeft">&#160;</td><td class="mdescRight">setTime sets time_ to given time  <a href="class_course_side_1_1_logic.html#a2d04a203574c2752852a979567157acb">More...</a><br /></td></tr>
 <tr class="separator:a2d04a203574c2752852a979567157acb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2fa811a6c5bc60135e18115636774a00"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_course_side_1_1_logic.html#a2fa811a6c5bc60135e18115636774a00">takeCity</a> (std::shared_ptr&lt; <a class="el" href="class_interface_1_1_i_city.html">Interface::ICity</a> &gt; city)</td></tr>
+<tr class="memdesc:a2fa811a6c5bc60135e18115636774a00"><td class="mdescLeft">&#160;</td><td class="mdescRight">takeCity sets given parameter as cityif_  <a href="class_course_side_1_1_logic.html#a2fa811a6c5bc60135e18115636774a00">More...</a><br /></td></tr>
 <tr class="separator:a2fa811a6c5bc60135e18115636774a00"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>The <a class="el" href="class_course_side_1_1_logic.html" title="The Logic class.">Logic</a> class. </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a51808c3d4e27295b44a0dbc7c4ad03de"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a51808c3d4e27295b44a0dbc7c4ad03de">&#9670;&nbsp;</a></span>Logic()</h2>
 
@@ -126,6 +142,14 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Default constructor. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">parent</td><td>is a QObject pointer that defaults to 0 </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -152,6 +176,8 @@ Public Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>addNewBuses adds new buses to traffic from offlinedata </p>
 
 </div>
 </div>
@@ -189,6 +215,15 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>addNewPassengers adds passengers to given stop </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">stop</td><td>pointer to stop that passengers are added </td></tr>
+    <tr><td class="paramname">no</td><td>number of added passengers </td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
 <a id="ab9094d67a55e9f56721345890821463a"></a>
@@ -213,6 +248,8 @@ Public Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>advance handles the movement and removal of buses and passengers. Gets called every timeout by increaseTime </p>
 
 </div>
 </div>
@@ -250,6 +287,15 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>configChanged handles possible config parameters and calls fileconfig </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">time</td><td>given time in QTime </td></tr>
+    <tr><td class="paramname">debug</td><td>if debugmode is true </td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
 <a id="a0ad56bd09c3dbe242221cf4c09e8dee2"></a>
@@ -278,6 +324,15 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>fileConfig calls to read offlinedata </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">stops</td><td>datafile for stops, defaults to constant </td></tr>
+    <tr><td class="paramname">buses</td><td>datafile for buses, defaults to constant </td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
 <a id="aaf9eb4875f2f9dfa0bd53c3dc11b7677"></a>
@@ -294,6 +349,9 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>finalizeGameStart calls to add buses, stops and passengers, calls cityif_ to start the game and starts timer to update buses movement </p>
+<dl class="section pre"><dt>Precondition</dt><dd>takeCity and fileConfig must be called </dd></dl>
 
 </div>
 </div>
@@ -319,6 +377,8 @@ Public Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>increaseTime gets called when timer_ timeouts and increases time when game is not over, calls advance to move buses to next position. </p>
 
 </div>
 </div>
@@ -348,6 +408,16 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>readOfflineData uses <a class="el" href="class_course_side_1_1_offline_reader.html">OfflineReader</a> class to read given offlinedata-files </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">buses</td><td>filepath for busfile </td></tr>
+    <tr><td class="paramname">stops</td><td>filepath for stopfile </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>returns true if data files are read correctly, else false </dd></dl>
+
 </div>
 </div>
 <a id="a2d04a203574c2752852a979567157acb"></a>
@@ -376,6 +446,15 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>setTime sets time_ to given time </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">hr</td><td>time in hours </td></tr>
+    <tr><td class="paramname">min</td><td>time in minutes </td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
 <a id="a2fa811a6c5bc60135e18115636774a00"></a>
@@ -393,6 +472,15 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>takeCity sets given parameter as cityif_ </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">city</td><td>pointer of a class that is derived from ICity interface in StudentSide </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true </dd></dl>
 
 </div>
 </div>

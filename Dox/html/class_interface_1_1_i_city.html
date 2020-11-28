@@ -83,7 +83,7 @@ Inheritance diagram for Interface::ICity:</div>
  <div class="center">
   <img src="class_interface_1_1_i_city.png" usemap="#Interface::ICity_map" alt=""/>
   <map id="Interface::ICity_map" name="Interface::ICity_map">
-<area href="class_city.html" alt="City" shape="rect" coords="0,56,93,80"/>
+<area href="class_game_1_1_city.html" alt="Game::City" shape="rect" coords="0,56,93,80"/>
   </map>
 </div></div>
 <table class="memberdecls">
@@ -157,7 +157,7 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Default constructor of the interface (For documentation) </p>
-<dl class="section post"><dt>Postcondition</dt><dd><a class="el" href="class_city.html">City</a> is at initialization state. </dd></dl>
+<dl class="section post"><dt>Postcondition</dt><dd>City is at initialization state. </dd></dl>
 
 </div>
 </div>
@@ -220,8 +220,10 @@ Public Member Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section pre"><dt>Precondition</dt><dd><a class="el" href="class_city.html">City</a> is in gamestate. Given actor is found in the city. </dd></dl>
+<dl class="section pre"><dt>Precondition</dt><dd>City is in gamestate. Given actor is found in the city. </dd></dl>
 <dl class="section post"><dt>Postcondition</dt><dd>Exception guarantee: basic. </dd></dl>
+
+<p>Implemented in <a class="el" href="class_game_1_1_city.html#ae7c2b14aaf807c989eeb845db41d908c">Game::City</a>.</p>
 
 </div>
 </div>
@@ -256,8 +258,10 @@ Public Member Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section pre"><dt>Precondition</dt><dd><a class="el" href="class_city.html">City</a> is in gamestate. Given actor is found in the city. Actor has <code>actor.isRemoved() == true</code>. </dd></dl>
+<dl class="section pre"><dt>Precondition</dt><dd>City is in gamestate. Given actor is found in the city. Actor has <code>actor.isRemoved() == true</code>. </dd></dl>
 <dl class="section post"><dt>Postcondition</dt><dd>Exception guarantee: strong. </dd></dl>
+
+<p>Implemented in <a class="el" href="class_game_1_1_city.html#a2e068a24b3d85067cbec200fd0c600ab">Game::City</a>.</p>
 
 </div>
 </div>
@@ -301,6 +305,8 @@ Public Member Functions</h2></td></tr>
   </dd>
 </dl>
 
+<p>Implemented in <a class="el" href="class_game_1_1_city.html#af63b73e5889f6075edd75da97603db61">Game::City</a>.</p>
+
 </div>
 </div>
 <a id="a347fe0662fcd162fa9f18a3be41c8b0b"></a>
@@ -334,7 +340,7 @@ Public Member Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section pre"><dt>Precondition</dt><dd><a class="el" href="class_city.html">City</a> is in init state. </dd></dl>
+<dl class="section pre"><dt>Precondition</dt><dd>City is in init state. </dd></dl>
 <dl class="section post"><dt>Postcondition</dt><dd>Stop is added to the city. Exception guarantee: basic </dd></dl>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
@@ -342,6 +348,8 @@ Public Member Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
+
+<p>Implemented in <a class="el" href="class_game_1_1_city.html#a3f9dc6b307eab06a3f8e02704815196e">Game::City</a>.</p>
 
 </div>
 </div>
@@ -380,6 +388,8 @@ Public Member Functions</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>Boolean that tells wether the actor is in the city. </dd></dl>
 <dl class="section post"><dt>Postcondition</dt><dd>Exception guarantee: nothrow. </dd></dl>
 
+<p>Implemented in <a class="el" href="class_game_1_1_city.html#ae1deaa2e5ef55a0b0f8086659089cdf8">Game::City</a>.</p>
+
 </div>
 </div>
 <a id="a40b338c8611a1d1febb36799af6ac730"></a>
@@ -413,9 +423,11 @@ Public Member Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section pre"><dt>Precondition</dt><dd><a class="el" href="class_city.html">City</a> is in gamestate. </dd></dl>
+<dl class="section pre"><dt>Precondition</dt><dd>City is in gamestate. </dd></dl>
 <dl class="section return"><dt>Returns</dt><dd>Vector containing actors close to the location, that pass <code>getLocation().isClose(loc) == true</code>. </dd></dl>
 <dl class="section post"><dt>Postcondition</dt><dd>Exception guarantee: strong. </dd></dl>
+
+<p>Implemented in <a class="el" href="class_game_1_1_city.html#a06761a564f3920db87e0a50711b1fbb4">Game::City</a>.</p>
 
 </div>
 </div>
@@ -443,9 +455,11 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>isGameOver tells wether the game is overor not. </p>
-<dl class="section pre"><dt>Precondition</dt><dd><a class="el" href="class_city.html">City</a> is in gamestate. </dd></dl>
+<dl class="section pre"><dt>Precondition</dt><dd>City is in gamestate. </dd></dl>
 <dl class="section return"><dt>Returns</dt><dd><code>true</code>, if game is over, else ´false´ </dd></dl>
 <dl class="section post"><dt>Postcondition</dt><dd>Exception guarantee: nothrow. </dd></dl>
+
+<p>Implemented in <a class="el" href="class_game_1_1_city.html#a204e92bc305fe3c22d51d3252e777486">Game::City</a>.</p>
 
 </div>
 </div>
@@ -480,7 +494,7 @@ Public Member Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section pre"><dt>Precondition</dt><dd><a class="el" href="class_city.html">City</a> is in gamestate. </dd></dl>
+<dl class="section pre"><dt>Precondition</dt><dd>City is in gamestate. </dd></dl>
 <dl class="section post"><dt>Postcondition</dt><dd>Actor is removed from the city. Exception guarantee: strong. </dd></dl>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
@@ -488,6 +502,8 @@ Public Member Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
+
+<p>Implemented in <a class="el" href="class_game_1_1_city.html#abd655694956c5493e7b8bdcb1aaf8e5d">Game::City</a>.</p>
 
 </div>
 </div>
@@ -533,7 +549,7 @@ Public Member Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section pre"><dt>Precondition</dt><dd><a class="el" href="class_city.html">City</a> is in init state. </dd></dl>
+<dl class="section pre"><dt>Precondition</dt><dd>City is in init state. </dd></dl>
 <dl class="section post"><dt>Postcondition</dt><dd>Picture for the game area is set. Exception guarantee: basic. </dd></dl>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
@@ -541,6 +557,8 @@ Public Member Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
+
+<p>Implemented in <a class="el" href="class_game_1_1_city.html#a9fc3ef42e9adbb5fc64512d3792c8041">Game::City</a>.</p>
 
 </div>
 </div>
@@ -571,12 +589,14 @@ Public Member Functions</h2></td></tr>
 <p>setClock sets the time of the game clock. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">clock</td><td>Game clock time at the function call. </td></tr>
+    <tr><td class="paramname">clock</td><td><a class="el" href="namespace_game.html">Game</a> clock time at the function call. </td></tr>
   </table>
   </dd>
 </dl>
 <dl class="section pre"><dt>Precondition</dt><dd><code>kello.isValid() == true</code>. </dd></dl>
 <dl class="section post"><dt>Postcondition</dt><dd>Time is set. Exception guarantee: nothrow. </dd></dl>
+
+<p>Implemented in <a class="el" href="class_game_1_1_city.html#ae963aff608b9969a1cc1a103e4f1a4eb">Game::City</a>.</p>
 
 </div>
 </div>
@@ -604,8 +624,10 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>startGame shofts city from init state to the gamestate. </p>
-<dl class="section pre"><dt>Precondition</dt><dd><a class="el" href="class_city.html">City</a> is in init state. <a class="el" href="class_interface_1_1_i_city.html#a429a9dd7d9f16607e3c9ed2b554f0e1d" title="setBackground sets the bitmap picture of the game area.">setBackground()</a> and <a class="el" href="class_interface_1_1_i_city.html#a397cb96750b1e4534e12f1cd85c756ff" title="setClock sets the time of the game clock.">setClock()</a> have been called. </dd></dl>
-<dl class="section post"><dt>Postcondition</dt><dd><a class="el" href="class_city.html">City</a> is in gamestate. Exception guarantee: nothrow. </dd></dl>
+<dl class="section pre"><dt>Precondition</dt><dd>City is in init state. <a class="el" href="class_interface_1_1_i_city.html#a429a9dd7d9f16607e3c9ed2b554f0e1d" title="setBackground sets the bitmap picture of the game area.">setBackground()</a> and <a class="el" href="class_interface_1_1_i_city.html#a397cb96750b1e4534e12f1cd85c756ff" title="setClock sets the time of the game clock.">setClock()</a> have been called. </dd></dl>
+<dl class="section post"><dt>Postcondition</dt><dd>City is in gamestate. Exception guarantee: nothrow. </dd></dl>
+
+<p>Implemented in <a class="el" href="class_game_1_1_city.html#a7db2d446aad991226aba2dde473fd19d">Game::City</a>.</p>
 
 </div>
 </div>

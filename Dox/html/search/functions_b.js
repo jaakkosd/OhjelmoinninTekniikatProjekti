@@ -1,7 +1,8 @@
 var searchData=
 [
-  ['paint_289',['paint',['../class_course_side_1_1_simple_actor_item.html#a3c1081cf8cc7b197b57085774f972c37',1,'CourseSide::SimpleActorItem']]],
-  ['passenger_290',['Passenger',['../class_course_side_1_1_passenger.html#ad56775f1d24665b29e375f714812b8db',1,'CourseSide::Passenger']]],
-  ['passengerdied_291',['passengerDied',['../class_interface_1_1_i_statistics.html#a3954cb1fc5f164e2ac01dcf304429e5e',1,'Interface::IStatistics']]],
-  ['printboth_292',['printBoth',['../class_interface_1_1_location.html#a9bb8e240fc35b0c67d86aa24c430cc4b',1,'Interface::Location']]]
+  ['newnysse_438',['newNysse',['../class_interface_1_1_i_statistics.html#ac683e84583e624d355a77f255d465d3b',1,'Interface::IStatistics::newNysse()'],['../class_game_1_1_statistics.html#ac4630c3448536d5cd3126d3a174db695',1,'Game::Statistics::newNysse()']]],
+  ['nysse_439',['Nysse',['../class_course_side_1_1_nysse.html#aa510b2460cc631ba267c437f1a5f2603',1,'CourseSide::Nysse']]],
+  ['nysseleft_440',['nysseLeft',['../class_interface_1_1_i_statistics.html#a728b82296c14bcdd68e8dd362bf23429',1,'Interface::IStatistics::nysseLeft()'],['../class_game_1_1_statistics.html#a87e97b1110c095f3a0888be24b095687',1,'Game::Statistics::nysseLeft()']]],
+  ['nysseremoved_441',['nysseRemoved',['../class_interface_1_1_i_statistics.html#ac1ef08da0ea42f4633ad86450449c56d',1,'Interface::IStatistics::nysseRemoved()'],['../class_game_1_1_statistics.html#a87609906215361dd0d25de7f4afba57a',1,'Game::Statistics::nysseRemoved()']]],
+  ['nysses_442',['nysses',['../class_game_1_1_statistics.html#ac1eafde1499103145aaabc25831be2a5',1,'Game::Statistics']]]
 ];

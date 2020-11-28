@@ -7,14 +7,15 @@
 
 namespace Game
 {
-/**
- * @brief City is an class that stores city information like nysses and stops
- *
+
+/*
+ * @brief The City class stores city information like nysses and stops
  * If class method doesn't have exception guarantee of nothrow, method can leak out exception `std::bad_alloc` (out of memory)
  */
 class City : public Interface::ICity
 {
 public:
+
     /**
       * @brief Constructor
       * @post City is initialized.

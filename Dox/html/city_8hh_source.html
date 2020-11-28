@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.20"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Jakke ja makke: C:/Users/Markus/source/repos/jakke-ja-makke/Game/city.hh Source File</title>
+<title>Jakke ja makke: C:/Users/Markus/source/repos/jakke-ja-makke/Game/core/city.hh Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -61,7 +61,7 @@ $(function() {
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="dir_c33286056d2acf479cd8641ef845fec1.html">Game</a></li>  </ul>
+<li class="navelem"><a class="el" href="dir_c33286056d2acf479cd8641ef845fec1.html">Game</a></li><li class="navelem"><a class="el" href="dir_538d181b0739040f6b825e89f21a80fb.html">core</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
@@ -72,22 +72,112 @@ $(function() {
 <a href="city_8hh.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef CITY_HH</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define CITY_HH</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="icity_8hh.html">interfaces/icity.hh</a>&quot;</span></div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160; </div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160; </div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160; </div>
-<div class="line"><a name="l00007"></a><span class="lineno"><a class="line" href="class_city.html">    7</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_city.html">City</a> : <span class="keyword">public</span> <a class="code" href="class_interface_1_1_i_city.html">Interface::ICity</a></div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;{</div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;    <a class="code" href="class_city.html#a1b1f549430f0a7ecd0ec7b1605415193">City</a>();</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;};</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160; </div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#endif // CITY_HH</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="statistics_8h.html">statistics.h</a>&quot;</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="nysse_8hh.html">actors/nysse.hh</a>&quot;</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="gameerror_8hh.html">errors/gameerror.hh</a>&quot;</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160; </div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespace_game.html">Game</a></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;{</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160; </div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment">/*</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="comment"> * @brief The City class stores city information like nysses and stops</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment"> * If class method doesn&#39;t have exception guarantee of nothrow, method can leak out exception `std::bad_alloc` (out of memory)</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment"> */</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno"><a class="line" href="class_game_1_1_city.html">   15</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_game_1_1_city.html">City</a> : <span class="keyword">public</span> <a class="code" href="class_interface_1_1_i_city.html">Interface::ICity</a></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;{</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; </div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <a class="code" href="class_game_1_1_city.html#a3f5b36a84a3ae6b5e6a9e95b1c240c4f">City</a>();</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_game_1_1_city.html#a9fc3ef42e9adbb5fc64512d3792c8041">setBackground</a>(QImage &amp;<a class="code" href="class_game_1_1_city.html#af94ba07d6c5a15fbcbe12475a01dbf8c">basicbackground</a>, QImage &amp;<a class="code" href="class_game_1_1_city.html#ad19ce5ada99a5b2b3b431865d4df8d64">bigbackground</a>);</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    [[deprecated]] <span class="keywordtype">void</span> <a class="code" href="class_game_1_1_city.html#ae963aff608b9969a1cc1a103e4f1a4eb">setClock</a>(QTime clock);</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160; </div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_game_1_1_city.html#a3f9dc6b307eab06a3f8e02704815196e">addStop</a>(std::shared_ptr&lt;Interface::IStop&gt; newstop);</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160; </div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_game_1_1_city.html#a7db2d446aad991226aba2dde473fd19d">startGame</a>();</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160; </div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_game_1_1_city.html#af63b73e5889f6075edd75da97603db61">addActor</a>(std::shared_ptr&lt;Interface::IActor&gt; newactor);</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160; </div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_game_1_1_city.html#abd655694956c5493e7b8bdcb1aaf8e5d">removeActor</a>(std::shared_ptr&lt;Interface::IActor&gt; actor);</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160; </div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_game_1_1_city.html#a2e068a24b3d85067cbec200fd0c600ab">actorRemoved</a>(std::shared_ptr&lt;Interface::IActor&gt; actor);</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160; </div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="class_game_1_1_city.html#ae1deaa2e5ef55a0b0f8086659089cdf8">findActor</a>(std::shared_ptr&lt;Interface::IActor&gt; actor) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160; </div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_game_1_1_city.html#ae7c2b14aaf807c989eeb845db41d908c">actorMoved</a>(std::shared_ptr&lt;Interface::IActor&gt; actor);</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160; </div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;    QList&lt;std::shared_ptr&lt;Interface::IActor&gt;&gt; <a class="code" href="class_game_1_1_city.html#adb95bbd182b4976f41bce5fc488d38c9">movedActors</a>();</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160; </div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;    std::vector&lt;std::shared_ptr&lt;Interface::IActor&gt;&gt; <a class="code" href="class_game_1_1_city.html#a06761a564f3920db87e0a50711b1fbb4">getNearbyActors</a>(<a class="code" href="class_interface_1_1_location.html">Interface::Location</a> loc) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160; </div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="class_game_1_1_city.html#a4d2561f8074c4f35e31f9af911716740">isGameStarted</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160; </div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="class_game_1_1_city.html#a204e92bc305fe3c22d51d3252e777486">isGameOver</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160; </div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_game_1_1_city.html#a5e70e6f428cb9a9477738352736add1e">endGame</a>();</div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160; </div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;    <a class="code" href="class_game_1_1_statistics.html">Statistics</a> *<a class="code" href="class_game_1_1_city.html#a0626035a30c93b63585c7ad25655b7f5">stats</a>();</div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160; </div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;    QList&lt;std::shared_ptr&lt;Interface::IStop&gt;&gt; <a class="code" href="class_game_1_1_city.html#aabc87764d639c4899fbcd5f7abe0a234">stopList</a>();</div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160; </div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;    QImage <a class="code" href="class_game_1_1_city.html#af94ba07d6c5a15fbcbe12475a01dbf8c">basicbackground</a>();</div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160; </div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;    QImage <a class="code" href="class_game_1_1_city.html#ad19ce5ada99a5b2b3b431865d4df8d64">bigbackground</a>();</div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;<span class="keyword">public</span> slots:</div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160; </div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;    QList&lt;std::shared_ptr&lt;Interface::IStop&gt;&gt; stopList_;</div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;    QList&lt;std::shared_ptr&lt;Interface::IActor&gt;&gt; actorList_;</div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;    QList&lt;std::shared_ptr&lt;Interface::IActor&gt;&gt; movedActors_;</div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160; </div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;    <span class="keywordtype">bool</span> isGameStarted_ = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;    <span class="keywordtype">bool</span> isGameOver_ = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;    <a class="code" href="class_game_1_1_statistics.html">Statistics</a> stats_;</div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;    QImage basicbackground_;</div>
+<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;    QImage bigbackground_;</div>
+<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;};</div>
+<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160; </div>
+<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;} <span class="comment">// namespace Game</span></div>
+<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160; </div>
+<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;<span class="preprocessor">#endif // CITY_HH</span></div>
 </div><!-- fragment --></div><!-- contents -->
+<div class="ttc" id="aclass_game_1_1_city_html_aabc87764d639c4899fbcd5f7abe0a234"><div class="ttname"><a href="class_game_1_1_city.html#aabc87764d639c4899fbcd5f7abe0a234">Game::City::stopList</a></div><div class="ttdeci">QList&lt; std::shared_ptr&lt; Interface::IStop &gt; &gt; stopList()</div><div class="ttdoc">stopList contains all stops in the city</div><div class="ttdef"><b>Definition:</b> city.cc:111</div></div>
+<div class="ttc" id="aclass_game_1_1_statistics_html"><div class="ttname"><a href="class_game_1_1_statistics.html">Game::Statistics</a></div><div class="ttdoc">The Statistics class is used to keep track of points, hiscore and gameobject counts.</div><div class="ttdef"><b>Definition:</b> statistics.h:13</div></div>
+<div class="ttc" id="aclass_game_1_1_city_html_a3f5b36a84a3ae6b5e6a9e95b1c240c4f"><div class="ttname"><a href="class_game_1_1_city.html#a3f5b36a84a3ae6b5e6a9e95b1c240c4f">Game::City::City</a></div><div class="ttdeci">City()</div><div class="ttdoc">Constructor.</div><div class="ttdef"><b>Definition:</b> city.cc:8</div></div>
+<div class="ttc" id="aclass_game_1_1_statistics_html_a87609906215361dd0d25de7f4afba57a"><div class="ttname"><a href="class_game_1_1_statistics.html#a87609906215361dd0d25de7f4afba57a">Game::Statistics::nysseRemoved</a></div><div class="ttdeci">void nysseRemoved()</div><div class="ttdoc">nysseRemoved notifies, that the nysse is removed ingame.</div><div class="ttdef"><b>Definition:</b> statistics.cpp:16</div></div>
+<div class="ttc" id="aclass_game_1_1_statistics_html_ac4630c3448536d5cd3126d3a174db695"><div class="ttname"><a href="class_game_1_1_statistics.html#ac4630c3448536d5cd3126d3a174db695">Game::Statistics::newNysse</a></div><div class="ttdeci">void newNysse()</div><div class="ttdoc">newNysse notifies, that a new nysse is added to the game.</div><div class="ttdef"><b>Definition:</b> statistics.cpp:21</div></div>
+<div class="ttc" id="aclass_game_1_1_city_html_af94ba07d6c5a15fbcbe12475a01dbf8c"><div class="ttname"><a href="class_game_1_1_city.html#af94ba07d6c5a15fbcbe12475a01dbf8c">Game::City::basicbackground</a></div><div class="ttdeci">QImage basicbackground()</div><div class="ttdoc">basicbackground returns the stored image stored by setBackground.</div><div class="ttdef"><b>Definition:</b> city.cc:116</div></div>
+<div class="ttc" id="aclass_course_side_1_1_nysse_html"><div class="ttname"><a href="class_course_side_1_1_nysse.html">CourseSide::Nysse</a></div><div class="ttdef"><b>Definition:</b> nysse.hh:21</div></div>
+<div class="ttc" id="aclass_game_1_1_statistics_html_a87e97b1110c095f3a0888be24b095687"><div class="ttname"><a href="class_game_1_1_statistics.html#a87e97b1110c095f3a0888be24b095687">Game::Statistics::nysseLeft</a></div><div class="ttdeci">void nysseLeft()</div><div class="ttdoc">nysseLeft notifies, that a nysse has left the game.</div><div class="ttdef"><b>Definition:</b> statistics.cpp:26</div></div>
+<div class="ttc" id="aclass_game_1_1_city_html_af63b73e5889f6075edd75da97603db61"><div class="ttname"><a href="class_game_1_1_city.html#af63b73e5889f6075edd75da97603db61">Game::City::addActor</a></div><div class="ttdeci">void addActor(std::shared_ptr&lt; Interface::IActor &gt; newactor)</div><div class="ttdoc">addActor adds a new actor to the city.</div><div class="ttdef"><b>Definition:</b> city.cc:30</div></div>
+<div class="ttc" id="aclass_game_1_1_city_html_ae963aff608b9969a1cc1a103e4f1a4eb"><div class="ttname"><a href="class_game_1_1_city.html#ae963aff608b9969a1cc1a103e4f1a4eb">Game::City::setClock</a></div><div class="ttdeci">void setClock(QTime clock)</div><div class="ttdoc">setClock is deprecated, not used and won't affect game time because game logic isn't handeled by City...</div><div class="ttdef"><b>Definition:</b> city.cc:17</div></div>
+<div class="ttc" id="aclass_game_1_1_city_html_a3f9dc6b307eab06a3f8e02704815196e"><div class="ttname"><a href="class_game_1_1_city.html#a3f9dc6b307eab06a3f8e02704815196e">Game::City::addStop</a></div><div class="ttdeci">void addStop(std::shared_ptr&lt; Interface::IStop &gt; newstop)</div><div class="ttdoc">addStop adds a stop to the city.</div><div class="ttdef"><b>Definition:</b> city.cc:21</div></div>
 <div class="ttc" id="acity_8hh_html"><div class="ttname"><a href="city_8hh.html">city.hh</a></div></div>
+<div class="ttc" id="aclass_interface_1_1_location_html"><div class="ttname"><a href="class_interface_1_1_location.html">Interface::Location</a></div><div class="ttdoc">Location is a class, which has methods dealing with the location of the objects.</div><div class="ttdef"><b>Definition:</b> location.hh:21</div></div>
+<div class="ttc" id="astatistics_8h_html"><div class="ttname"><a href="statistics_8h.html">statistics.h</a></div></div>
+<div class="ttc" id="aclass_game_1_1_city_html_a0626035a30c93b63585c7ad25655b7f5"><div class="ttname"><a href="class_game_1_1_city.html#a0626035a30c93b63585c7ad25655b7f5">Game::City::stats</a></div><div class="ttdeci">Statistics * stats()</div><div class="ttdoc">stats returns a pointer to starts object for easy access.</div><div class="ttdef"><b>Definition:</b> city.cc:106</div></div>
+<div class="ttc" id="aclass_game_1_1_city_html_a06761a564f3920db87e0a50711b1fbb4"><div class="ttname"><a href="class_game_1_1_city.html#a06761a564f3920db87e0a50711b1fbb4">Game::City::getNearbyActors</a></div><div class="ttdeci">std::vector&lt; std::shared_ptr&lt; Interface::IActor &gt; &gt; getNearbyActors(Interface::Location loc) const</div><div class="ttdoc">getNearbyActors returns actors that are close to given position.</div><div class="ttdef"><b>Definition:</b> city.cc:82</div></div>
+<div class="ttc" id="aclass_game_1_1_city_html_ae1deaa2e5ef55a0b0f8086659089cdf8"><div class="ttname"><a href="class_game_1_1_city.html#ae1deaa2e5ef55a0b0f8086659089cdf8">Game::City::findActor</a></div><div class="ttdeci">bool findActor(std::shared_ptr&lt; Interface::IActor &gt; actor) const</div><div class="ttdoc">findActor checks if the given actor is in the city.</div><div class="ttdef"><b>Definition:</b> city.cc:63</div></div>
+<div class="ttc" id="aclass_game_1_1_city_html_abd655694956c5493e7b8bdcb1aaf8e5d"><div class="ttname"><a href="class_game_1_1_city.html#abd655694956c5493e7b8bdcb1aaf8e5d">Game::City::removeActor</a></div><div class="ttdeci">void removeActor(std::shared_ptr&lt; Interface::IActor &gt; actor)</div><div class="ttdoc">removeActor removes the actor from the city.</div><div class="ttdef"><b>Definition:</b> city.cc:40</div></div>
+<div class="ttc" id="anysse_8hh_html"><div class="ttname"><a href="nysse_8hh.html">nysse.hh</a></div></div>
+<div class="ttc" id="aclass_game_1_1_city_html_a4d2561f8074c4f35e31f9af911716740"><div class="ttname"><a href="class_game_1_1_city.html#a4d2561f8074c4f35e31f9af911716740">Game::City::isGameStarted</a></div><div class="ttdeci">bool isGameStarted() const</div><div class="ttdoc">isGameOver tells whether the game has started overor not.</div><div class="ttdef"><b>Definition:</b> city.cc:92</div></div>
 <div class="ttc" id="aclass_interface_1_1_i_city_html"><div class="ttname"><a href="class_interface_1_1_i_city.html">Interface::ICity</a></div><div class="ttdoc">CityIF is an interface that every city in the game must fulfill. Kaupunki.</div><div class="ttdef"><b>Definition:</b> icity.hh:28</div></div>
-<div class="ttc" id="aclass_city_html_a1b1f549430f0a7ecd0ec7b1605415193"><div class="ttname"><a href="class_city.html#a1b1f549430f0a7ecd0ec7b1605415193">City::City</a></div><div class="ttdeci">City()</div><div class="ttdef"><b>Definition:</b> city.cc:3</div></div>
+<div class="ttc" id="anamespace_game_html"><div class="ttname"><a href="namespace_game.html">Game</a></div><div class="ttdef"><b>Definition:</b> city.cc:7</div></div>
+<div class="ttc" id="aclass_game_1_1_city_html_a7db2d446aad991226aba2dde473fd19d"><div class="ttname"><a href="class_game_1_1_city.html#a7db2d446aad991226aba2dde473fd19d">Game::City::startGame</a></div><div class="ttdeci">void startGame()</div><div class="ttdoc">startGame sets isGameStarted flag to true.</div><div class="ttdef"><b>Definition:</b> city.cc:25</div></div>
+<div class="ttc" id="aclass_interface_1_1_game_error_html"><div class="ttname"><a href="class_interface_1_1_game_error.html">Interface::GameError</a></div><div class="ttdoc">Exception class that expresses errors ingame.</div><div class="ttdef"><b>Definition:</b> gameerror.hh:21</div></div>
+<div class="ttc" id="aclass_game_1_1_city_html_ad19ce5ada99a5b2b3b431865d4df8d64"><div class="ttname"><a href="class_game_1_1_city.html#ad19ce5ada99a5b2b3b431865d4df8d64">Game::City::bigbackground</a></div><div class="ttdeci">QImage bigbackground()</div><div class="ttdoc">bigbackground returns the stored image stored by setBackground.</div><div class="ttdef"><b>Definition:</b> city.cc:121</div></div>
+<div class="ttc" id="aclass_game_1_1_city_html_a5e70e6f428cb9a9477738352736add1e"><div class="ttname"><a href="class_game_1_1_city.html#a5e70e6f428cb9a9477738352736add1e">Game::City::endGame</a></div><div class="ttdeci">void endGame()</div><div class="ttdoc">endGame sets the isGameOver flag to true.</div><div class="ttdef"><b>Definition:</b> city.cc:101</div></div>
+<div class="ttc" id="aclass_game_1_1_city_html_ae7c2b14aaf807c989eeb845db41d908c"><div class="ttname"><a href="class_game_1_1_city.html#ae7c2b14aaf807c989eeb845db41d908c">Game::City::actorMoved</a></div><div class="ttdeci">void actorMoved(std::shared_ptr&lt; Interface::IActor &gt; actor)</div><div class="ttdoc">actorMoved is an operation that is used to tell wether certain actor has moved.</div><div class="ttdef"><b>Definition:</b> city.cc:68</div></div>
+<div class="ttc" id="acity_8cc_html_aaf8fa2fba0e5eb45466c4ebaeafd9a8e"><div class="ttname"><a href="city_8cc.html#aaf8fa2fba0e5eb45466c4ebaeafd9a8e">VIEW_DISTANCE</a></div><div class="ttdeci">#define VIEW_DISTANCE</div><div class="ttdef"><b>Definition:</b> city.cc:5</div></div>
+<div class="ttc" id="agameerror_8hh_html"><div class="ttname"><a href="gameerror_8hh.html">gameerror.hh</a></div><div class="ttdoc">Defines an exception class for errors ingame.</div></div>
+<div class="ttc" id="aclass_game_1_1_city_html_a2e068a24b3d85067cbec200fd0c600ab"><div class="ttname"><a href="class_game_1_1_city.html#a2e068a24b3d85067cbec200fd0c600ab">Game::City::actorRemoved</a></div><div class="ttdeci">void actorRemoved(std::shared_ptr&lt; Interface::IActor &gt; actor)</div><div class="ttdoc">actorRemoved tells the city that actor is removed ingame.</div><div class="ttdef"><b>Definition:</b> city.cc:52</div></div>
 <div class="ttc" id="aicity_8hh_html"><div class="ttname"><a href="icity_8hh.html">icity.hh</a></div><div class="ttdoc">Defines an interface that reperesents the city's operations.</div></div>
-<div class="ttc" id="aclass_city_html"><div class="ttname"><a href="class_city.html">City</a></div><div class="ttdef"><b>Definition:</b> city.hh:8</div></div>
+<div class="ttc" id="aclass_game_1_1_city_html_a9fc3ef42e9adbb5fc64512d3792c8041"><div class="ttname"><a href="class_game_1_1_city.html#a9fc3ef42e9adbb5fc64512d3792c8041">Game::City::setBackground</a></div><div class="ttdeci">void setBackground(QImage &amp;basicbackground, QImage &amp;bigbackground)</div><div class="ttdoc">setBackground saves the bitmap pictures of the game area.</div><div class="ttdef"><b>Definition:</b> city.cc:12</div></div>
+<div class="ttc" id="aclass_game_1_1_city_html"><div class="ttname"><a href="class_game_1_1_city.html">Game::City</a></div><div class="ttdef"><b>Definition:</b> city.hh:16</div></div>
+<div class="ttc" id="aclass_game_1_1_city_html_adb95bbd182b4976f41bce5fc488d38c9"><div class="ttname"><a href="class_game_1_1_city.html#adb95bbd182b4976f41bce5fc488d38c9">Game::City::movedActors</a></div><div class="ttdeci">QList&lt; std::shared_ptr&lt; Interface::IActor &gt; &gt; movedActors()</div><div class="ttdoc">movedActors returns a list of moved actors since movedActors was last called.</div><div class="ttdef"><b>Definition:</b> city.cc:76</div></div>
+<div class="ttc" id="aclass_game_1_1_city_html_a204e92bc305fe3c22d51d3252e777486"><div class="ttname"><a href="class_game_1_1_city.html#a204e92bc305fe3c22d51d3252e777486">Game::City::isGameOver</a></div><div class="ttdeci">bool isGameOver() const</div><div class="ttdoc">isGameOver tells whether the game is overor not.</div><div class="ttdef"><b>Definition:</b> city.cc:97</div></div>
+<div class="ttc" id="aclass_game_1_1_statistics_html_ab441c0f73afd7f74fd2ed105158dad1e"><div class="ttname"><a href="class_game_1_1_statistics.html#ab441c0f73afd7f74fd2ed105158dad1e">Game::Statistics::morePassengers</a></div><div class="ttdeci">void morePassengers(int num)</div><div class="ttdoc">morePassengers notifies, that more passangers are added to the game.</div><div class="ttdef"><b>Definition:</b> statistics.cpp:11</div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by&#160;<a href="http://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.8.20

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['locationptr_338',['locationPtr',['../struct_course_side_1_1_place.html#a045081015d0aa2b28b4e10e1d54b9c87',1,'CourseSide::Place']]]
+  ['height_520',['HEIGHT',['../namespace_course_side.html#a9d1f3f47e05fabe6286e161e03dc7111',1,'CourseSide']]]
 ];

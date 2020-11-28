@@ -1,12 +1,10 @@
 var searchData=
 [
-  ['programming_203_20exercise_20project_20template_99',['Programming 3 Exercise project template',['../md__c___users__markus_source_repos_jakke-ja-makke__r_e_a_d_m_e.html',1,'']]],
-  ['padding_100',['PADDING',['../simplemainwindow_8cpp.html#ae2b4ba534ebba05c378f2389aab70d4b',1,'simplemainwindow.cpp']]],
-  ['paint_101',['paint',['../class_course_side_1_1_simple_actor_item.html#a3c1081cf8cc7b197b57085774f972c37',1,'CourseSide::SimpleActorItem']]],
-  ['passenger_102',['Passenger',['../class_course_side_1_1_passenger.html',1,'CourseSide::Passenger'],['../class_course_side_1_1_passenger.html#ad56775f1d24665b29e375f714812b8db',1,'CourseSide::Passenger::Passenger()']]],
-  ['passenger_2ecc_103',['passenger.cc',['../passenger_8cc.html',1,'']]],
-  ['passenger_2ehh_104',['passenger.hh',['../passenger_8hh.html',1,'']]],
-  ['passengerdied_105',['passengerDied',['../class_interface_1_1_i_statistics.html#a3954cb1fc5f164e2ac01dcf304429e5e',1,'Interface::IStatistics']]],
-  ['place_106',['Place',['../struct_course_side_1_1_place.html',1,'CourseSide']]],
-  ['printboth_107',['printBoth',['../class_interface_1_1_location.html#a9bb8e240fc35b0c67d86aa24c430cc4b',1,'Interface::Location']]]
+  ['newnysse_131',['newNysse',['../class_interface_1_1_i_statistics.html#ac683e84583e624d355a77f255d465d3b',1,'Interface::IStatistics::newNysse()'],['../class_game_1_1_statistics.html#ac4630c3448536d5cd3126d3a174db695',1,'Game::Statistics::newNysse()']]],
+  ['nysse_132',['Nysse',['../class_course_side_1_1_nysse.html',1,'CourseSide::Nysse'],['../class_course_side_1_1_nysse.html#aa510b2460cc631ba267c437f1a5f2603',1,'CourseSide::Nysse::Nysse()']]],
+  ['nysse_2ecc_133',['nysse.cc',['../nysse_8cc.html',1,'']]],
+  ['nysse_2ehh_134',['nysse.hh',['../nysse_8hh.html',1,'']]],
+  ['nysseleft_135',['nysseLeft',['../class_interface_1_1_i_statistics.html#a728b82296c14bcdd68e8dd362bf23429',1,'Interface::IStatistics::nysseLeft()'],['../class_game_1_1_statistics.html#a87e97b1110c095f3a0888be24b095687',1,'Game::Statistics::nysseLeft()']]],
+  ['nysseremoved_136',['nysseRemoved',['../class_interface_1_1_i_statistics.html#ac1ef08da0ea42f4633ad86450449c56d',1,'Interface::IStatistics::nysseRemoved()'],['../class_game_1_1_statistics.html#a87609906215361dd0d25de7f4afba57a',1,'Game::Statistics::nysseRemoved()']]],
+  ['nysses_137',['nysses',['../class_game_1_1_statistics.html#ac1eafde1499103145aaabc25831be2a5',1,'Game::Statistics']]]
 ];

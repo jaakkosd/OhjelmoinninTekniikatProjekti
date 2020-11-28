@@ -114,6 +114,10 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a290629cf49a2e3b34b9ddf0bbae4ba9f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a86068b1577229b24a2678179708a5313"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_course_side_1_1_passenger.html#a86068b1577229b24a2678179708a5313">enterNysse</a> (std::weak_ptr&lt; <a class="el" href="class_course_side_1_1_nysse.html">Nysse</a> &gt; nysse)</td></tr>
 <tr class="separator:a86068b1577229b24a2678179708a5313"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acd7beaf9d1e429aa337d862a6bcca7c1"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_course_side_1_1_passenger.html#acd7beaf9d1e429aa337d862a6bcca7c1">wantToEnterVehicle</a> (std::weak_ptr&lt; <a class="el" href="class_interface_1_1_i_vehicle.html">Interface::IVehicle</a> &gt; vehicle) const</td></tr>
+<tr class="separator:acd7beaf9d1e429aa337d862a6bcca7c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a43652cea3cc00a5e11f37b9c736f7956"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_course_side_1_1_passenger.html#a43652cea3cc00a5e11f37b9c736f7956">enterVehicle</a> (std::weak_ptr&lt; <a class="el" href="class_interface_1_1_i_vehicle.html">Interface::IVehicle</a> &gt; vehicle)</td></tr>
+<tr class="separator:a43652cea3cc00a5e11f37b9c736f7956"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1a131fd79dfe775028dcb6fdebfbcc6d"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_course_side_1_1_passenger.html#a1a131fd79dfe775028dcb6fdebfbcc6d">wantToEnterStop</a> (std::weak_ptr&lt; <a class="el" href="class_interface_1_1_i_stop.html">Interface::IStop</a> &gt; stop) const</td></tr>
 <tr class="separator:a1a131fd79dfe775028dcb6fdebfbcc6d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a62705bd26c80ee468ebe1d4d6e15f991"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_course_side_1_1_passenger.html#a62705bd26c80ee468ebe1d4d6e15f991">enterStop</a> (std::weak_ptr&lt; <a class="el" href="class_interface_1_1_i_stop.html">Interface::IStop</a> &gt; stop)</td></tr>
@@ -189,6 +193,24 @@ Protected Attributes</h2></td></tr>
           <td>(</td>
           <td class="paramtype">std::weak_ptr&lt; <a class="el" href="class_interface_1_1_i_stop.html">Interface::IStop</a> &gt;&#160;</td>
           <td class="paramname"><em>stop</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a43652cea3cc00a5e11f37b9c736f7956"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a43652cea3cc00a5e11f37b9c736f7956">&#9670;&nbsp;</a></span>enterVehicle()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void CourseSide::Passenger::enterVehicle </td>
+          <td>(</td>
+          <td class="paramtype">std::weak_ptr&lt; <a class="el" href="class_interface_1_1_i_vehicle.html">Interface::IVehicle</a> &gt;&#160;</td>
+          <td class="paramname"><em>vehicle</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -462,6 +484,32 @@ Protected Attributes</h2></td></tr>
           <td>(</td>
           <td class="paramtype">std::weak_ptr&lt; <a class="el" href="class_interface_1_1_i_stop.html">Interface::IStop</a> &gt;&#160;</td>
           <td class="paramname"><em>stop</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="acd7beaf9d1e429aa337d862a6bcca7c1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acd7beaf9d1e429aa337d862a6bcca7c1">&#9670;&nbsp;</a></span>wantToEnterVehicle()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool CourseSide::Passenger::wantToEnterVehicle </td>
+          <td>(</td>
+          <td class="paramtype">std::weak_ptr&lt; <a class="el" href="class_interface_1_1_i_vehicle.html">Interface::IVehicle</a> &gt;&#160;</td>
+          <td class="paramname"><em>vehicle</em></td><td>)</td>
           <td> const</td>
         </tr>
       </table>

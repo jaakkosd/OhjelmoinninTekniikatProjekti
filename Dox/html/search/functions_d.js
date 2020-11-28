@@ -1,22 +1,9 @@
 var searchData=
 [
-  ['setbackground_298',['setBackground',['../class_interface_1_1_i_city.html#a429a9dd7d9f16607e3c9ed2b554f0e1d',1,'Interface::ICity']]],
-  ['setcity_299',['setCity',['../class_course_side_1_1_nysse.html#a9af0a880ad768518cdc5359483501b9f',1,'CourseSide::Nysse']]],
-  ['setclock_300',['setClock',['../class_interface_1_1_i_city.html#a397cb96750b1e4534e12f1cd85c756ff',1,'Interface::ICity']]],
-  ['setcoord_301',['setCoord',['../class_course_side_1_1_simple_actor_item.html#ae3aec134a73b90de82a768267429d675',1,'CourseSide::SimpleActorItem']]],
-  ['setid_302',['setId',['../class_course_side_1_1_stop.html#abe63cae2b44e8a472c6011aa01ecd23d',1,'CourseSide::Stop']]],
-  ['setlocation_303',['setLocation',['../class_course_side_1_1_stop.html#abef8b082f5fc37381b58544b098b65a5',1,'CourseSide::Stop']]],
-  ['setname_304',['setName',['../class_course_side_1_1_stop.html#a48911eada43f2aaca9b535e3c77c0606',1,'CourseSide::Stop']]],
-  ['setnortheast_305',['setNorthEast',['../class_interface_1_1_location.html#ae137e3489b12adeae2ec5da5502bce86',1,'Interface::Location']]],
-  ['setpicture_306',['setPicture',['../class_course_side_1_1_simple_main_window.html#a925cc218154af2afe53a9f48535397ea',1,'CourseSide::SimpleMainWindow']]],
-  ['setroute_307',['setRoute',['../class_course_side_1_1_nysse.html#a688933f4d77729a943aeec543446bb36',1,'CourseSide::Nysse']]],
-  ['setsid_308',['setSID',['../class_course_side_1_1_nysse.html#ae2154871668fb85dc765ad276da88e75',1,'CourseSide::Nysse']]],
-  ['setsize_309',['setSize',['../class_course_side_1_1_simple_main_window.html#aa59aeebba7e394da9dfa375b61d7c43e',1,'CourseSide::SimpleMainWindow']]],
-  ['settick_310',['setTick',['../class_course_side_1_1_simple_main_window.html#aaacffcc933a5c1747f91bc17f767c122',1,'CourseSide::SimpleMainWindow']]],
-  ['settime_311',['setTime',['../class_course_side_1_1_logic.html#a2d04a203574c2752852a979567157acb',1,'CourseSide::Logic']]],
-  ['setxy_312',['setXY',['../class_interface_1_1_location.html#a2991a4110be44c0d5fa18178ace5d0fb',1,'Interface::Location']]],
-  ['simpleactoritem_313',['SimpleActorItem',['../class_course_side_1_1_simple_actor_item.html#a1501f33c1474264fa4a0da3eea485861',1,'CourseSide::SimpleActorItem']]],
-  ['simplemainwindow_314',['SimpleMainWindow',['../class_course_side_1_1_simple_main_window.html#a8f30ce42820c9bc023187ce9301c764e',1,'CourseSide::SimpleMainWindow']]],
-  ['startgame_315',['startGame',['../class_interface_1_1_i_city.html#acd6ac71137fe0561c57acd958ce24309',1,'Interface::ICity']]],
-  ['stop_316',['Stop',['../class_course_side_1_1_stop.html#ad5ec7a4c895eb85aa589c8da3671b2ea',1,'CourseSide::Stop']]]
+  ['paint_445',['paint',['../class_course_side_1_1_simple_actor_item.html#a3c1081cf8cc7b197b57085774f972c37',1,'CourseSide::SimpleActorItem']]],
+  ['passangers_446',['passangers',['../class_game_1_1_statistics.html#a0553e7b46054dfa6fc483c089de25850',1,'Game::Statistics']]],
+  ['passangeruiitem_447',['PassangerUiItem',['../class_game_1_1_passanger_ui_item.html#a0a2a0df0589d67d3004709162245beba',1,'Game::PassangerUiItem']]],
+  ['passenger_448',['Passenger',['../class_course_side_1_1_passenger.html#ad56775f1d24665b29e375f714812b8db',1,'CourseSide::Passenger']]],
+  ['points_449',['Points',['../class_game_1_1_statistics.html#a3bbaa4ecd4ff5d65e9e07f415916498b',1,'Game::Statistics']]],
+  ['printboth_450',['printBoth',['../class_interface_1_1_location.html#a9bb8e240fc35b0c67d86aa24c430cc4b',1,'Interface::Location']]]
 ];

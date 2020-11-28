@@ -1,7 +1,9 @@
 var searchData=
 [
-  ['wanttoenternysse_153',['wantToEnterNysse',['../class_course_side_1_1_passenger.html#a290629cf49a2e3b34b9ddf0bbae4ba9f',1,'CourseSide::Passenger']]],
-  ['wanttoenterstop_154',['wantToEnterStop',['../class_course_side_1_1_passenger.html#a1a131fd79dfe775028dcb6fdebfbcc6d',1,'CourseSide::Passenger']]],
-  ['what_155',['what',['../class_interface_1_1_game_error.html#af13a9b1111ba69820f277af8a454d516',1,'Interface::GameError::what()'],['../class_interface_1_1_init_error.html#a23d8bb7e725cfba0cec3ac9eaa82cac5',1,'Interface::InitError::what()']]],
-  ['width_156',['WIDTH',['../namespace_course_side.html#acf424024123c6017460309ec3faa1e03',1,'CourseSide']]]
+  ['takecity_221',['takeCity',['../class_course_side_1_1_logic.html#a2fa811a6c5bc60135e18115636774a00',1,'CourseSide::Logic']]],
+  ['testcase1_222',['TestCase1',['../class_test_case1.html',1,'TestCase1'],['../class_test_case1.html#a4ed72239d509149b8cd10f2621fbadf2',1,'TestCase1::TestCase1()']]],
+  ['testi_2etxt_223',['testi.txt',['../testi_8txt.html',1,'']]],
+  ['timeroute_224',['timeRoute',['../struct_course_side_1_1_bus_data.html#ae707a4b114f52f4276c8c38e3742733a',1,'CourseSide::BusData']]],
+  ['timeroute2_225',['timeRoute2',['../struct_course_side_1_1_bus_data.html#af7284de0947aa24e91deacae0656b5e7',1,'CourseSide::BusData']]],
+  ['tst_5ftestcase1_2ecpp_226',['tst_testcase1.cpp',['../tst__testcase1_8cpp.html',1,'']]]
 ];

@@ -1,15 +1,7 @@
 var searchData=
 [
-  ['_7econfigwindow_323',['~ConfigWindow',['../class_course_side_1_1_config_window.html#a745c6c4c4612cfb820e5a0032668ed39',1,'CourseSide::ConfigWindow']]],
-  ['_7egameerror_324',['~GameError',['../class_interface_1_1_game_error.html#a405bb2771d007347dbab533125b676a4',1,'Interface::GameError']]],
-  ['_7eiactor_325',['~IActor',['../class_interface_1_1_i_actor.html#af7c2d6370eba42b50b0aca35576a734d',1,'Interface::IActor']]],
-  ['_7eicity_326',['~ICity',['../class_interface_1_1_i_city.html#ad0ca2b4701d01e5e3ce14a459be0a816',1,'Interface::ICity']]],
-  ['_7einiterror_327',['~InitError',['../class_interface_1_1_init_error.html#a9842ae35e907c900bf3fd7636128aa0d',1,'Interface::InitError']]],
-  ['_7eipassenger_328',['~IPassenger',['../class_interface_1_1_i_passenger.html#a6940a052745137ec3e103b0abb3eed84',1,'Interface::IPassenger']]],
-  ['_7eistatistics_329',['~IStatistics',['../class_interface_1_1_i_statistics.html#a21917fcb22d156b8f49de56fbc4fb60e',1,'Interface::IStatistics']]],
-  ['_7eistop_330',['~IStop',['../class_interface_1_1_i_stop.html#a583e3c222567a7bd0849589c9255a0b7',1,'Interface::IStop']]],
-  ['_7eivehicle_331',['~IVehicle',['../class_interface_1_1_i_vehicle.html#adc2eb6b4f44dac8fa0fd095793be2d46',1,'Interface::IVehicle']]],
-  ['_7esimpleactoritem_332',['~SimpleActorItem',['../class_course_side_1_1_simple_actor_item.html#a309ccba2c9137210051d8095f42858a4',1,'CourseSide::SimpleActorItem']]],
-  ['_7esimplemainwindow_333',['~SimpleMainWindow',['../class_course_side_1_1_simple_main_window.html#a0548a33e71548f99d976d71e263b1adf',1,'CourseSide::SimpleMainWindow']]],
-  ['_7estop_334',['~Stop',['../class_course_side_1_1_stop.html#a9f75a078e543ede6b3dc598e5f632f84',1,'CourseSide::Stop']]]
+  ['wanttoenternysse_495',['wantToEnterNysse',['../class_course_side_1_1_passenger.html#a290629cf49a2e3b34b9ddf0bbae4ba9f',1,'CourseSide::Passenger']]],
+  ['wanttoenterstop_496',['wantToEnterStop',['../class_course_side_1_1_passenger.html#a1a131fd79dfe775028dcb6fdebfbcc6d',1,'CourseSide::Passenger']]],
+  ['wanttoentervehicle_497',['wantToEnterVehicle',['../class_course_side_1_1_passenger.html#acd7beaf9d1e429aa337d862a6bcca7c1',1,'CourseSide::Passenger']]],
+  ['what_498',['what',['../class_interface_1_1_game_error.html#af13a9b1111ba69820f277af8a454d516',1,'Interface::GameError::what()'],['../class_interface_1_1_init_error.html#a23d8bb7e725cfba0cec3ac9eaa82cac5',1,'Interface::InitError::what()']]]
 ];

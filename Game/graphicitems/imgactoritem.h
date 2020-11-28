@@ -4,9 +4,9 @@
 #include <QGraphicsPixmapItem>
 #include "core/courseconverter.h"
 namespace Game {
+
 /**
- * @brief ImgActorItem is base class for our ui items.
- *
+ * @brief The ImgActorItem class is a base class for our ui items.
  * If class method doesn't have exception guarantee of nothrow, method can leak
  * out exception `std::bad_alloc` (out of memory)
  */

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['padding_339',['PADDING',['../simplemainwindow_8cpp.html#ae2b4ba534ebba05c378f2389aab70d4b',1,'simplemainwindow.cpp']]]
+  ['locationptr_521',['locationPtr',['../struct_course_side_1_1_place.html#a045081015d0aa2b28b4e10e1d54b9c87',1,'CourseSide::Place']]]
 ];
