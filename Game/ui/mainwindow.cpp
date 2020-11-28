@@ -26,11 +26,6 @@ void MainWindow::addActor(QGraphicsItem* actor)
     map.addItem(actor);
 }
 
-void MainWindow::setSize(int w, int h)
-{
-    map_width_ = w;
-    map_height_ = h;
-}
 
 void MainWindow::setPicture(QImage &img)
 {
