@@ -14,8 +14,8 @@ INCLUDEPATH += \
     ../
 
 DEPENDPATH += \
-    ../ \
-    ../Course/CourseLib
+    ../Course/CourseLib \
+    ../
 
 HEADERS += \
     ../Game/core/statistics.h

@@ -14,17 +14,19 @@ public:
     /**
      * @brief Movement, default constructor
      * @param parent QObject
+     * @exception Exception guarantee: No-throw
      */
     explicit Movement(QObject *parent = nullptr);
 signals:
     /**
      * @brief keyPressed is emitted when a relevant keypress or release happends.
      * @param keys emits the internal list of keys currently pressed
+     * @exception Exception guarantee: No-throw
      */
     void keyPressed(QSet<int> keys);
 protected:
     /**
-     * @brief eventFilter is the actual filter that handles the relevent events like mouse scrolling and keyboard asdw and arrow keys.
+     * @brief eventFilter is the actual filters that handles the relevent events like mouse scrolling and keyboard asdw and arrow keys.
      * @param obj sender QObject
      * @param event QEvent of occured event
      * @return
