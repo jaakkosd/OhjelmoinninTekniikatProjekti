@@ -19,7 +19,16 @@ public:
      * @param y item's y uicoordinate
      */
     ImgActorItem(int x, int y);
+    /**
+     * @brief getCoords returns actors coordinates
+     * @return struct which includes x and y coordinate
+     */
     CourseConverter::cords getCoords();
+    /**
+     * @brief moveTo moves actor to given position
+     * @param x new x coordinate
+     * @param y ne y coordinate
+     */
     virtual void moveTo(int x, int y);
 protected:
     int x_=0;
