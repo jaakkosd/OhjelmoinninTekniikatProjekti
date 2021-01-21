@@ -1,4 +1,4 @@
-# Jakke & Makke, Ohjelmoitni 3 projekti
+# Jakke & Makke, Ohjelmointi 3 projekti
 
 
 ## Pelin ohjeet
